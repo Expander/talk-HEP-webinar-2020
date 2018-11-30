@@ -268,7 +268,115 @@
 
 \section{Introduction}
 
-\begin{frame}{Current status on SUSY particle masses}
+\begin{frame}[t]{Before / after LHC}
+  \begin{columns}
+    \column{.5\linewidth}
+    \scalebox{0.6}{
+    \begin{tikzpicture}[node distance = 2.5em, auto]
+      \visible<1-4>{
+      \node[quark] (u) {$u$};
+      \node[quark, below of=u] (d) {$d$};
+      \node[quark, right of=u] (c) {$c$};
+      \node[quark, below of=c] (s) {$s$};
+      \node[quark, right of=c] (t) {$t$};
+      \node[quark, below of=t] (b) {$b$};
+      \node[lepton, below of=d] (ne) {$\nu_e$};
+      \node[lepton, below of=ne] (e) {$e$};
+      \node[lepton, right of=ne] (nm) {$\nu_\mu$};
+      \node[lepton, below of=nm] (m) {$\mu$};
+      \node[lepton, right of=nm] (nt) {$\nu_\tau$};
+      \node[lepton, below of=nt] (ta) {$\tau$};
+      \node[gauge, right of=t] (gamma) {$\gamma$};
+      \node[gauge, below of=gamma] (g) {$g$};
+      \node[gauge, below of=g] (Z) {$Z$};
+      \node[gauge, below of=Z] (W) {$W$};
+      \node[phantom, below of=W] (corner) {\phantom{X}};
+      \node[phantom, below of=corner] (corner2) {\phantom{X}};
+      \draw[line width=1, color=blue!70,rounded corners] ($(u) + (-2em,2em)$) rectangle ($(corner) + (2em,-2em)$);
+      \node[color=blue!70, anchor=east] (MSSM) at ($(corner.east) + (1em,-1em)$) {SM};
+      }
+      \visible<1>{
+        \node[scalar, fill=blue!10, dashed, below of=e] (h) {$h$};
+      }
+      \visible<2-4>{
+        \node[scalar, below of=e] (h) {$h$};
+      }
+      \visible<3-4>{
+        \node[gaugino, below=1.75em of h] (chi0) {$\chi^{0}$};
+        \node[gaugino, right of=chi0] (chipm) {$\chi^{\pm}$};
+        \draw[line width=1, color=darkgreen,rounded corners] ($(u) + (-3em,3em)$) rectangle ($(corner2) + (3em,-3.5em)$);
+        \node[color=darkgreen, anchor=east] (Split) at ($(corner2.east) + (2em,-2.5em)$) {SM+$\chi$};
+      }
+      \visible<4>{
+        \node[slepton, below=1.7em of chi0] (smu) {$\tilde\mu$};
+        \node[slepton, right of=smu] (snu) {$\tilde{\nu}_{\mu}$};
+        \draw[line width=1, color=red,rounded corners] ($(u) + (-4em,4em)$) rectangle ($(corner2) + (4em,-7.3em)$);
+        \node[color=red, anchor=east] (Split) at ($(corner2.east) + (3em,-6.3em)$) {SM+$\chi$+$\tilde{\mu}$+$\tilde{\nu}_\mu$};
+      }
+      \visible<5->{
+        \node[quark] (u) {$u$};
+        \node[quark, below of=u] (d) {$d$};
+        \node[quark, right of=u] (c) {$c$};
+        \node[quark, below of=c] (s) {$s$};
+        \node[quark, right of=c] (t) {$t$};
+        \node[quark, below of=t] (b) {$b$};
+        \node[lepton, below of=d] (ne) {$\nu_e$};
+        \node[lepton, below of=ne] (e) {$e$};
+        \node[lepton, right of=ne] (nm) {$\nu_\mu$};
+        \node[lepton, below of=nm] (m) {$\mu$};
+        \node[lepton, right of=nm] (nt) {$\nu_\tau$};
+        \node[lepton, below of=nt] (ta) {$\tau$};
+        \node[gauge, right of=t] (gamma) {$\gamma$};
+        \node[gauge, below of=gamma] (g) {$g$};
+        \node[gauge, below of=g] (Z) {$Z$};
+        \node[gauge, below of=Z] (W) {$W$};
+        \node[scalar, below of=e] (h) {$h$};
+        \node[scalar, right of=h] (H) {$H$};
+        \node[scalar, below of=h] (A) {$A$};
+        \node[scalar, right of=A] (Hpm) {$H^\pm$};
+        %
+        \node[squark, below=2em of A] (su) {$\tilde u$};
+        \node[squark, below of=su] (sd) {$\tilde d$};
+        \node[squark, right of=su] (sc) {$\tilde c$};
+        \node[squark, below of=sc] (ss) {$\tilde s$};
+        \node[squark, right of=sc] (st) {$\tilde t$};
+        \node[squark, below of=st] (sb) {$\tilde b$};
+        \node[slepton, below of=sd] (sne) {$\tilde \nu_e$};
+        \node[slepton, below of=sne] (se) {$\tilde e$};
+        \node[slepton, right of=sne] (snm) {$\tilde \nu_\mu$};
+        \node[slepton, below of=snm] (sm) {$\tilde \mu$};
+        \node[slepton, right of=snm] (snt) {$\tilde \nu_\tau$};
+        \node[slepton, below of=snt] (sta) {$\tilde \tau$};
+        \node[gaugino, right of=st] (sgamma) {$\tilde \gamma$};
+        \node[gaugino, below of=sgamma] (sg) {$\tilde g$};
+        \node[gaugino, below of=sg] (sZ) {$\tilde Z$};
+        \node[gaugino, below of=sZ] (sW) {$\tilde W$};
+        \node[higgsino, below of=se] (sh) {$\tilde h_1^0$};
+        \node[higgsino, right of=sh] (sH) {$\tilde h_2^0$};
+        \node[higgsino, below of=sh] (sA) {$\tilde h^-_1$};
+        \node[higgsino, below of=sH] (sHpm) {$\tilde h^+_2$};
+        \node[phantom , below of=sW    ] (sZprime) {\phantom{X}};
+        \node[phantom , below of=sZprime] (corner) {\phantom{X}};
+        %
+        \draw[line width=1, color=black!70,rounded corners] ($(u) + (-2em,2em)$) rectangle ($(corner) + (2em,-2em)$);
+        \node[color=black!70, anchor=east] (SUSY) at ($(corner.east) + (1em,-1em)$) {SUSY};
+      }
+    \end{tikzpicture}}
+    \column{.5\linewidth}
+    \emph{Open questions:}\\
+    \begin{itemize}
+    \item {\color<2->{darkgreen}{Does the Higgs exist?}}
+    \item {\color<3->{darkgreen}{What does DM consist of?}}
+    \item {\color<4->{darkgreen}{What causes the deviation of $(g-2)_\mu$?}}
+    \item {\color<5->{darkgreen}{Is the vacuum stable up to $M_{\text{Pl}}$?}}
+    \item {\color<5->{darkgreen}{Why is $M_h = 125\eh{GeV}$?}}
+    \item {\color<5->{darkgreen}{Is there a solution to the hierarchy problem?}}
+    \item {\color<6->{darkgreen}{Can QFT and gravity be unified?}}
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Current status on SUSY searches}
   \begin{center}
     \includegraphics[width=\textwidth]{images/ATLAS_SUSY_Summary}
   \end{center}
