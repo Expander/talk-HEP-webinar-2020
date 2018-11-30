@@ -31,6 +31,8 @@
 \tikzstyle{higgsino} = [rectangle, draw, fill=blue!40  , minimum width=2em, text centered, minimum height=2em]
 \tikzstyle{inert}    = [diamond  , draw, fill=teal!80, minimum width=2.3em, text centered, minimum height=2.3em, inner sep=0pt]
 \tikzstyle{inertino} = [rectangle, draw, fill=teal!80, minimum width=2em, text centered, minimum height=2em]
+\tikzstyle{graviton} = [regular polygon, regular polygon sides=5, draw, fill=orange!80, minimum width=2em, text centered, minimum height=2em]
+\tikzstyle{gravitino} = [regular polygon, regular polygon sides=8, draw, fill=orange!80, minimum width=2em, text centered, minimum height=2em]
 \tikzstyle{phantom}  = [rectangle, minimum width=2em, text centered, minimum height=2em]
 \usepackage{slashed}
 \usepackage{fixltx2e} % textsubscript
@@ -268,10 +270,10 @@
 
 \section{Introduction}
 
-\begin{frame}[t]{Before / after LHC}
+\begin{frame}[t]{Open questions before/after the Higgs discovery}
   \begin{columns}
-    \column{.5\linewidth}
-    \scalebox{0.6}{
+    \column{.3\linewidth}
+    \scalebox{0.5}{
     \begin{tikzpicture}[node distance = 2.5em, auto]
       \visible<1-4>{
       \node[quark] (u) {$u$};
@@ -355,14 +357,21 @@
         \node[higgsino, right of=sh] (sH) {$\tilde h_2^0$};
         \node[higgsino, below of=sh] (sA) {$\tilde h^-_1$};
         \node[higgsino, below of=sH] (sHpm) {$\tilde h^+_2$};
-        \node[phantom , below of=sW    ] (sZprime) {\phantom{X}};
-        \node[phantom , below of=sZprime] (corner) {\phantom{X}};
+        \node[phantom, below of=sW    ] (sZprime) {\phantom{X}};
+        \node[phantom, below of=sZprime] (corner) {\phantom{X}};
+        \node[phantom, below of=corner] (corner2) {\phantom{X}};
         %
         \draw[line width=1, color=black!70,rounded corners] ($(u) + (-2em,2em)$) rectangle ($(corner) + (2em,-2em)$);
         \node[color=black!70, anchor=east] (SUSY) at ($(corner.east) + (1em,-1em)$) {SUSY};
       }
+      \visible<6->{
+        \node[graviton, below=1.75em of sA] (G) {$G$};
+        \node[gravitino, right of=G] (sG) {$\tilde{G}$};
+        \draw[line width=1, color=orange, rounded corners] ($(u) + (-3em,3em)$) rectangle ($(corner2) + (3em,-3.5em)$);
+        \node[color=orange, anchor=east] (SUGRA) at ($(corner2.east) + (2em,-2.5em)$) {SUGRA};
+      }
     \end{tikzpicture}}
-    \column{.5\linewidth}
+    \column{.7\linewidth}
     \emph{Open questions:}\\
     \begin{itemize}
     \item {\color<2->{darkgreen}{Does the Higgs exist?}}
