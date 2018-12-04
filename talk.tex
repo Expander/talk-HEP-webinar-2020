@@ -401,55 +401,14 @@
 \begin{frame}{Disadvantages of SUSY: 2.\ tree-level Higgs mass too small}
   (minimal) SUSY predicts at tree-level:
   \begin{align*}
-    m_h \lesssim m_Z
+    m_h \le m_Z
   \end{align*}
   But from experiment we know:
   \begin{align*}
     M_h &\approx 125.1 \GeV \\
     M_Z &\approx 91.2 \GeV
   \end{align*}
-\end{frame}
-
-\begin{frame}{Higgs masses in the SM}
-  Higgs potential
-  \begin{align*}
-    V_{\text{Higgs}} = -\mu^2 |\Phi|^2 + \frac{\lambda}{2}|\Phi|^4
-  \end{align*}
-  Decompose $\Phi$ as
-  \begin{align*}
-    \Phi =
-    \begin{pmatrix}
-      G^\pm \\ \frac{1}{\sqrt{2}} (v + h + i G^0)
-    \end{pmatrix}
-  \end{align*}
-  $\Rightarrow$ mass of the Higgs after EWSB
-  \begin{align*}
-    m_h^2 = \lambda v^2  \qquad \text{(tree-level)}
-  \end{align*}
-  \emph{Until 2012:} $M_h =\ ?$ $\Leftrightarrow$ $\lambda =\ ?$\\
-  \emph{Since 2012:} $M_h \approx 125\eh{GeV}$ $\Rightarrow$ $\lambda \approx 0.26$
-\end{frame}
-
-\begin{frame}{Higgs masses in the (real) MSSM}
-  Higgs sector of the MSSM:
-  \begin{align*}
-    h, H, A, H^\pm
-  \end{align*}
-  Higgs masses are not independent:
-  \begin{align*}
-    m_h^2 = \frac{1}{2} \left[
-      m_Z^2 + m_A^2 - \sqrt{(m_Z^2 + m_A^2)^2 - 4 m_Z^2 m_A^2 \cos^2{2\beta}}
-    \right]
-  \end{align*}
-  $\Rightarrow$ \emph{prediction} (if $m_A \gg m_Z$):
-  \begin{align*}
-    m_h^2 = m_Z^2 \cos^2{2\beta}
-    % = \frac{1}{4} (g_Y^2 + g_2^2) v^2 \cos^2{2\beta}
-    \leq m_Z^2
-    \approx (91.2 \eh{GeV})^2  \qquad \text{(tree-level)}
-  \end{align*}
-  $\Rightarrow$ $M_h \approx 125\eh{GeV}$ requires \emph{large loop
-    corrections}!
+  $\Rightarrow$ \emph{large loop corrections} required!
   \begin{align*}
     M_h^2 &= m_h^2 + \Delta m_h^2
     & &\Rightarrow &
@@ -929,6 +888,67 @@
   \begin{center}
     \Huge Backup
   \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[noframenumbering]{Higgs masses in the SM}
+  Higgs potential
+  \begin{align*}
+    V_{\text{Higgs}} = -\mu^2 |\Phi|^2 + \frac{\lambda}{2}|\Phi|^4
+    = -\frac{\mu^2}{2} (v+h)^2 + \frac{\lambda}{8} (v+h)^4 + \cdots
+  \end{align*}
+  where
+  \begin{align*}
+    \Phi =
+    \begin{pmatrix}
+      0 \\ \frac{1}{\sqrt{2}} (v + h)
+    \end{pmatrix}
+  \end{align*}
+  After eliminating $\mu^2$:
+  \begin{align*}
+    V_{\text{Higgs}} = \lambda v^2 \frac{h^2}{2} + \cdots
+    \qquad\Rightarrow\qquad
+    m_h^2 = \lambda v^2  \qquad \text{(tree-level)}
+  \end{align*}
+  \emph{Until 2012:} $M_h =\ ?$ $\Leftrightarrow$ $\lambda =\ ?$\\
+  \emph{Since 2012:} $M_h \approx 125\eh{GeV}$ $\Rightarrow$ $\lambda \approx 0.26$
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[noframenumbering]{Higgs masses in the (real) MSSM}
+  Higgs potential:
+  \begin{align*}
+    V_{\text{Higgs}} = \frac{1}{8}(g_Y^2 + g_2^2)(|h_1|^2 - |h_2|^2)^2 + \frac{g_2^2}{2}|h_1^\dagger h_2|^2 + \cdots
+  \end{align*}
+  where
+  \begin{align*}
+    % h, H, A, H^\pm
+    h_1 =
+    \begin{pmatrix}
+      \frac{1}{\sqrt{2}} (v_1 + h_1^0) \\ 0
+    \end{pmatrix}, \qquad
+    h_2 =
+    \begin{pmatrix}
+      0 \\ \frac{1}{\sqrt{2}} (v_2 + h_2^0)
+    \end{pmatrix}
+  \end{align*}
+  After EWSB (if $m_A \gg m_Z$):
+  \begin{align*}
+    V_{\text{Higgs}} \approx \frac{1}{4}(g_Y^2+g_2^2) v^2 c_{2\beta}^2 \frac{h^2}{2} + \cdots
+    = m_Z^2 c_{2\beta}^2 \frac{h^2}{2} + \cdots
+    % m_h^2 = \frac{1}{2} \left[
+    %   m_Z^2 + m_A^2 - \sqrt{(m_Z^2 + m_A^2)^2 - 4 m_Z^2 m_A^2 \cos^2{2\beta}}
+    % \right]
+  \end{align*}
+  $\Rightarrow$ \emph{prediction}:
+  \begin{align*}
+    m_h^2 = m_Z^2 \cos^2{2\beta}
+    % = \frac{1}{4} (g_Y^2 + g_2^2) v^2 \cos^2{2\beta}
+    \leq m_Z^2
+    \approx (91.2 \eh{GeV})^2  \qquad \text{(tree-level)}
+  \end{align*}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
