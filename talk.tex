@@ -469,6 +469,7 @@
 \end{frame}
 
 \begin{frame}{Fixed-order calculation}
+  \emph{Input:} $\aem$, $\as$, $G_F$, $M_Z$, $M_t$, $m_b$, \ldots\\[2em]
   \begin{center}
     \begin{tikzpicture}[scale=0.9]
       \draw[->, thick] (0,0) -- (0,1) node[left]{$M_Z$} -- (0,5) node[left]{$\MS$} -- (0,6);
@@ -642,7 +643,7 @@
 \begin{frame}{Higgs mass calculation in an EFT}
   \emph{Idea:} Integrate out SUSY particles at $\MS$ (expand in $v^2/\MS^2$) \\
   $\Rightarrow$ $\lambda(\MS)$ is fixed by the MSSM \\
-  $\Rightarrow$ effectively: separation of scales $\MS$ and $M_t$.
+  % $\Rightarrow$ effectively: separation of scales $\MS$ and $M_t$.
   \begin{center}
     \begin{tikzpicture}[scale=0.9]
       \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
@@ -656,38 +657,38 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{EFT avoids large logarithmic corrections}
-  \begin{enumerate}
-  \item Calculate $\lambda$ from the condition ($p^2 = v^2 = 0$):
-    \begin{align*}
-      \partial_{p^2}^{(k)}\Gamma_{h,\ldots,h}^{\MSSM,(n)}
-      = \partial_{p^2}^{(k)}\Gamma_{h,\ldots,h}^{\SM,(n)}
-    \end{align*}
-    $\Rightarrow$
-    \begin{align*}
-      \lambda(Q) &= \frac{1}{4}\left[g_Y^{2} + g_2^2\right] c^2_{2\beta}
-                   + \Delta \lambda^{1L} + \Delta \lambda^{2L} + \cdots \\
-                 &= \frac{1}{4}\left[g_Y^{2} + g_2^2\right] c^2_{2\beta}
-      + \frac{12 m_t^2 y_t^2}{(4\pi)^2 v^2} \left[
-        \ln\frac{\MS^2}{Q^2} + \frac{X_t^2}{\MS^2} - \frac{X_t^4}{12 \MS^4}
-      \right]
-      + \cdots
-    \end{align*}
-    $\Rightarrow$ \textcolor{darkgreen}{no large logs for $Q\approx\MS$}
-  \item RG running of $\lambda$ from $Q = \MS$ $\rightarrow M_t$.\\
-    $\Rightarrow$ \textcolor{darkgreen}{logs are resummed to all orders}
-  \item Calculate $M_h$ in the SM at $Q = M_t$:
-    \begin{align*}
-      (M_h^\SM)^2 &= \lambda(Q) v^2 + \frac{12 m_t^2 y_t^2}{(4\pi)^2 v^2} \ln\frac{Q^2}{m_t^2} + \cdots
-    \end{align*}
-    $\Rightarrow$ \textcolor{darkgreen}{no large logs for $Q\approx M_t$}
-  \end{enumerate}
-\end{frame}
+% \begin{frame}{EFT avoids large logarithmic corrections}
+%   \begin{enumerate}
+%   \item Calculate $\lambda$ from the condition ($p^2 = v^2 = 0$):
+%     \begin{align*}
+%       \partial_{p^2}^{(k)}\Gamma_{h,\ldots,h}^{\MSSM,(n)}
+%       = \partial_{p^2}^{(k)}\Gamma_{h,\ldots,h}^{\SM,(n)}
+%     \end{align*}
+%     $\Rightarrow$
+%     \begin{align*}
+%       \lambda(Q) &= \frac{1}{4}\left[g_Y^{2} + g_2^2\right] c^2_{2\beta}
+%                    + \Delta \lambda^{1L} + \Delta \lambda^{2L} + \cdots \\
+%                  &= \frac{1}{4}\left[g_Y^{2} + g_2^2\right] c^2_{2\beta}
+%       + \frac{12 m_t^2 y_t^2}{(4\pi)^2 v^2} \left[
+%         \ln\frac{\MS^2}{Q^2} + \frac{X_t^2}{\MS^2} - \frac{X_t^4}{12 \MS^4}
+%       \right]
+%       + \cdots
+%     \end{align*}
+%     $\Rightarrow$ \textcolor{darkgreen}{no large logs for $Q\approx\MS$}
+%   \item RG running of $\lambda$ from $Q = \MS$ $\rightarrow M_t$.\\
+%     $\Rightarrow$ \textcolor{darkgreen}{logs are resummed to all orders}
+%   \item Calculate $M_h$ in the SM at $Q = M_t$:
+%     \begin{align*}
+%       (M_h^\SM)^2 &= \lambda(Q) v^2 + \frac{12 m_t^2 y_t^2}{(4\pi)^2 v^2} \ln\frac{Q^2}{m_t^2} + \cdots
+%     \end{align*}
+%     $\Rightarrow$ \textcolor{darkgreen}{no large logs for $Q\approx M_t$}
+%   \end{enumerate}
+% \end{frame}
 
-\begin{frame}{Comparison of fixed-order and EFT approaches}
+\begin{frame}{Comparison of fixed-order and EFT calculation}
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{plots/SOFTSUSY/HSSUSY_TB-20_Xt--sqrt6_individual}\hfill
-    \includegraphics[width=0.49\textwidth]{plots/SOFTSUSY/Mh_MS_TB-20_Xt--sqrt6}
+    \includegraphics[width=0.49\textwidth]{plots/SOFTSUSY/Mh_MS_TB-20_Xt--sqrt6}\hfill
+    \includegraphics[width=0.49\textwidth]{plots/SOFTSUSY/HSSUSY_TB-20_Xt--sqrt6_individual}
   \end{center}
   \begin{center}
     $\DMh \overset{!}{=} \DMhHSSUSY$\\[0.5em]
@@ -722,7 +723,7 @@
     \begin{tabular}{lcc}
       \toprule
                   & low $\MS$ & high $\MS$ \\
-                  & $\MS \lesssim 2\eh{TeV}$ & $\MS \gtrsim 2\eh{TeV}$ \\
+                  & $\MS \lesssim 1\eh{TeV}$ & $\MS \gtrsim 1\eh{TeV}$ \\
       \midrule
       fixed-order & \ok       & \notok     \\
       EFT         & \notok    & \ok        \\
