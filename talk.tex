@@ -748,19 +748,47 @@
   \emph{Goal:} resum large logarithms \emph{and} include suppressed
   $O(v^2/\MS^2)$ terms
   \\[2em]
-  \emph{Two known approaches:}
+  \emph{Idea I:} (``FeynHiggs approach'' \mycite{1312.4937, 1706.00346, 1805.00867})\\
+  Replace logs from fixed-order calculation by resummed logs:
+  \begin{align*}
+    M_h^2 = (M_h^2)_{\text{fixed-order}} - (M_h^2)_{\text{logs}} + (M_h^2)_{\text{resummed logs}}
+  \end{align*}
+  \emph{Pro:}
   \begin{itemize}
-  \item FeynHiggs \mycite{1312.4937, 1706.00346, 1805.00867}: Replace logs from
-    fixed-order calculation by resummed logs
-    \begin{align*}
-      M_h^2 = (M_h^2)_{\text{fixed-order}} - (M_h^2)_{\text{logs}} + (M_h^2)_{\text{resummed logs}}
-    \end{align*}
-  \item FlexibleEFTHiggs \mycite{1609.00371, 1710.03760}: Incorporate
-    $O(v^2/\MS^2)$ terms into $\lambda$ by using the matching
-    condition
-    \begin{align*}
-      (M_h^2)_{\SM} \overset{!}{=} (M_h^2)_{\BSM} \qquad \text{at } Q = \MS
-    \end{align*}
+  \item[\ok] approach applicable to any BSM model
+  \item[\ok] any EFT can be used
+  \end{itemize}
+  \emph{Contra:}
+  \begin{itemize}
+  \item[\notok] difficult to automate: requires knowledge of
+    fixed-order and EFT expressions
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Hybrid fixed-order/EFT calculation}
+  \emph{Goal:} resum large logarithms \emph{and} include suppressed
+  $O(v^2/\MS^2)$ terms
+  \\[2em]
+  \emph{Idea II:} (``FlexibleEFTHiggs'' \mycite{1609.00371,
+    1710.03760})\\
+  Incorporate $O(v^2/\MS^2)$ terms into $\lambda$ by using the
+  matching condition
+  \begin{align*}
+    (M_h^2)_{\SM} \overset{!}{=} (M_h^2)_{\BSM} \qquad \text{at } Q = \MS
+  \end{align*}
+  \emph{Pro:}
+  \begin{itemize}
+  \item[\ok] approach applicable to any BSM model
+    % easy to apply to any SM extensison
+  \item[\ok] easy to automate
+    (only fixed-order expressions required)
+  \end{itemize}
+  \emph{Contra:}
+  \begin{itemize}
+  \item[\notok] difficult to extend to other EFTs beyond the SM (2HDM,
+    \ldots)
+  \item[\meh] tricky to reach 2-loop accuracy\\
+    (requires careful treatment of parameter matching)
   \end{itemize}
 \end{frame}
 
