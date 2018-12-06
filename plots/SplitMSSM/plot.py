@@ -89,7 +89,7 @@ def plot_sets(datasets,styles,outputfile):
     # labels
     ax.set_ylabel(r'$M_h/\text{GeV}$')
     ax.set_xlabel(r'$M_S/\text{GeV}$')
-    ax.set_title(r'split-SUSY, $X_t = \sqrt{6}M_S$')
+    ax.set_title(r'$X_t = \sqrt{6}M_S$')
     # ax limits
     ax.set_ylim(80,160)
     ax.set_xlim(500,10**16)
@@ -140,7 +140,7 @@ def plot_sets(datasets,styles,outputfile):
 
     print("Saving {}.pdf".format(outputfile))
     filename = outputfile+".pdf"
-    plt.savefig(filename)
+    plt.savefig(filename,bbox_inches='tight')
     # os.system("pdfcrop {} {}".format(filename,filename))
 
 if __name__ == "__main__":
