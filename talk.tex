@@ -475,7 +475,7 @@
   \emph{Input:} $\aem$, $\as$, $G_F$, $M_Z$, $M_t$, $m_b$, \ldots\\[2em]
   \begin{center}
     \begin{tikzpicture}[scale=0.9]
-      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_Z$} -- (0,5) node[left]{$\MS$} -- (0,6);
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
       \draw[thick] (1,0)   rectangle node{SM}    (4,0.9);
       \draw[thick] (1,1.1) rectangle node{MSSM}  (4,6);
       \draw[<-, thick, red] (4.1,5) -- (4.5,5) node[right]{$M_h^2 = m_Z^2 c_{2\beta}^2 + (\Delta m_h^2)^{1L} + \cdots$};
@@ -521,8 +521,7 @@
     $M_t \approx 173.3\eh{GeV}$, $m_t^{\DRbar} \approx 165\eh{GeV}$ \\
     $\Rightarrow$ huge theoretical uncertainty!\\
     $\Rightarrow$ 2-loop calculation needed to resolve this ambiguity
-  \item to get $M_h \approx 125\eh{GeV}$, $\MS \gtrsim 5\eh{TeV}$ needed
-    (see later)
+  \item $M_h \approx 125\eh{GeV}$ requires $\MS \gtrsim 5\eh{TeV}$
   \end{itemize}
 \end{frame}
 
@@ -562,7 +561,7 @@
 \begin{frame}{Higgs mass at 3-loop level}
   Known contributions: $O(\at\as^2)$ for $p^2 = 0$ \mycite{1005.5709}
   \begin{center}
-    \includegraphics[width=0.3\textwidth]{images/h3l-atasas}
+    \includegraphics[width=0.9\textwidth]{images/h3l-atasas}
   \end{center}
   \begin{align*}
     (\Delta m_h^2)^{3L} &\approx
@@ -591,8 +590,9 @@
   \end{align*}
   \emph{Advantages:}
   \begin{itemize}
-  \item includes logarithmic, non-logarithmic and suppressed terms of
-    the order $O(v^2/\MS^2)$ at fixed loop order
+  \item includes logarithmic and non-logarithmic contributions
+    % and suppressed terms of
+    % $O(v^2/\MS^2)$ at fixed loop order
   \item precise prediction if $\MS \sim m_t$
   \end{itemize}
   \emph{Problem:}
@@ -600,10 +600,11 @@
   \item large logarithmic corrections, if $\MS \gg m_t$ \\
     $\Rightarrow$ slow convergence of perturbation series \\
     $\Rightarrow$ large theoretical uncertainty, ($1$--$2\eh{GeV}$, or
-    more) \\
-    recall: $M_h^{\text{exp}} = (125.09 \pm 0.24)\eh{GeV}$
+    more)
+    % \\
+    % recall: $M_h^{\text{exp}} = (125.09 \pm 0.24)\eh{GeV}$
   \end{itemize}
-  \emph{Note:} 3-loop MSSM calculation implemented in \fsh \mycite{1708.05720}
+  % \emph{Note:} 3-loop MSSM corrections available in \Himalaya \mycite{1708.05720}
 \end{frame}
 
 \begin{frame}{Uncertainty estimate of the fixed-order \DRbarp\ calculation}
