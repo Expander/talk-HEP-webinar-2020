@@ -677,12 +677,46 @@
   \tableofcontents[currentsection,currentsubsection]
 \end{frame}
 
-\begin{frame}{Los geht's! 1-Schleifen-Quantenkorrekturen}
-  Dominante Quantenkorrekturen zu $M_h$ auf 1-Schleifenniveau:
+\begin{frame}{Berechnung bis zu endlicher Schleifenordnung}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.9]
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
+      \draw[thick] (1,0)   rectangle node{SM}    (4,0.9);
+      \draw[thick] (1,1.1) rectangle node{MSSM}  (4,6);
+      % \draw[<-, thick, red] (4.1,5) -- (4.5,5) node[right]{$M_h^2 = m_Z^2 c_{2\beta}^2 + \Delta m_h^2$};
+      % \draw[<-, thick, darkgreen] (4.1,1) -- (4.5,1) node[right]{$y_f^\MSSM, g_i^\MSSM$};
+      % \draw[<->, thick, blue] (4.2,1.2) -- node[right]{RG running} (4.2,4.8);
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Berechnung bis zu endlicher Schleifenordnung}
+  Quantenkorrekturen berechnen:
   \begin{align*}
-    (\Delta m_h^2)^{1L}
+    \fmfvcenter{htop}
+  \end{align*}
+  \emph{Beobachtung:}
+  \begin{itemize}
+  \item Quantenkorrekturen lassen sich nach der Anzahl der Schleifen
+    sortieren
+  \item Jede Schleife hat einen Faktor $\kappa = 1/(4\pi)^2 \approx 1/160$\\
+    $\Rightarrow$ Feynman-Diagramm mit $n$-Schleifen hat Faktor $\kappa^n$
+  \end{itemize}
+  \vspace*{1em}
+  \emph{Idee:}
+  Reihenentwicklung in Schleifen:
+  \begin{align*}
+    M_h^2 &= m_Z^2 c_{2\beta}^2 + \Delta m_h^2 \\
+    \Delta m_h^2 &= \kappa^1 \Delta_1 + \kappa^2 \Delta_2 + \kappa^3 \Delta_3 + \cdots
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Los geht's! 1-Schleifen-Quantenkorrekturen}
+  Quantenkorrekturen zu $M_h$ mit 1 Schleife:
+  \begin{align*}
+    \Delta_1
     &= \fmfvcenter{htop} + \fmfvcenter{hstop} + \fmfvcenter{hstopA} \\
-    &\phantom{={}} + \fmfvcenter{htoptad} + \fmfvcenter{hstoptad} \\
+    &\phantom{={}} + \fmfvcenter{htoptad} + \fmfvcenter{hstoptad} + \cdots \\
     &\approx \frac{6 y_t^4 v^2}{(4\pi)^2} \left(
       \ln\frac{\MS^2}{m_t^2}
       + x_t^2
@@ -695,7 +729,7 @@
 
 \begin{frame}{1-Schleifen-Quantenkorrekturen}
   \begin{align*}
-    (\Delta m_h^2)^{1L} &\approx
+    \Delta_1 &\approx
     \frac{6 y_t^4 v^2}{(4\pi)^2} \left(
       \ln\frac{\MS^2}{m_t^2}
       + x_t^2
@@ -726,7 +760,7 @@
 
 \begin{frame}{2-Schleifen-Quantenkorrekturen}
   \begin{align*}
-    (\Delta m_h^2)^{2L} &\approx
+    \Delta_2 &\approx
     \frac{y_t^6}{(4\pi)^4} \left(
       c_1 \ln^2\frac{\MS^2}{m_t^2}
       + c_2 \ln\frac{\MS^2}{m_t^2}
@@ -754,7 +788,7 @@
     \includegraphics[width=0.9\textwidth]{images/h3l-atasas}
   \end{center}
   \begin{align*}
-    (\Delta m_h^2)^{3L} &\approx
+    \Delta_3 &\approx
     \frac{y_t^4 g_3^4}{(4\pi)^6} \left(
       c_7 \ln^3\frac{\MS^2}{m_t^2}
       + c_8 \ln^2\frac{\MS^2}{m_t^2}
@@ -773,7 +807,7 @@
 \begin{frame}{Konvergenz der Störungsreihe}
   Typische Beträge der Quantenkorrekturen (Abhängig vom Parameterpunkt):
   \begin{align*}
-    M_h &= m_h + \Delta m_h^{1L} + \Delta m_h^{2L} + \Delta m_h^{3L} + \cdots \\
+    M_h &= m_h + \Delta m_h^{1\ell} + \Delta m_h^{2\ell} + \Delta m_h^{3\ell} + \cdots \\
     &\approx [91 + O(20\ldots 30) + O(2\ldots 4) + O(1\ldots 2)] \eh{GeV}
   \end{align*}
   \emph{Beobachtungen:}
@@ -829,7 +863,7 @@
       \draw[thick] (1,1.1) rectangle node{SM}    (4,4.9);
       \draw[thick] (1,5.1) rectangle node{MSSM}  (4,6);
       \draw[<-, thick, darkgreen] (4.1,5) -- (4.5,5) node[right]{$\lambda(\MS) = \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta} + \cdots$};
-      \draw[<-, thick, red] (4.1,1) -- (4.5,1) node[right]{$(M_h^\SM)^2 = \lambda(M_t) v^2 + (\Delta m_h^2)^{(1L)} + \cdots$};
+      \draw[<-, thick, red] (4.1,1) -- (4.5,1) node[right]{$(M_h^\SM)^2 = \lambda(M_t) v^2 + (\Delta m_h^2)^{(1\ell)} + \cdots$};
       \draw[<->, thick, blue] (4.2,1.2) -- node[right]{RG running} (4.2,4.8);
     \end{tikzpicture}
   \end{center}
@@ -839,10 +873,10 @@
   Typical order of magnitude of loop contributions (depends on
   parameter scenario, here $X_t = 0$, $\MS = 20\eh{TeV}$):
   \begin{align*}
-    M_h &= m_h + \Delta m_h^{1L} + \Delta m_h^{2L} + \Delta m_h^{3L} + \cdots \\
-    % &= \sqrt{\lambda(M_t)} v + \Delta m_h^{1L} + \Delta m_h^{2L} + \cdots \\
+    M_h &= m_h + \Delta m_h^{1\ell} + \Delta m_h^{2\ell} + \Delta m_h^{3\ell} + \cdots \\
+    % &= \sqrt{\lambda(M_t)} v + \Delta m_h^{1\ell} + \Delta m_h^{2\ell} + \cdots \\
     &\approx [O(124) + O(0.5\ldots 1) + O(0.1\ldots 0.2) + O(0.02\ldots 0.04)] \eh{GeV}
-    % &= \sqrt{\lambda(\MS)} v + \text{logs} + \Delta m_h^{1L} + \Delta m_h^{2L} + \cdots \\
+    % &= \sqrt{\lambda(\MS)} v + \text{logs} + \Delta m_h^{1\ell} + \Delta m_h^{2\ell} + \cdots \\
     % &\approx [O(84) + O(40) + O(0.5\ldots 1) + O(0.1\ldots 0.2)] \eh{GeV}
   \end{align*}
   \emph{Advantages:}
@@ -970,20 +1004,6 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{Fixed-order calculation}
-  \emph{Input:} $\aem$, $\as$, $G_F$, $M_Z$, $M_t$, $m_b$, \ldots\\[2em]
-  \begin{center}
-    \begin{tikzpicture}[scale=0.9]
-      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
-      \draw[thick] (1,0)   rectangle node{SM}    (4,0.9);
-      \draw[thick] (1,1.1) rectangle node{MSSM}  (4,6);
-      \draw[<-, thick, red] (4.1,5) -- (4.5,5) node[right]{$M_h^2 = m_Z^2 c_{2\beta}^2 + (\Delta m_h^2)^{1L} + \cdots$};
-      \draw[<-, thick, darkgreen] (4.1,1) -- (4.5,1) node[right]{$y_f^\MSSM, g_i^\MSSM$};
-      \draw[<->, thick, blue] (4.2,1.2) -- node[right]{RG running} (4.2,4.8);
-    \end{tikzpicture}
-  \end{center}
-\end{frame}
-
 % \begin{frame}{EFT avoids large logarithmic corrections}
 %   \begin{enumerate}
 %   \item Calculate $\lambda$ from the condition ($p^2 = v^2 = 0$):
@@ -994,7 +1014,7 @@
 %     $\Rightarrow$
 %     \begin{align*}
 %       \lambda(Q) &= \frac{1}{4}\left[g_Y^{2} + g_2^2\right] c^2_{2\beta}
-%                    + \Delta \lambda^{1L} + \Delta \lambda^{2L} + \cdots \\
+%                    + \Delta \lambda^{1\ell} + \Delta \lambda^{2\ell} + \cdots \\
 %                  &= \frac{1}{4}\left[g_Y^{2} + g_2^2\right] c^2_{2\beta}
 %       + \frac{12 m_t^2 y_t^2}{(4\pi)^2 v^2} \left[
 %         \ln\frac{\MS^2}{Q^2} + \frac{X_t^2}{\MS^2} - \frac{X_t^4}{12 \MS^4}
