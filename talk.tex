@@ -479,6 +479,8 @@
   \end{align*}
 \end{frame}
 
+\subsection{Erfolge und Probleme}
+
 \begin{frame}{Erfolge und Probleme des Standardmodells}
   \emph{Erfolge:}
   \begin{itemize}
@@ -499,14 +501,93 @@
   des Universums!
 \end{frame}
 
-\subsection{Erfolge und Probleme}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Supersymmetrische Erweiterung des Standardmodells}
 
+\begin{frame}{Contents}
+  \tableofcontents[currentsection]
+\end{frame}
+
 \subsection{Erweiterung der Raum-Zeit-Symmetrien}
-% \subsection{Konsequenzen}
+
+\begin{frame}{Contents}
+  \tableofcontents[currentsubsection]
+\end{frame}
+
+\begin{frame}{Supersymmetrie}
+  \emph{Ausgangspunkt:} Die uns umgebende Raumzeit besitzt mehrere
+  Symmetrien:
+  \begin{itemize}
+  \item Raum-Zeit-Translationsinvarianz\\
+    $\leftrightarrow$ Erhaltung von Energie- und Impul $P^\mu$
+  \item Rotations-/Boostinvarianz\\
+    $\leftrightarrow$ Erhaltung des Drehimpulstensors $M^{\mu\nu}$
+  \end{itemize}
+  \vspace*{1em}
+  \emph{Theorem:} Es gibt nur \emph{eine} Möglichkeit diese Symmetrien
+  auf eine nicht-triviale Weise zu erweitern: Supersymmetrie
+  \begin{align*}
+    |\text{boson}\rangle \leftrightarrow |\text{fermion}\rangle
+  \end{align*}
+  \emph{Konsequenz:} Zu jedem Teilchen im Standardmodell mit Spin $S$
+  korrespondiert ein supersymmetrischer ``Partner'' mit Spin
+  $S \pm \frac{1}{2}$.
+\end{frame}
+
+\begin{frame}{Minimal Supersymmetrisches Standardmodell}
+  \begin{center}
+    \begin{tikzpicture}[node distance = 2.5em, auto]
+        \node[quark] (u) {$u$};
+        \node[quark, below of=u] (d) {$d$};
+        \node[quark, right of=u] (c) {$c$};
+        \node[quark, below of=c] (s) {$s$};
+        \node[quark, right of=c] (t) {$t$};
+        \node[quark, below of=t] (b) {$b$};
+        \node[lepton, below of=d] (ne) {$\nu_e$};
+        \node[lepton, below of=ne] (e) {$e$};
+        \node[lepton, right of=ne] (nm) {$\nu_\mu$};
+        \node[lepton, below of=nm] (m) {$\mu$};
+        \node[lepton, right of=nm] (nt) {$\nu_\tau$};
+        \node[lepton, below of=nt] (ta) {$\tau$};
+        \node[gauge, right of=t] (gamma) {$\gamma$};
+        \node[gauge, below of=gamma] (g) {$g$};
+        \node[gauge, below of=g] (Z) {$Z$};
+        \node[gauge, below of=Z] (W) {$W$};
+        \node[scalar, below of=e] (h) {$h$};
+        \node[scalar, right of=h] (H) {$H$};
+        \node[scalar, below of=h] (A) {$A$};
+        \node[scalar, right of=A] (Hpm) {$H^\pm$};
+        %
+        \node[squark, right=2em of gamma] (su) {$\tilde u$};
+        \node[squark, below of=su] (sd) {$\tilde d$};
+        \node[squark, right of=su] (sc) {$\tilde c$};
+        \node[squark, below of=sc] (ss) {$\tilde s$};
+        \node[squark, right of=sc] (st) {$\tilde t$};
+        \node[squark, below of=st] (sb) {$\tilde b$};
+        \node[slepton, below of=sd] (sne) {$\tilde \nu_e$};
+        \node[slepton, below of=sne] (se) {$\tilde e$};
+        \node[slepton, right of=sne] (snm) {$\tilde \nu_\mu$};
+        \node[slepton, below of=snm] (sm) {$\tilde \mu$};
+        \node[slepton, right of=snm] (snt) {$\tilde \nu_\tau$};
+        \node[slepton, below of=snt] (sta) {$\tilde \tau$};
+        \node[gaugino, right of=st] (sgamma) {$\tilde \gamma$};
+        \node[gaugino, below of=sgamma] (sg) {$\tilde g$};
+        \node[gaugino, below of=sg] (sZ) {$\tilde Z$};
+        \node[gaugino, below of=sZ] (sW) {$\tilde W$};
+        \node[higgsino, below of=se] (sh) {$\tilde h_1^0$};
+        \node[higgsino, right of=sh] (sH) {$\tilde h_2^0$};
+        \node[higgsino, below of=sh] (sA) {$\tilde h^-_1$};
+        \node[higgsino, below of=sH] (sHpm) {$\tilde h^+_2$};
+        \node[phantom, below of=sW    ] (sZprime) {\phantom{X}};
+        \node[phantom, below of=sZprime] (corner) {\phantom{X}};
+        \node[phantom, below of=corner] (corner2) {\phantom{X}};
+        %
+        \draw[line width=1, color=black!70,rounded corners] ($(u) + (-2em,2em)$) rectangle ($(corner) + (2em,-2em)$);
+        \node[color=black!70, anchor=east] (SUSY) at ($(corner.east) + (1em,-1em)$) {MSSM};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
 
 \subsection{Eigenschaften des MSSM}
 
