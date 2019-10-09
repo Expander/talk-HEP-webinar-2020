@@ -253,6 +253,26 @@
   \fmf{scalar,right,tension=0.3}{c2,c1}
   \fmf{phantom,tension=10}{c2,t1}
 \end{fmfgraph*}
+
+\begin{fmfgraph*}(80,60)
+  \fmfkeep{escattering}
+  \fmfleft{v1,v2}
+  \fmfright{v3,v4}
+  \fmf{fermion}{v1,c1,v2}
+  \fmf{fermion}{v3,c2,v4}
+  \fmf{photon,label=$\gamma$}{c1,c2}
+\end{fmfgraph*}
+
+\begin{fmfgraph*}(80,60)
+  \fmfkeep{compton}
+  \fmfleft{v1,v2}
+  \fmfright{v3,v4}
+  \fmf{fermion}{v1,c1}
+  \fmf{fermion}{c2,v3}
+  \fmf{fermion,label=$e$,label.side=left}{c1,c2}
+  \fmf{photon}{v2,c1}
+  \fmf{photon}{v4,c2}
+\end{fmfgraph*}
 \end{fmffile}
 }
 
@@ -323,6 +343,53 @@
     \item starke Wechselwirkung
     \end{itemize}
   \end{columns}
+\end{frame}
+
+\begin{frame}{Wechselwirkungen}
+  Wechselwirkungen beschreiben auf fundamentaler Ebene:
+  \begin{itemize}
+  \item Teilchenumwandlung (Erzeugung, Vernichtung, ``Zerfall'')
+  \item Kraft zwischen Teilchen (z.B.\ Coulombkraft)
+  \end{itemize}
+  \vspace*{1em}
+  Wechselwirkungen werden durch Austauschteilchen vermittelt:
+  \begin{align*}
+    &\fmfvcenter{escattering} &
+    &\fmfvcenter{compton}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Wechselwirkungen im Standardmodell}
+  Wechselwirkungen folgen aus inneren Symmetrien:
+  \begin{center}
+    \begin{tabular}{lll}
+      \toprule
+      Symmetriegruppe & Kopplung & Austauschteilchen\\
+      \midrule
+      $U(1)_Y$  & $g_Y$ & $B$ \\
+      $SU(2)_L$ & $g_2$ & $W^1, W^2, W^3$ \\
+      $SU(3)_C$ & $g_3$ & $G^1, \dots, G^8$ \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  Symmetrien werden spontan gebrochen durch Higgs-Feld:
+  \begin{center}
+    \begin{tabular}{lll}
+      \toprule
+      Symmetriegruppe & Kopplung & Austauschteilchen\\
+      \midrule
+      $U(1)_\text{e.m.}$ & $e$ & $\gamma$ \\
+      -- & -- & $W^{\pm}$, $Z$ \\
+      $SU(3)_C$ & $g_3$ & $G^1, \dots, G^8$ \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Lagrangedichte des Standardmodells}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{images/cup.png}
+  \end{center}
 \end{frame}
 
 \subsection{Higgsmechanismus}
