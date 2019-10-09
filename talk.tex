@@ -276,6 +276,55 @@
 
 \subsection{Teilcheninhalt}
 
+\begin{frame}{Woraus besteht Materie?}
+  \begin{center}
+    \includegraphics[width=\textwidth]{images/route}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Das Standardmodell der Teilchenphysik}
+  \begin{columns}
+    \column{.5\linewidth}
+    \scalebox{1}{
+    \begin{tikzpicture}[node distance = 2.5em, auto]
+      \node[quark] (u) {$u$};
+      \node[quark, below of=u] (d) {$d$};
+      \node[quark, right of=u] (c) {$c$};
+      \node[quark, below of=c] (s) {$s$};
+      \node[quark, right of=c] (t) {$t$};
+      \node[quark, below of=t] (b) {$b$};
+      \node[lepton, below of=d] (ne) {$\nu_e$};
+      \node[lepton, below of=ne] (e) {$e$};
+      \node[lepton, right of=ne] (nm) {$\nu_\mu$};
+      \node[lepton, below of=nm] (m) {$\mu$};
+      \node[lepton, right of=nm] (nt) {$\nu_\tau$};
+      \node[lepton, below of=nt] (ta) {$\tau$};
+      \node[gauge, right of=t] (gamma) {$\gamma$};
+      \node[gauge, below of=gamma] (g) {$g$};
+      \node[gauge, below of=g] (Z) {$Z$};
+      \node[gauge, below of=Z] (W) {$W$};
+      \node[phantom, below of=W] (corner) {\phantom{X}};
+      \node[phantom, below of=corner] (corner2) {\phantom{X}};
+      \draw[line width=1, color=blue!70,rounded corners] ($(u) + (-2em,2em)$) rectangle ($(corner) + (2em,-2em)$);
+      \node[color=blue!70, anchor=east] (MSSM) at ($(corner.east) + (1em,-1em)$) {SM};
+      \node[scalar, below of=e] (h) {$h$};
+    \end{tikzpicture}}
+    \column{.5\linewidth}
+    \emph{Teilcheninhalt:}\\
+    \begin{itemize}
+    \item 3 Generationen Fermionen (Quarks und Leptonen)
+    \item Eichbosonen (Austauschteilchen)
+    \item Higgs-Boson
+    \end{itemize}
+    \emph{Wechselwirkungen:}\\
+    \begin{itemize}
+    \item Elektromagnetismus
+    \item schwache Wechselwirkung
+    \item starke Wechselwirkung
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
 \subsection{Higgsmechanismus}
 
 \subsection{Erfolge und Probleme}
