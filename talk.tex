@@ -714,10 +714,10 @@
 \begin{frame}{Los geht's! 1-Schleifen-Quantenkorrekturen}
   Quantenkorrekturen zu $M_h$ mit 1 Schleife:
   \begin{align*}
-    \Delta_1
+    \kappa^1\Delta_1
     &= \fmfvcenter{htop} + \fmfvcenter{hstop} + \fmfvcenter{hstopA} \\
     &\phantom{={}} + \fmfvcenter{htoptad} + \fmfvcenter{hstoptad} + \cdots \\
-    &\approx \frac{6 y_t^4 v^2}{(4\pi)^2} \left(
+    &\approx 6 \kappa y_t^4 v^2 \left(
       \ln\frac{\MS^2}{m_t^2}
       + x_t^2
       - \frac{x_t^4}{12}
@@ -729,8 +729,8 @@
 
 \begin{frame}{1-Schleifen-Quantenkorrekturen}
   \begin{align*}
-    \Delta_1 &\approx
-    \frac{6 y_t^4 v^2}{(4\pi)^2} \left(
+    \kappa^1\Delta_1 &\approx
+    6 \kappa y_t^4 v^2 \left(
       \ln\frac{\MS^2}{m_t^2}
       + x_t^2
       - \frac{x_t^4}{12}
@@ -742,63 +742,60 @@
   \\[1em]
   \emph{Beobachtungen:}
   \begin{itemize}
-  \item logarithmisch verstärkt mit $\MS / m_t$
+  \item logarithmisch verstärkt mit $L\equiv\ln(\MS / m_t)$
   \item maximal für $x_t \approx \sqrt{6}$
   \item extrem sensitiv auf Wert von $y_t$
-  \item damit $M_h \approx 125\eh{GeV}$ muss $\MS \gtrsim 5\eh{TeV}$
-  \item verbleibende Unsicherheit: $\delta M_h \approx \pm 6 \GeV$
+  \item damit $M_h \approx 125\eh{GeV}$ muss $\MS \gtrsim 2\TeV$
+  \item verbleibende Unsicherheit: $\delta M_h \approx \pm 10 \GeV$
   \end{itemize}
+  \vspace*{1em}
   Nicht gut genug!
 \end{frame}
 
 \begin{frame}{Weiter geht's! 2-Schleifen-Quantenkorrekturen}
-  Bekannte Beiträge \mycite{hep-ph/0105096, hep-ph/0112177}:
-  \\[1em]
   \includegraphics[width=0.6\textwidth]{images/atas}\\[1em]
   \includegraphics[width=\textwidth]{images/atat}
+  \\
+  \vspace*{1em}
+  \mycite{hep-ph/0105096, hep-ph/0112177}
 \end{frame}
 
 \begin{frame}{2-Schleifen-Quantenkorrekturen}
   \begin{align*}
-    \Delta_2 &\approx
-    \frac{y_t^6}{(4\pi)^4} \left(
-      c_1 \ln^2\frac{\MS^2}{m_t^2}
-      + c_2 \ln\frac{\MS^2}{m_t^2}
+    \kappa^2\Delta_2 &\approx
+    \kappa^2 y_t^4 g_3^2 \left(
+      c_1 L^2
+      + c_2 L
       + c_3
-    \right) \\
-    & +
-    \frac{y_t^4 g_3^2}{(4\pi)^4} \left(
-      c_4 \ln^2\frac{\MS^2}{m_t^2}
-      + c_5 \ln\frac{\MS^2}{m_t^2}
-      + c_6
-    \right)
+    \right) + \cdots \\
   \end{align*}
   \emph{Beobachtungen:}
   \begin{itemize}
-  \item logarithmisch verstärkt mit $\MS / m_t$
+  \item logarithmisch verstärkt mit $L^2$, $L\equiv\ln(\MS / m_t)$
   \item extrem sensitiv auf Wert von $y_t$
   \item verbleibende Unsicherheit: $\delta M_h \approx \pm 3 \GeV$
   \end{itemize}
+  \vspace*{1em}
   Immernoch nicht gut genug!
 \end{frame}
 
 \begin{frame}{Weiter geht's! 3-Schleifen-Quantenkorrekturen}
-  Bekannte Beiträge \mycite{1005.5709}:
   \begin{center}
     \includegraphics[width=0.9\textwidth]{images/h3l-atasas}
   \end{center}
+  \mycite{1005.5709}
   \begin{align*}
-    \Delta_3 &\approx
-    \frac{y_t^4 g_3^4}{(4\pi)^6} \left(
-      c_7 \ln^3\frac{\MS^2}{m_t^2}
-      + c_8 \ln^2\frac{\MS^2}{m_t^2}
-      + c_9 \ln\frac{\MS^2}{m_t^2}
+    \kappa^3\Delta_3 &\approx
+    \kappa^3 y_t^4 g_3^4 \left(
+      c_7 L^3
+      + c_8 L^2
+      + c_9 L
       + c_{10}
     \right)
   \end{align*}
   \emph{Beobachtungen:}
   \begin{itemize}
-  \item logarithmisch verstärkt mit $\MS / m_t$
+  \item logarithmisch verstärkt mit $L^3$, $L\equiv\ln(\MS / m_t)$
   \item extrem sensitiv auf Wert von $y_t$
   \item verbleibende Unsicherheit: $\delta M_h \approx \pm 1\text{--}2 \GeV$
   \end{itemize}
