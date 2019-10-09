@@ -390,9 +390,60 @@
   \begin{center}
     \includegraphics[width=0.8\textwidth]{images/cup.png}
   \end{center}
+  + Euler-Lagrange-Gleichungen
 \end{frame}
 
 \subsection{Higgsmechanismus}
+
+\begin{frame}{Higgsmechanismus}
+  \emph{Ursprüngliches Problem:} Massenterme verletzen die Symmetrien:
+  \begin{align*}
+    \textcolor{red}{\Lagr_{\text{Elektronmasse}} =
+    - m_e \bar{\psi}_e \psi_e \qquad (\text{verboten!})}
+  \end{align*}
+  $\psi_e =$ Wellenfunktion des Elektrons,\\
+  $m_e = 511\,\text{keV}/c^2$ Masse des Elektrons
+  \\[1em]
+  \emph{Lösung:}\\ \emph{Schritt 1:}
+  Neues Feld $\phi$ (Higgs-Feld) einführen und mit Teilchen
+  wechselwirken lassen:
+  \begin{align*}
+    \Lagr_{\text{Higgs}} = - y_e \phi \bar{\psi}_e \psi_e + \cdots
+  \end{align*}
+  $y_e =$ ``Stärke'' der WW des Elektrons mit Higgs-Feld
+\end{frame}
+
+\begin{frame}{Higgsmechanismus}
+  \emph{Schritt 2:} Higgs-Feld besitzt nicht-trivialen Grundzustand,
+  $v=\text{konst}.$
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{images/higgs-potential}
+  \end{center}
+  Entwickeln von $\phi(x)$ um den Grundzustand:
+  \begin{align*}
+    \phi(x) = v + h(x)
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Higgsmechanismus}
+  Einsetzen von
+  \begin{align*}
+    \phi(x) = v + h(x)
+  \end{align*}
+  in $\Lagr_{\text{Higgs}}$ ergibt:
+  \begin{align*}
+    \Lagr_{\text{Higgs}}
+    &= - y_e \phi \bar{\psi}_e \psi_e + \cdots \\
+    &= - y_e (v + h(x)) \bar{\psi}_e \psi_e + \cdots \\
+    &= - y_e v \bar{\psi}_e \psi_e + \cdots
+  \end{align*}
+  $\Rightarrow$ durch Ablesen
+  \begin{align*}
+    m_e = y_e v
+  \end{align*}
+  Massen der Elementarteilchen durch WW mit Higgs-Feld erzeugt!\\
+  Nebeneffekt: neues Teilchen, \emph{Higgs-Boson} $h$
+\end{frame}
 
 \subsection{Erfolge und Probleme}
 
