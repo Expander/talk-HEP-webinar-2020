@@ -424,7 +424,7 @@
     \column{0.4\textwidth}
     Higgs-Potential:
     \begin{align*}
-      V(\phi) = -\frac{\mu^2}{2} \phi^2 + \frac{\lambda}{8}\phi^4
+      V(\phi) = \frac{\lambda}{8}\phi^4 - \frac{\mu^2}{2} \phi^2
     \end{align*}
     Entwickeln von $\phi(x)$ um den Grundzustand:
     \begin{align*}
@@ -506,14 +506,14 @@
 \section{Supersymmetrische Erweiterung des Standardmodells}
 
 \begin{frame}{Contents}
-  \tableofcontents[currentsection]
+  \tableofcontents[currentsection,currentsubsection]
 \end{frame}
 
-\subsection{Erweiterung der Raum-Zeit-Symmetrien}
+% \begin{frame}{Contents}
+%   \tableofcontents[currentsection]
+% \end{frame}
 
-\begin{frame}{Contents}
-  \tableofcontents[currentsubsection]
-\end{frame}
+% \subsection{Erweiterung der Raum-Zeit-Symmetrien}
 
 \begin{frame}{Supersymmetrie}
   \emph{Ausgangspunkt:} Die uns umgebende Raumzeit besitzt mehrere
@@ -589,11 +589,45 @@
   \end{center}
 \end{frame}
 
-\subsection{Eigenschaften des MSSM}
+% \subsection{Eigenschaften des MSSM}
+
+\begin{frame}{Eigenschaften des MSSM}
+  Eigenschaften des MSSM:
+  \begin{itemize}
+  \item Eichkopplungsvereinigung $\rightarrow$ Möglichkeit die 3 WW zu
+    einer zu vereinigen [Bild]
+  \item korrekte Vorhersage von $(g-2)_\mu$ [Bild]
+  \item Enthält ein Dunkle Materie-Teilchen $\chi^0$
+  \item löst das Hierarchie-Problem
+  \item Vorhersage der Masse des Higgs-Bosons
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Vorhersage der Masse des Higgs-Bosons}
+  Higgs-Masse im SM ($\phi(x) = v + h(x)$):
+  \begin{align*}
+    V(\phi) &= \frac{\textcolor{red}{\lambda}}{8}\phi^4 - \frac{\mu^2}{2} \phi^2 \\
+    \Rightarrow
+    m_Z^2 &= \frac{1}{4} (g_Y^2 + g_2^2) v^2 \\
+    m_h^2 &= \textcolor{red}{\lambda} v^2
+  \end{align*}
+  Higgs-Masse im MSSM:
+  \begin{align*}
+    V(\phi) &= \frac{1}{8}\textcolor{red}{\frac{1}{4}\left(g_Y^2 + g_2^2\right)} \cos^2(2\beta) \phi^4 + \cdots \\
+    \Rightarrow
+    m_Z^2 &= \textcolor{red}{\frac{1}{4}\left(g_Y^2 + g_2^2\right)} v^2 \\
+    \Rightarrow
+    m_h^2 &= \textcolor{red}{\frac{1}{4}\left(g_Y^2 + g_2^2\right)} v^2 \cos^2(2\beta) = m_Z^2 \cos^2(2\beta)
+  \end{align*}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Präzise Bestimmung der Masse des Higgs-Bosons}
+
+\begin{frame}{Contents}
+  \tableofcontents[currentsection,currentsubsection]
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
