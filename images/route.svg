@@ -10,15 +10,15 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="3007.4741"
-   height="793.7951"
+   width="3119.7136"
+   height="818.56073"
    id="svg2"
    sodipodi:version="0.32"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="route.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0"
-   viewBox="0 0 2819.5069 744.18293">
+   viewBox="0 0 2924.7314 767.4007">
   <defs
      id="defs4">
     <marker
@@ -510,9 +510,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.21704615"
-     inkscape:cx="2308.2615"
-     inkscape:cy="522.17034"
+     inkscape:zoom="0.3481782"
+     inkscape:cx="1371.4019"
+     inkscape:cy="284.30041"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -547,7 +547,7 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-10.001919,116.05815)">
+     transform="translate(-10.001919,138.85111)">
     <g
        id="g1586">
       <path
@@ -1247,58 +1247,58 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:23.4375px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="174.18553"
+       x="122.69627"
        y="-78.069862"
        id="text6837"><tspan
          sodipodi:role="line"
          id="tspan6835"
-         x="174.18553"
+         x="122.69627"
          y="-78.069862"
-         style="font-size:50px;stroke-width:0.9375px">Kristall</tspan></text>
+         style="font-size:80px;stroke-width:0.9375px">Kristall</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:23.4375px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="832.71722"
+       x="794.21381"
        y="-78.069862"
        id="text6837-4"><tspan
          sodipodi:role="line"
          id="tspan6835-5"
-         x="832.71722"
+         x="794.21381"
          y="-78.069862"
-         style="font-size:50.00000381px;stroke-width:0.9375px">Atom</tspan></text>
+         style="font-size:80px;stroke-width:0.9375px">Atom</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:23.4375px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="1308.4456"
+       x="1237.1077"
        y="-78.069862"
        id="text6837-2"><tspan
          sodipodi:role="line"
          id="tspan6835-54"
-         x="1308.4456"
+         x="1237.1077"
          y="-78.069862"
-         style="font-size:50.00000381px;stroke-width:0.9375px">Atomkern</tspan></text>
+         style="font-size:80px;stroke-width:0.9375px">Atomkern</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:23.4375px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="1893.7277"
+       x="1832.0212"
        y="-78.069862"
        id="text6837-7"><tspan
          sodipodi:role="line"
          id="tspan6835-4"
-         x="1893.7277"
+         x="1832.0212"
          y="-78.069862"
-         style="font-size:50.00000381px;stroke-width:0.9375px">Nukleon</tspan></text>
+         style="font-size:80px;stroke-width:0.9375px">Nukleon</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:23.4375px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="2612.9268"
+       x="2614.1865"
        y="137.90591"
        id="text6837-43"><tspan
          sodipodi:role="line"
          id="tspan6835-0"
-         x="2612.9268"
+         x="2614.1865"
          y="137.90591"
-         style="font-size:50.00000381px;stroke-width:0.9375px">Quark</tspan></text>
+         style="font-size:80px;stroke-width:0.9375px">Quark</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:23.4375px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1309,71 +1309,71 @@
          id="tspan6835-6"
          x="2610.8271"
          y="369.27625"
-         style="font-size:50.00000381px;stroke-width:0.9375px">Elektron</tspan></text>
+         style="font-size:80px;stroke-width:0.9375px">Elektron</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:23.4375px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="135.83501"
+       x="129.18065"
        y="627.41675"
        id="text6837-8"><tspan
          sodipodi:role="line"
          id="tspan6835-8"
-         x="135.83501"
+         x="129.18065"
          y="627.41675"
-         style="font-size:50.00000381px;stroke-width:0.9375px">10<tspan
-   style="font-size:64.99999762%;baseline-shift:super"
+         style="font-size:80px;stroke-width:0.9375px">10<tspan
+   style="font-size:60px;baseline-shift:super"
    id="tspan6907">-3</tspan>m</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:23.4375px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="813.51312"
+       x="740.60052"
        y="627.41675"
        id="text6837-8-4"><tspan
          sodipodi:role="line"
          id="tspan6835-8-3"
-         x="813.51312"
+         x="740.60052"
          y="627.41675"
-         style="font-size:50.00000763px;stroke-width:0.9375px">10<tspan
-   style="font-size:32.5px;baseline-shift:super;stroke-width:0.9375px"
+         style="font-size:80px;stroke-width:0.9375px">10<tspan
+   style="font-size:60px;baseline-shift:super;stroke-width:0.9375px"
    id="tspan6907-1">-10</tspan>m</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:23.4375px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="1343.9656"
+       x="1271.053"
        y="627.41675"
        id="text6837-8-49"><tspan
          sodipodi:role="line"
          id="tspan6835-8-2"
-         x="1343.9656"
+         x="1271.053"
          y="627.41675"
-         style="font-size:50.00000763px;stroke-width:0.9375px">10<tspan
-   style="font-size:32.5px;baseline-shift:super;stroke-width:0.9375px"
+         style="font-size:80px;stroke-width:0.9375px">10<tspan
+   style="font-size:60px;baseline-shift:super;stroke-width:0.9375px"
    id="tspan6907-0">-14</tspan>m</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:23.4375px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="1913.1954"
+       x="1840.283"
        y="627.41675"
        id="text6837-8-6"><tspan
          sodipodi:role="line"
          id="tspan6835-8-8"
-         x="1913.1954"
+         x="1840.283"
          y="627.41675"
-         style="font-size:50.00000763px;stroke-width:0.9375px">10<tspan
-   style="font-size:32.5px;baseline-shift:super;stroke-width:0.9375px"
+         style="font-size:80px;stroke-width:0.9375px">10<tspan
+   style="font-size:60px;baseline-shift:super;stroke-width:0.9375px"
    id="tspan6907-9">-15</tspan>m</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:23.4375px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="2610.4365"
+       x="2413.7625"
        y="627.41675"
        id="text6837-8-2"><tspan
          sodipodi:role="line"
          id="tspan6835-8-6"
-         x="2610.4365"
+         x="2413.7625"
          y="627.41675"
-         style="font-size:50.00000763px;stroke-width:0.9375px">&lt; 10<tspan
-   style="font-size:32.5px;baseline-shift:super;stroke-width:0.9375px"
+         style="font-size:80px;stroke-width:0.9375px">&lt; 10<tspan
+   style="font-size:60px;baseline-shift:super;stroke-width:0.9375px"
    id="tspan6907-6">-18</tspan>m</tspan></text>
   </g>
 </svg>
