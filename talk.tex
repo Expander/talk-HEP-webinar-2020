@@ -644,20 +644,26 @@
 \end{frame}
 
 \begin{frame}{Vorhersage der Masse des Higgs-Bosons}
-  Higgs-Masse im SM ($\phi(x) = v + h(x)$):
+  \emph{SM:} Ad-hoc Higgs-Potential:
   \begin{align*}
-    V(\phi) &= \frac{\textcolor{red}{\lambda}}{8}\phi^4 - \frac{\mu^2}{2} \phi^2 \\
-    \Rightarrow
-    m_Z^2 &= \frac{1}{4} (g_Y^2 + g_2^2) v^2 \\
-    m_h^2 &= \textcolor{red}{\lambda} v^2
+    V(\phi) &= \frac{\textcolor{red}{\lambda}}{8}\phi^4 - \frac{\mu^2}{2} \phi^2
   \end{align*}
-  Higgs-Masse im MSSM:
+  $\Rightarrow$
   \begin{align*}
-    V(\phi) &= \frac{1}{8}\textcolor{red}{\frac{1}{4}\left(g_Y^2 + g_2^2\right)} \cos^2(2\beta) \phi^4 + \cdots \\
-    \Rightarrow
-    m_Z^2 &= \textcolor{red}{\frac{1}{4}\left(g_Y^2 + g_2^2\right)} v^2 \\
-    \Rightarrow
-    m_h^2 &= \textcolor{red}{\frac{1}{4}\left(g_Y^2 + g_2^2\right)} v^2 \cos^2(2\beta) = m_Z^2 \cos^2(2\beta)
+    m_h^2 &= \textcolor{red}{\lambda} v^2, &
+    \textcolor{darkgreen}{m_Z^2 = \frac{1}{4} \left(g_Y^2 + g_2^2\right) v^2}
+  \end{align*}
+  \emph{MSSM:} Higgs-Potential automatisch:
+  \begin{align*}
+    V(\phi) &= \frac{1}{8}\textcolor{red}{\frac{1}{4}\left(g_Y^2 + g_2^2\right) \cos^2(2\beta)} \phi^4 + \cdots
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    m_h^2 &= \textcolor{red}{\frac{1}{4}\left(g_Y^2 + g_2^2\right) \cos^2(2\beta)} v^2
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    \boxed{m_h^2 = \textcolor{darkgreen}{m_Z^2} \cos^2(2\beta) \le m_Z^2}
   \end{align*}
 \end{frame}
 
