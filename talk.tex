@@ -803,7 +803,7 @@
 \begin{frame}{Berechnung bis zu endlicher Schleifenordnung}
   \begin{center}
     \begin{tikzpicture}[scale=0.9]
-      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6) node[left] {$E$};
       \draw[thick] (1,0)   rectangle node{SM}    (4,0.9);
       \draw[thick] (1,1.1) rectangle node{MSSM}  (4,6);
       % \draw[<-, thick, red] (4.1,5) -- (4.5,5) node[right]{$M_h^2 = m_Z^2 c_{2\beta}^2 + \Delta m_h^2$};
@@ -816,7 +816,7 @@
 \begin{frame}{Berechnung bis zu endlicher Schleifenordnung}
   Quantenkorrekturen berechnen:
   \begin{align*}
-    \fmfvcenter{htop}
+    \Delta m_h^2 = \fmfvcenter{htop} + \fmfvcenter{hstop} + \cdots
   \end{align*}
   \emph{Beobachtung:}
   \begin{itemize}
@@ -838,23 +838,24 @@
   Quantenkorrekturen zu $M_h$ mit 1 Schleife:
   \begin{align*}
     \kappa^1\Delta_1
-    &= \fmfvcenter{htop} + \fmfvcenter{hstop} + \fmfvcenter{hstopA} \\
-    &\phantom{={}} + \fmfvcenter{htoptad} + \fmfvcenter{hstoptad} + \cdots \\
+    &= \fmfvcenter{htop} + \fmfvcenter{hstop} + \cdots \\
     &\approx 6 \kappa y_t^4 v^2 \left(
-      \ln\frac{\MS^2}{m_t^2}
+      \ln\frac{\MS^2}{M_t^2}
       + x_t^2
       - \frac{x_t^4}{12}
     \right) + \cdots
   \end{align*}
-  $m_t \approx 173.34\GeV$,
-  $x_t \in [-4,4]$ ``Strärke der Mischung der Stops''
+  \\[1em]
+  $M_t \approx 173.34\GeV$ = Masse des Top-Quarks \\
+  $\MS$ = Masse der Stop-Quarks\\
+  $x_t \in [-4,4]$ = ``Strärke der Mischung der Stop-Quarks''
 \end{frame}
 
 \begin{frame}{1-Schleifen-Quantenkorrekturen}
   \begin{align*}
     \kappa^1\Delta_1 &\approx
     6 \kappa y_t^4 v^2 \left(
-      \ln\frac{\MS^2}{m_t^2}
+      \ln\frac{\MS^2}{M_t^2}
       + x_t^2
       - \frac{x_t^4}{12}
     \right) + \cdots
@@ -865,7 +866,7 @@
   \\[1em]
   \emph{Beobachtungen:}
   \begin{itemize}
-  \item logarithmisch verstärkt mit $L\equiv\ln(\MS / m_t)$
+  \item logarithmisch verstärkt mit $L\equiv\ln(\MS / M_t)$
   \item maximal für $x_t \approx \sqrt{6}$
   \item extrem sensitiv auf Wert von $y_t$
   \item damit $M_h \approx 125\eh{GeV}$ muss $\MS \gtrsim 2\TeV$
@@ -894,7 +895,7 @@
   \end{align*}
   \emph{Beobachtungen:}
   \begin{itemize}
-  \item logarithmisch verstärkt mit $L^2$, $L\equiv\ln(\MS / m_t)$
+  \item logarithmisch verstärkt mit $L^2$, $L\equiv\ln(\MS / M_t)$
   \item extrem sensitiv auf Wert von $y_t$
   \item verbleibende Unsicherheit: $\delta M_h \approx \pm 3 \GeV$
   \end{itemize}
@@ -918,7 +919,7 @@
   \end{align*}
   \emph{Beobachtungen:}
   \begin{itemize}
-  \item logarithmisch verstärkt mit $L^3$, $L\equiv\ln(\MS / m_t)$
+  \item logarithmisch verstärkt mit $L^3$, $L\equiv\ln(\MS / M_t)$
   \item extrem sensitiv auf Wert von $y_t$
   \item verbleibende Unsicherheit: $\delta M_h \approx \pm 1\text{--}2 \GeV$
   \end{itemize}
@@ -981,7 +982,7 @@
   % $\Rightarrow$ effectively: separation of scales $\MS$ and $M_t$.
   \begin{center}
     \begin{tikzpicture}[scale=0.9]
-      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6) node[left] {$E$};
       \draw[thick] (1,0)   rectangle node{SM}    (4,4.9);
       \draw[thick] (1,5.1) rectangle node{MSSM}  (4,6);
       \draw[<-, thick, darkgreen] (4.1,5) -- (4.5,5) node[right]{$\lambda(\MS) = \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta} + \cdots$};
@@ -1113,7 +1114,7 @@
 \begin{frame}{Approaches to predict $M_h$}
   \begin{center}
     \begin{tikzpicture}[scale=0.9]
-      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6) node[left] {$E$};
       \node at (2.5,7) {\emph{Fixed order}};
       \draw[thick] (1,0)   rectangle node{SM}    (4,0.9);
       \draw[thick] (1,1.1) rectangle node{MSSM}  (4,6);
