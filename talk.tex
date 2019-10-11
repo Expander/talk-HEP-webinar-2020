@@ -940,7 +940,7 @@
 \end{frame}
 
 \begin{frame}{Konvergenz der Störungsreihe}
-  Typische Beträge der Quantenkorrekturen (Abhängig vom Parameterpunkt):
+  Typische Größenordnung der Quantenkorrekturen:
   \begin{align*}
     M_h &= m_h + \kappa^1\Delta_1 + \kappa^2\Delta_2 + \kappa^3\Delta_3 + \cdots \\
     &\approx [91 + O(20\ldots 30) + O(2\ldots 4) + O(1\ldots 2)] \GeV
@@ -980,7 +980,7 @@
   \end{align*}
   einbezogen werden:
   \begin{center}
-    \emph{Effektive Feldtheorie}
+    \emph{Effektive Feldtheorie (EFT)}
   \end{center}
 \end{frame}
 
@@ -992,7 +992,7 @@
 \end{frame}
 
 \begin{frame}{Berechnung in einer effektiven Feldtheorie}
-  \emph{Idee:} SUSY-Teilchen entkoppeln an $\MS$ \\
+  \emph{Idee:} SUSY-Teilchen entkoppeln an Energieskala $\MS$ \\
   $\Rightarrow$ SM ist ``effektive Theorie'' (ohne SUSY-Teilchen)\\
   $\Rightarrow$ $\lambda(\MS)$ wird vorhergesagt  \\
   % $\Rightarrow$ effectively: separation of scales $\MS$ and $M_t$.
@@ -1008,9 +1008,8 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{Summary of EFT approach}
-  Typical order of magnitude of loop contributions (depends on
-  parameter scenario, here $X_t = 0$, $\MS = 20\eh{TeV}$):
+\begin{frame}{Eigenschaften der EFT-Rechnung}
+  Typische Größenordnung der Quantenkorrekturen in einer EFT-Rechnung:
   \begin{align*}
     M_h &= m_h + \Delta m_h^{1\ell} + \Delta m_h^{2\ell} + \Delta m_h^{3\ell} + \cdots \\
     % &= \sqrt{\lambda(M_t)} v + \Delta m_h^{1\ell} + \Delta m_h^{2\ell} + \cdots \\
@@ -1018,14 +1017,18 @@
     % &= \sqrt{\lambda(\MS)} v + \text{logs} + \Delta m_h^{1\ell} + \Delta m_h^{2\ell} + \cdots \\
     % &\approx [O(84) + O(40) + O(0.5\ldots 1) + O(0.1\ldots 0.2)] \eh{GeV}
   \end{align*}
-  \emph{Advantages:}
+  \emph{Vorteile:}
   \begin{itemize}
-  \item large logarithmic fixed order loop corrections are avoided
-  \item large logarithms $\propto\ln(M_S/M_t)$ are resummed to all orders
+  \item Störungsreihe wird nicht bei $n$-Schleifenordnung $O(L^n)$
+    abgeschnitten
+  \item große Logarithmen $L^n$ werden komplett aufsummiert
   \end{itemize}
-  \emph{Disadvantage:} terms of $O(v^2/M_S^2)$ are neglected \\
-  $\Rightarrow$ imprecise when $v \sim \MS$ \\
-  $\Rightarrow$ large theoretical uncertainty when $v \sim \MS$
+  \vspace*{1em}
+  \emph{Nachteil:}
+  \begin{itemize}
+  \item Unpräzise wenn  $\MS \lesssim 0.5\TeV$.
+    Das ist aber nicht der Fall!
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Comparison of fixed-order and EFT calculation}
