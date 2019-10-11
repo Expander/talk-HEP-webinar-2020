@@ -764,7 +764,7 @@
     M_Z &\approx 91.2 \GeV
   \end{align*}
   $\Rightarrow$ Das MSSM kann nur dann die korrekte Higgs-Masse
-  vorhersagen, wenn es \emph{große Quantenkorrkturen} zwischen $M_h$
+  vorhersagen, wenn es \emph{große Quantenkorrekturen} zwischen $M_h$
   und $m_h$ gibt!
   \begin{align*}
     M_h^2 &= m_h^2 + \Delta m_h^2
@@ -840,10 +840,11 @@
     sortieren
   \item Jede Schleife hat einen Faktor $\kappa = 1/(4\pi)^2 \approx 1/160$\\
     $\Rightarrow$ Feynman-Diagramm mit $n$-Schleifen hat Faktor $\kappa^n$
+  \item Je mehr Quantenkorrekturen, desto genauer das Ergebnis!
   \end{itemize}
   \vspace*{1em}
   \emph{Idee:}
-  Reihenentwicklung in Schleifen:
+  Reihenentwicklung in Schleifen (Störungsreihe):
   \begin{align*}
     M_h^2 &= m_Z^2 c_{2\beta}^2 + \Delta m_h^2 \\
     \Delta m_h^2 &= \kappa^1 \Delta_1 + \kappa^2 \Delta_2 + \kappa^3 \Delta_3 + \cdots
@@ -856,24 +857,21 @@
     \kappa^1\Delta_1
     &= \fmfvcenter{htop} + \fmfvcenter{hstop} + \cdots \\
     &\approx 6 \kappa y_t^4 v^2 \left(
-      \ln\frac{\MS^2}{M_t^2}
-      + x_t^2
-      - \frac{x_t^4}{12}
+      2L + c_0
     \right) + \cdots
   \end{align*}
   \\[1em]
-  $M_t \approx 173.34\GeV$ = Masse des Top-Quarks \\
-  $\MS$ = Masse der Stop-Quarks\\
-  $x_t \in [-4,4]$ = ``Strärke der Mischung der Stop-Quarks''
+  $L\equiv\ln(\MS / M_t)$ = ``großer Logarithmus'' \\[0.5em]
+  $M_t \approx 173.34\GeV$ = Masse des Top-Quarks \\[0.5em]
+  $\MS$ = Masse der Stop-Quarks%  \\
+  % $x_t \in [-4,4]$ = ``Strärke der Mischung der Stop-Quarks''
 \end{frame}
 
 \begin{frame}{1-Schleifen-Quantenkorrekturen}
   \begin{align*}
     \kappa^1\Delta_1 &\approx
     6 \kappa y_t^4 v^2 \left(
-      \ln\frac{\MS^2}{M_t^2}
-      + x_t^2
-      - \frac{x_t^4}{12}
+      2L + c_0
     \right) + \cdots
   \end{align*}
   % $X_t = A_t - \mu/t_\beta$ = stop mixing parameter,
@@ -883,10 +881,10 @@
   \emph{Beobachtungen:}
   \begin{itemize}
   \item logarithmisch verstärkt mit $L\equiv\ln(\MS / M_t)$
-  \item maximal für $x_t \approx \sqrt{6}$
-  \item extrem sensitiv auf Wert von $y_t$
+  % \item maximal für $x_t \approx \sqrt{6}$
+  % \item extrem sensitiv auf Wert von $y_t$
   \item damit $M_h \approx 125\eh{GeV}$ muss $\MS \gtrsim 2\TeV$
-  \item verbleibende Unsicherheit: $\delta M_h \approx \pm 10 \GeV$
+  \item verbleibende theoretische Unsicherheit: $\delta M_h^{\text{theo}} \approx \pm 6 \GeV$
   \end{itemize}
   \vspace*{1em}
   Nicht gut genug!
@@ -912,8 +910,8 @@
   \emph{Beobachtungen:}
   \begin{itemize}
   \item logarithmisch verstärkt mit $L^2$, $L\equiv\ln(\MS / M_t)$
-  \item extrem sensitiv auf Wert von $y_t$
-  \item verbleibende Unsicherheit: $\delta M_h \approx \pm 3 \GeV$
+  % \item extrem sensitiv auf Wert von $y_t$
+  \item verbleibende Unsicherheit: $\delta M_h^{\text{theo}} \approx \pm 3 \GeV$
   \end{itemize}
   \vspace*{1em}
   Immernoch nicht gut genug!
@@ -936,8 +934,8 @@
   \emph{Beobachtungen:}
   \begin{itemize}
   \item logarithmisch verstärkt mit $L^3$, $L\equiv\ln(\MS / M_t)$
-  \item extrem sensitiv auf Wert von $y_t$
-  \item verbleibende Unsicherheit: $\delta M_h \approx \pm 1\text{--}2 \GeV$
+  % \item extrem sensitiv auf Wert von $y_t$
+  \item verbleibende Unsicherheit: $\delta M_h^{\text{theo}} \approx \pm 2 \GeV$
   \end{itemize}
 \end{frame}
 
@@ -945,16 +943,19 @@
   Typische Beträge der Quantenkorrekturen (Abhängig vom Parameterpunkt):
   \begin{align*}
     M_h &= m_h + \kappa^1\Delta_1 + \kappa^2\Delta_2 + \kappa^3\Delta_3 + \cdots \\
-    &\approx [91 + O(20\ldots 30) + O(2\ldots 4) + O(1\ldots 2)] \eh{GeV}
+    &\approx [91 + O(20\ldots 30) + O(2\ldots 4) + O(1\ldots 2)] \GeV
   \end{align*}
   \emph{Beobachtungen:}
   \begin{itemize}
-  \item große Quantenkorrekturen sind nötig\\
-    $\Rightarrow$ $\MS \gtrsim 2\TeV$\\
-    $\rightarrow$ Störungsreihe konvergiert schlecht
-  \item 4-Schleifen-Quantenkorrekturen aktuell nicht umsetzbar
+  \item Wir wissen: große Quantenkorrekturen sind nötig damit im MSSM $M_h = 125.09\GeV$
+  \item Quantenkorrektur mit $n$ Schleifen erzeugt Term $L^n$
+  \item $\Rightarrow$ $L=\ln(\MS / M_t)$ groß machen!
+  \item damit $L$ groß wird, muss $\MS \gg M_t$, insbes.\
+    $\MS \gtrsim 2\TeV$
+  \item $\Rightarrow$ Störungsreihe konvergiert langsam
+  % \item 4-Schleifen-Quantenkorrekturen aktuell nicht berechenbar
   \item $\Rightarrow$ verbleibende Unsicherheit durch Abschneiden der
-    Störungsreihe: $\delta M_h^{\text{theo}} \approx 1$--$2\GeV$ \\
+    Störungsreihe: $\delta M_h^{\text{theo}} \approx 2\GeV$ \\
     zur Erinnerung: $\delta M_h^{\text{exp}} = 0.14\GeV$
   \end{itemize}
 \end{frame}
