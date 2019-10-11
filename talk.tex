@@ -81,7 +81,7 @@
 \DeclareMathOperator{\re}{Re}
 \DeclareMathOperator{\im}{Im}
 \renewcommand{\emph}[1]{\textbf{\textcolor{darkblue}{#1}}}
-\newcommand{\dd}{\mathsf{d}}
+\newcommand{\dd}{\text{d}}
 \newcommand{\myurl}[1]{\href{#1}{#1}}
 \newcommand{\Superpot}{\mathcal{W}}
 \newcommand{\SuperField}[1]{#1}
@@ -1020,7 +1020,9 @@
       \draw[thick] (1,5.1) rectangle node{MSSM}  (4,6);
       \draw[<-, thick, darkgreen] (4.1,5) -- (4.5,5) node[right]{$\lambda(\MS) = \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta} + \cdots$};
       \draw[<-, thick, red] (4.1,1) -- (4.5,1) node[right]{$M_h^2 = \lambda v^2 + (\Delta m_h^2)_{\SM}$};
-      \draw[<-, thick, blue] (4.2,1.2) -- node[right]{Renormierungsgruppenlaufen} (4.2,4.8);
+      \draw[<-, thick, blue] (4.2,1.2) -- node[right, align=center]{Renormierungsgruppenlaufen,\\
+        d.h.\ numerisches Lösen von\\
+        $\frac{\dd\lambda}{\dd \ln(Q)} = \beta_\lambda$} (4.2,4.8);
     \end{tikzpicture}
   \end{center}
 \end{frame}
