@@ -273,6 +273,27 @@
   \fmf{photon}{v2,c1}
   \fmf{photon}{v4,c2}
 \end{fmfgraph*}
+
+\begin{fmfgraph*}(60,60)
+  \fmfkeep{schwinger}
+  \fmftop{v1}
+  \fmfbottom{v2,v3}
+  \fmf{fermion}{v2,c1,c2,c3,v3}
+  \fmf{photon}{v1,c2}
+  \fmffreeze{}
+  \fmf{photon}{c1,c3}
+\end{fmfgraph*}
+
+\begin{fmfgraph*}(60,60)
+  \fmfkeep{schwinger2}
+  \fmftop{v1}
+  \fmfbottom{v2,v3}
+  \fmf{fermion}{v2,c11,c1,c2,c3,c33,v3}
+  \fmf{photon}{v1,c2}
+  \fmffreeze{}
+  \fmf{photon}{c1,c3}
+  \fmf{photon}{c11,c33}
+\end{fmfgraph*}
 \end{fmffile}
 }
 
@@ -733,6 +754,18 @@
     M_h^2 &= m_h^2 + \Delta m_h^2
     & &\Rightarrow &
     \Delta m_h^2 &\geq (85\eh{GeV})^2
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Was sind Quantenkorrekturen?}
+  Quantenkorrekturen zu $(g-2)_e$:
+  \begin{align*}
+    (g-2)_e = 0 + \fmfvcenter{schwinger} + \fmfvcenter{schwinger2} + \cdots
+  \end{align*}
+  Quantenkorrekturen zu $M_h^2$:
+  \begin{align*}
+    M_h^2 &= m_h^2 + \fmfvcenter{htop} + \fmfvcenter{hstop} + \cdots \\
+          &= m_h^2 + \Delta m_h^2
   \end{align*}
 \end{frame}
 
