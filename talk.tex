@@ -188,7 +188,7 @@
   \fmfset{dash_len}{2.5mm}
   \fmfset{dot_size}{1thick}
   \fmfset{arrow_len}{2.5mm}
-  \fmfset{curly_len}{2.5mm}
+  \fmfset{curly_len}{2mm}
 
 \begin{fmfgraph*}(60,60)
   \fmfkeep{hX}
@@ -253,6 +253,22 @@
   \fmf{scalar,right,tension=0.3}{c2,c1}
   \fmf{phantom,tension=10}{c2,t1}
 \end{fmfgraph*}
+
+\begin{fmfgraph}(60,60)
+  \fmfkeep{hstop2}
+  \fmfleft{v1}
+  \fmfright{v2}
+  \fmftop{p1}
+  \fmfbottom{p2}
+  \fmf{higgs}{v1,c1}
+  \fmf{higgs}{c2,v2}
+  \fmf{scalar,straight,tension=0.2}{c1,c11,c2}
+  \fmf{scalar,straight,tension=0.2}{c2,c22,c1}
+  \fmf{phantom,tension=1}{p1,c11}
+  \fmf{phantom,tension=1}{p2,c22}
+  \fmffreeze{}
+  \fmf{gluon}{c11,c22}
+\end{fmfgraph}
 
 \begin{fmfgraph*}(80,60)
   \fmfkeep{escattering}
@@ -816,7 +832,7 @@
 \begin{frame}{Berechnung bis zu endlicher Schleifenordnung}
   Quantenkorrekturen berechnen:
   \begin{align*}
-    \Delta m_h^2 = \fmfvcenter{htop} + \fmfvcenter{hstop} + \cdots
+    \Delta m_h^2 = \fmfvcenter{htop} + \fmfvcenter{hstop} + \fmfvcenter{hstop2} + \cdots
   \end{align*}
   \emph{Beobachtung:}
   \begin{itemize}
