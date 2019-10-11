@@ -4,7 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as tck
 import matplotlib.patches as patches
-import scipy.interpolate
 
 def plot(datafile, outfile, title, label_y, labels, range_y, range_x, curves=[1,1,1], draw_uncertainties = True):
     plt.rcParams['text.usetex'] = True
@@ -57,15 +56,15 @@ def plot(datafile, outfile, title, label_y, labels, range_y, range_x, curves=[1,
     if draw_uncertainties:
         if curves[0]:
             plt.fill_between(MSSS, MhSS - DMhSS, MhSS + DMhSS,
-                             facecolor='red', alpha=0.3, interpolate=True, linewidth=0.0)
+                             facecolor='red', alpha=0.3, linewidth=0.0)
 
         if curves[1]:
             plt.fill_between(MSFS, MhEFT - DMhEFT, MhEFT + DMhEFT,
-                             facecolor='black', alpha=0.3, interpolate=True, linewidth=0.0)
+                             facecolor='black', alpha=0.3, linewidth=0.0)
 
         if curves[2]:
             plt.fill_between(MSFS2L, MhFS2L - DMhFS2L, MhFS2L + DMhFS2L,
-                             facecolor='blue', alpha=0.3, interpolate=True, linewidth=0.0)
+                             facecolor='blue', alpha=0.3, linewidth=0.0)
 
     _labels = []
     if curves[0]: _labels.append(labels[0])
