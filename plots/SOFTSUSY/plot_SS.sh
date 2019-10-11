@@ -97,8 +97,8 @@ def plot(datafile, outfile, title, label_y, labels, range_y, range_x, curves=[1,
     plt.close(fig)
 
 labels = [
-    r'\texttt{SOFTSUSY}+\texttt{Himalaya} 3L',
-    r'\texttt{FlexibleSUSY}/\texttt{HSSUSY}+\texttt{Himalaya} 3L',
+    r'FO $3\ell$',
+    r'EFT $3\ell$',
     r'\texttt{FlexibleSUSY}/fixed-order 2L'
 ]
 
