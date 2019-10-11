@@ -991,9 +991,26 @@
   \tableofcontents[currentsection,currentsubsection]
 \end{frame}
 
-\begin{frame}{Berechnung in einer effektiven Feldtheorie}
+\begin{frame}{Feste Schleifenordnung vs.\ Effektive Feldtheorie}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.9]
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6) node[left] {$E$};
+      \node at (2.5,7) {\emph{Feste Schleifenordnung}};
+      \draw[thick] (1,0)   rectangle node{SM}    (4,0.9);
+      \draw[thick] (1,1.1) rectangle node{MSSM}  (4,6);
+      \draw[<-, thick, red] (4.1,5) -- (4.5,5) node[right]{$M_h$};
+      \node at (7.5,7) {\emph{Effektive Feldtheorie}};
+      \draw[thick] (6,0)   rectangle node{SM}    (9,0.9);
+      \draw[thick] (6,1.1) rectangle node{EFT}   (9,4.9);
+      \draw[thick] (6,5.1) rectangle node{MSSM}  (9,6);
+      \draw[<-, thick, red] (9.1,1.5) -- (9.5,1.5) node[right]{$M_h$};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Berechnung in einer Effektiven Feldtheorie}
   \emph{Idee:} SUSY-Teilchen entkoppeln an Energieskala $\MS$ \\
-  $\Rightarrow$ SM ist ``effektive Theorie'' (ohne SUSY-Teilchen)\\
+  $\Rightarrow$ SM ist ``Effektive Theorie'' (ohne SUSY-Teilchen)\\
   $\Rightarrow$ $\lambda(\MS)$ wird vorhergesagt  \\
   % $\Rightarrow$ effectively: separation of scales $\MS$ and $M_t$.
   \begin{center}
@@ -1123,23 +1140,6 @@
   \end{center}
   \begin{center}
     \includegraphics[width=0.9\textwidth]{images/FS.png}
-  \end{center}
-\end{frame}
-
-\begin{frame}{Approaches to predict $M_h$}
-  \begin{center}
-    \begin{tikzpicture}[scale=0.9]
-      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6) node[left] {$E$};
-      \node at (2.5,7) {\emph{Fixed order}};
-      \draw[thick] (1,0)   rectangle node{SM}    (4,0.9);
-      \draw[thick] (1,1.1) rectangle node{MSSM}  (4,6);
-      \draw[<-, thick, red] (4.1,5) -- (4.5,5) node[right]{$M_h$};
-      \node at (7.5,7) {\emph{Effective Field Theory}};
-      \draw[thick] (6,0)   rectangle node{SM}    (9,0.9);
-      \draw[thick] (6,1.1) rectangle node{EFT}   (9,4.9);
-      \draw[thick] (6,5.1) rectangle node{MSSM}  (9,6);
-      \draw[<-, thick, red] (9.1,1.5) -- (9.5,1.5) node[right]{$M_h$};
-    \end{tikzpicture}
   \end{center}
 \end{frame}
 
