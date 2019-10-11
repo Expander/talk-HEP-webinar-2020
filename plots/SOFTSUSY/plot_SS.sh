@@ -25,7 +25,7 @@ def plot(datafile, outfile, title, label_y, labels, range_y, range_x, curves=[1,
     MhFS   = dataFS[:,1]
     DMhFS  = dataFS[:,2]
     MhEFT  = dataHS[:,3]
-    DMhEFT = dataFS[:,4]
+    DMhEFT = dataHS[:,4]
 
     MSFS2L  = dataFS2L[:,0]
     MhFS2L  = dataFS2L[:,1]
