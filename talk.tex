@@ -998,12 +998,12 @@
       \node at (2.5,7) {\emph{Feste Schleifenordnung}};
       \draw[thick] (1,0)   rectangle node{SM}    (4,0.9);
       \draw[thick] (1,1.1) rectangle node{MSSM}  (4,6);
-      \draw[<-, thick, red] (4.1,5) -- (4.5,5) node[right]{$M_h$};
+      \draw[<-, thick, blue] (4.1,5) -- (4.5,5) node[right]{$M_h$};
       \node at (7.5,7) {\emph{Effektive Feldtheorie}};
       \draw[thick] (6,0)   rectangle node{SM}    (9,0.9);
       \draw[thick] (6,1.1) rectangle node{EFT}   (9,4.9);
       \draw[thick] (6,5.1) rectangle node{MSSM}  (9,6);
-      \draw[<-, thick, red] (9.1,1.5) -- (9.5,1.5) node[right]{$M_h$};
+      \draw[<-, thick, blue] (9.1,1.5) -- (9.5,1.5) node[right]{$M_h$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -1018,9 +1018,9 @@
       \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6) node[left] {$E$};
       \draw[thick] (1,0)   rectangle node{SM}    (4,4.9);
       \draw[thick] (1,5.1) rectangle node{MSSM}  (4,6);
-      \draw[<-, thick, darkgreen] (4.1,5) -- (4.5,5) node[right]{$\lambda(\MS) = \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta} + \cdots$};
-      \draw[<-, thick, red] (4.1,1) -- (4.5,1) node[right]{$M_h^2 = \lambda(M_t) v^2 + (\Delta m_h^2)_{\SM}$};
-      \draw[<-, thick, blue] (4.2,1.2) -- node[right, align=center]{Renormierungsgruppenlaufen,\\
+      \draw[<-, thick, blue] (4.1,5) -- (4.5,5) node[right]{$\lambda(\MS) = \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta} + \cdots$};
+      \draw[<-, thick, blue] (4.1,1) -- (4.5,1) node[right]{$M_h^2 = \lambda(M_t) v^2 + (\Delta m_h^2)_{\SM}$};
+      \draw[<-, thick, red] (4.2,1.2) -- node[right, align=center]{Renormierungsgruppenlaufen,\\
         d.h.\ numerisches Lösen von\\
         $\frac{\dd\lambda}{\dd L} = \beta_\lambda$} (4.2,4.8);
     \end{tikzpicture}
@@ -1038,21 +1038,23 @@
   \begin{align*}
     \lambda(M_t) &= \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta} % \lambda(\MS)
                    - \frac{2 y_t^4}{3 g_3^2} \left[
-                   \left( 1 + 14 \kappa g_3^2 L \right)^{-9/7} - 1
+                   \left( 1 + 14 g_3^2 \textcolor{red}{\kappa L} \right)^{-9/7} - 1
     \right]
   \end{align*}
   Einsetzen in $M_h^2 = \lambda(M_t) v^2$ ergibt:
   \begin{align*}
     M_h^2 &= m_Z^2 c^2_{2\beta}
             - \frac{2 y_t^4 v^2}{3 g_3^2} \left[
-            \left( 1 + 14 \kappa g_3^2 L \right)^{-9/7} - 1
+            \left( 1 + 14 g_3^2 \textcolor{red}{\kappa L} \right)^{-9/7} - 1
             \right]\\
           &= m_Z^2 c^2_{2\beta}
             + 12 y_t^4 v^2 \left[
-            \kappa L - 16 g_3^2 \kappa^2 L^2 + \frac{736}{3} g_3^4 \kappa^3 L^3 + O(\kappa^4L^4)
+            \textcolor{red}{\kappa L}
+            - 16 g_3^2 \textcolor{red}{\kappa^2 L^2}
+            + \frac{736}{3} g_3^4 \textcolor{red}{\kappa^3 L^3} + O(\textcolor{red}{\kappa^4L^4})
             \right]
   \end{align*}
-  $\Rightarrow$ $M_h$ enthält \emph{unendliche Reihe} von $(\kappa L)^n$-Termen
+  $\Rightarrow$ $M_h$ enthält \emph{unendliche Reihe} von $\textcolor{red}{(\kappa L)^n}$-Termen
 \end{frame}
 
 \begin{frame}{Eigenschaften der EFT-Rechnung}
