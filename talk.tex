@@ -1019,12 +1019,38 @@
       \draw[thick] (1,0)   rectangle node{SM}    (4,4.9);
       \draw[thick] (1,5.1) rectangle node{MSSM}  (4,6);
       \draw[<-, thick, darkgreen] (4.1,5) -- (4.5,5) node[right]{$\lambda(\MS) = \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta} + \cdots$};
-      \draw[<-, thick, red] (4.1,1) -- (4.5,1) node[right]{$M_h^2 = \lambda v^2 + (\Delta m_h^2)_{\SM}$};
+      \draw[<-, thick, red] (4.1,1) -- (4.5,1) node[right]{$M_h^2 = \lambda(M_t) v^2 + (\Delta m_h^2)_{\SM}$};
       \draw[<-, thick, blue] (4.2,1.2) -- node[right, align=center]{Renormierungsgruppenlaufen,\\
         d.h.\ numerisches Lösen von\\
-        $\frac{\dd\lambda}{\dd \ln(Q)} = \beta_\lambda$} (4.2,4.8);
+        $\frac{\dd\lambda}{\dd L} = \beta_\lambda$} (4.2,4.8);
     \end{tikzpicture}
   \end{center}
+\end{frame}
+
+\begin{frame}{Summation von $L^n$}
+  \begin{align*}
+    \frac{\dd\lambda}{\dd L} &= \beta_\lambda \approx -12 \kappa y_t^4 , &
+    \frac{\dd y_t}{\dd L} &\approx -8 \kappa y_t g_3^2 , &
+    \frac{\dd g_3}{\dd L} &\approx -7 \kappa g_3^3
+  \end{align*}
+  Lösung:
+  \begin{align*}
+    \lambda(M_t) &= \lambda(\MS)
+                   - \frac{2 y_t^4}{3 g_3^2} \left[
+                   \left( 1 + 14 \kappa g_3^2 L \right)^{-9/7} - 1
+    \right] \\
+                 &= \lambda(\MS)
+                   + 12 y_t^4 \left[
+                   \kappa L - 16 g_3^2 \kappa^2 L^2 + \frac{736}{3} g_3^4 \kappa^3 L^3 + O(\kappa^4L^4)
+                   \right]
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    M_h^2 = m_Z^2 c^2_{2\beta}
+    - \frac{2 y_t^4 v^2}{3 g_3^2} \left[
+    \left( 1 + 14 \kappa g_3^2 L \right)^{-9/7} - 1
+    \right]
+  \end{align*}
 \end{frame}
 
 \begin{frame}{Eigenschaften der EFT-Rechnung}
