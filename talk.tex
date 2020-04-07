@@ -17,7 +17,7 @@
 \usepackage{array,booktabs,tabularx}
 \usepackage{tikz,tikz-uml,pgf-pie}
 \usetikzlibrary{shapes,calc,arrows,positioning}
-\tikzstyle{block} = [rectangle, draw, text width=7em, text centered, minimum height=2em]
+\tikzstyle{block} = [rectangle, draw, text width=10em, text centered, minimum height=2em]
 \tikzstyle{arrow} = [draw, -latex, thick]
 \tikzstyle{arrow2} = [draw, latex-latex, thick]
 \tikzstyle{quark}  = [rectangle, draw, fill=yellow, minimum width=2em, text centered, minimum height=2em]
@@ -58,6 +58,8 @@
   frame=single}
 
 \definecolor{darkgreen}{RGB}{0,176,0}
+\definecolor{darkred}{RGB}{200,0,0}
+\definecolor{darkyellow}{RGB}{255,165,0}
 
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
@@ -141,6 +143,7 @@
 \newcommand{\DMhHSSUSYytSM}{\ensuremath{\Delta M_h^{(y_t^\SM)}}}
 \newcommand{\DMhHSSUSYytMSSM}{\ensuremath{\Delta M_h^{(y_t^\MSSM)}}}
 \newcommand{\DMhEFT}{\ensuremath{\Delta M_h^{(v^2/\MS^2)}}}
+\newcommand{\Mathematica}{\texttt{Mathematica}}
 \def\HSSUSY{\texttt{HSSUSY}}
 
 % set look of slides
@@ -162,12 +165,11 @@
 \usecolortheme{tud}
 
 % \title{Was können wir vom Higgsbosons über Supersymmetrie lernen?}
-\title{Das Higgs-Boson als Instrument \\auf der Suche nach Supersymmetrie}
+\title{Precise Higgs mass calculations with FlexibleSUSY}
 
 \author[Alexander Voigt]{Alexander Voigt}
 
-\date{Physik-Kolloquium\\ Europa-Universität Flensburg\\[1em]
-  24.10.2019}
+\date{Webinar\\ Monash University\\[1em] 28/04/2020}
 
 % \institute[Aachen]{RWTH Aachen}
 \subject{MSSM,Higgs,Supersymmetrie,EFT}
@@ -329,214 +331,199 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Das Standardmodell der Teilchenphysik}
+\section{Introduction}
 
-\subsection{Teilcheninhalt}
-
-\begin{frame}{Woraus besteht Materie?}
-  \begin{center}
-    \includegraphics[width=\textwidth]{images/route}
-  \end{center}
-\end{frame}
-
-\begin{frame}{Das Standardmodell der Teilchenphysik}
-  \begin{columns}
-    \column{.5\linewidth}
-    \scalebox{1}{
-    \begin{tikzpicture}[node distance = 2.5em, auto]
-      \node[quark] (u) {$u$};
-      \node[quark, below of=u] (d) {$d$};
-      \node[quark, right of=u] (c) {$c$};
-      \node[quark, below of=c] (s) {$s$};
-      \node[quark, right of=c] (t) {$t$};
-      \node[quark, below of=t] (b) {$b$};
-      \node[lepton, below of=d] (ne) {$\nu_e$};
-      \node[lepton, below of=ne] (e) {$e$};
-      \node[lepton, right of=ne] (nm) {$\nu_\mu$};
-      \node[lepton, below of=nm] (m) {$\mu$};
-      \node[lepton, right of=nm] (nt) {$\nu_\tau$};
-      \node[lepton, below of=nt] (ta) {$\tau$};
-      \node[gauge, right of=t] (gamma) {$\gamma$};
-      \node[gauge, below of=gamma] (g) {$G$};
-      \node[gauge, below of=g] (Z) {$Z$};
-      \node[gauge, below of=Z] (W) {$W$};
-      \node[phantom, below of=W] (corner) {\phantom{X}};
-      \node[phantom, below of=corner] (corner2) {\phantom{X}};
-      \draw[line width=1, color=blue!70,rounded corners] ($(u) + (-2em,2em)$) rectangle ($(corner) + (2em,-2em)$);
-      \node[color=blue!70, anchor=east] (MSSM) at ($(corner.east) + (1em,-1em)$) {SM};
-      \node[scalar, below of=e] (h) {$h$};
-    \end{tikzpicture}}
-    \column{.5\linewidth}
-    \emph{Teilcheninhalt:}\\
-    \begin{itemize}
-    \item 3 Generationen Fermionen (Quarks und Leptonen)
-    \item Eichbosonen (Austauschteilchen)
-    \item Higgs-Boson
-    \end{itemize}
-    \emph{Wechselwirkungen:}\\
-    \begin{itemize}
-    \item Elektromagnetismus
-    \item schwache Wechselwirkung
-    \item starke Wechselwirkung
-    \end{itemize}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Lagrangedichte des Standardmodells}
-  \begin{columns}
-    \column{0.6\textwidth}
-    \begin{center}
-      \includegraphics[width=0.9\textwidth]{images/cup.png}
-    \end{center}
-    \vspace*{-1em}
-    \mycite{https://home.cern/sites/home.web.cern.ch/files/2018-06/untitled\_7.png}
-    \column{0.4\textwidth}
-    zzgl.\ Euler-Lagrange-Gleichungen:
-    \begin{align*}
-      0 = \frac{\partial\Lagr}{\partial\sigma} - \partial_\mu \frac{\partial\Lagr}{\partial(\partial_\mu\sigma)}
-    \end{align*}
-    mit
-    \begin{align*}
-      \sigma \in \{A_\mu, \psi_i, \phi\}
-    \end{align*}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Wechselwirkungsbegriff}
-  Wechselwirkungen beschreiben auf fundamentaler Ebene:
+\begin{frame}{Introduction}
+  Current status:
   \begin{itemize}
-  \item \emph{Teilchenumwandlung} (Erzeugung, Vernichtung, ``Zerfall'')
-  \begin{align*}
-    \fmfvcenter{compton}
-  \end{align*}
-  \item \emph{Kraft} zwischen Teilchen (z.B.\ Coulombkraft)
-  \begin{align*}
-    \fmfvcenter{escattering}
-  \end{align*}
+  \item SM is complete
+  \item no BSM particles found at the LHC so far
   \end{itemize}
-  \vspace*{1em}
-  Kräfte werden durch \emph{Austauschteilchen} vermittelt
+  Currently open challenges:
+  \begin{itemize}
+  \item hierarchy problem
+  \item $\approx 3.6\sigma$ deviation between $g_\mu^\text{exp}$ und $g_\mu^\text{theo}$
+  \item Dark Matter, Dark Energy
+  \item unified description of all interactions, including gravity
+  \end{itemize}
+  Possible solutions:
+  \begin{itemize}
+  \item BSM physics (supersymmetry, \ldots)
+  \end{itemize}
 \end{frame}
 
-\begin{frame}{Wechselwirkungen im Standardmodell}
-  Wechselwirkungen folgen aus inneren Symmetrien:
-  \vspace*{-1em}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{SUSY particle exclusion limits}
   \begin{center}
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{llll}
-      \toprule
-      WW & Austauschteilchen & Kopplung & Symmetriegruppe\\
-      \midrule
-      schwache Hyperladung & $B$              & $g_Y$ & $U(1)_Y$ \\
-      schwacher Isospin & $W^1, W^2, W^3$  & $g_2$ & $SU(2)_L$ \\
-      starke      & $G^1, \dots, G^8$ & $g_3$ & $SU(3)_C$ \\
-      \bottomrule
-    \end{tabular}}
-  \end{center}
-  \vspace*{1em}
-  Symmetrien werden spontan gebrochen durch Higgs-Feld:
-  \begin{center}
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{llll}
-      \toprule
-      WW & Austauschteilchen & Kopplung & Symmetriegruppe\\
-      \midrule
-      elektromagnetische & $\gamma$ & $e$ & $U(1)_\text{e.m.}$ \\
-      schwache & $W^+$, $W^-$, $Z$ & -- & -- \\
-      starke   & $G^1, \dots, G^8$ & $g_3$ & $SU(3)_C$ \\
-      \bottomrule
-    \end{tabular}}
+    \includegraphics[width=\textwidth]{images/ATLAS_SUSY_Summary}
   \end{center}
 \end{frame}
 
-\subsection{Higgsmechanismus}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Higgsmechanismus}
-  \emph{Ursprüngliches Problem:} Massenterme verletzen die Symmetrien:
-  \begin{align*}
-    \textcolor{red}{\Lagr_{\text{Elektronmasse}} =
-    - m_e \bar{\psi}_e \psi_e \qquad (\text{verboten!})}
-  \end{align*}
-  $\psi_e =$ Wellenfunktion des Elektrons,\\
-  $m_e = 511\,\text{keV}/c^2$ Masse des Elektrons
-  \\[1em]
-  \pause
-  \emph{Lösung:} (Peter Higgs et.al.)\\[0.5em]
-  \emph{Schritt 1:}
-  Neues Feld $\phi$ (Higgs-Feld) einführen und mit Teilchen
-  wechselwirken lassen:
-  \begin{align*}
-    \Lagr_{\text{Higgs}} = - y_e \phi \bar{\psi}_e \psi_e + \cdots
-  \end{align*}
-  $y_e =$ ``Stärke'' der WW des Elektrons mit Higgs-Feld
+\section{BSM Phenomenology with FlexibleSUSY}
+
+\begin{frame}{Contents}
+  \tableofcontents[currentsection]  
 \end{frame}
 
-\begin{frame}{Higgsmechanismus}
-  \emph{Schritt 2:} Konstruiere Potential, in dem das Higgs-Feld einen
-  Grundzustand, $v=\text{konst.}\ne 0$, besitzt:
-  \begin{columns}
-    \column{0.6\textwidth}
-    \begin{center}
-      \includegraphics[width=0.9\textwidth]{images/higgs-potential}
-    \end{center}
-    \column{0.4\textwidth}
-    Higgs-Potential:
-    \begin{align*}
-      V(\phi) = \frac{\lambda}{8}\phi^4 - \frac{\mu^2}{2} \phi^2
-    \end{align*}
-    Entwickeln von $\phi(x)$ um den Grundzustand:
-    \begin{align*}
-      \phi(x) = v + h(x)
-    \end{align*}
+\begin{frame}{What is FlexibleSUSY?}
+  \begin{center}
+    \includegraphics[width=\textwidth]{images/FS.png}
+  \end{center}
+  \tikz[overlay,remember picture] 
+  \node[at=(current page.north east),anchor=north east,inner sep=0pt, xshift=-1.5cm, yshift=-2cm] (FS) {
+    \textbf{FlexibleSUSY}};
+  \tikz[overlay,remember picture] 
+  \draw[-latex,thick] ([yshift=-0.2cm] FS.south) to[out=270,in=0] ++(-2cm,-2cm);
+\end{frame}
+
+\begin{frame}{What is FlexibleSUSY?}
+  \begin{center}
+    \begin{tikzpicture}
+    \node[block] (EXPR) {\textbf{analytic expressions}\\ (\Mathematica)\\ $\beta_g$, $M_h$, $\Sigma_h$, \ldots};
+    % \node[block, below = 1cm of EXPR, text width=15em] (FS) {\textbf{spectrum generator}\\ (C++)\\ solves BVP, calculates observables};
+    \node[block, below = 1cm of EXPR, text width=15em] (FS) {\textbf{spectrum generator}\\ (C++)\\ \footnotesize{\texttt{double calc\_Mhh() \{ return ...; \}}}};
+    \node[block, below = 1cm of FS, text width=15em] (OUT) {$M_h$, $M_W$, BSM masses, $(g-2)_\mu$, EDMs, $h\rightarrow\gamma\gamma$, $h\rightarrow gg$};
+    \path[arrow] (EXPR) -- node[right]{generates} (FS);
+    \path[arrow] (FS) -- node[right]{calculates obs.} node[left]{solves BVP} (OUT);
+    \draw[red,very thick] ($(EXPR.north west)+(-1.5,0.5)$) node(FSname){} rectangle ($(OUT.south east)+(0.5,-0.5)$);
+    \node[above right = 0cm and 0cm of FSname.north west] {\textbf{\textcolor{red}{FlexibleSUSY}}};
+    \node[block, right = 2cm of EXPR, text width=5em] (SARAH) {\textbf{\SARAH}};
+    \path[arrow] (SARAH) -- node[above]{calculates} (EXPR);
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Spectrum generator setup in FlexibleSUSY}
+  \begin{raggedright}
+    \begin{tikzpicture}[scale=0.9]
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$Q_\text{low}$} -- (0,2) node[left]{$Q_\text{pole}$} -- (0,5.5) node[left]{$Q_\text{high}$} -- (0,6) node[left] {$Q$};
+      \draw[thick] (1,0)   rectangle node{SM(5)} (4,0.9);
+      \draw[thick] (1,1.1) rectangle node{BSM} (4,5.5);
+      \draw[<-, thick, darkgreen] (4.1,5.5) -- (4.5,5.5) node[right]{boundary condition};
+      \draw[<-, thick, blue] (4.1,2) -- (4.5,2) node[right]{calculation of masses/observables};
+      \draw[<-, thick, darkgreen] (4.1,1) -- (4.5,1) node[right]{boundary condition};
+    \end{tikzpicture}
+  \end{raggedright}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Example spectrum generator: MSSM}
+  \begin{raggedright}
+    \begin{tikzpicture}[scale=0.9]
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,2) node[left]{$Q_\text{pole}$} -- (0,5.5) node[left]{$Q_\text{high}$} -- (0,6) node[left] {$Q$};
+      \draw[thick] (1,0)   rectangle node{SM(5)} (4,0.9);
+      \draw[thick] (1,1.1) rectangle node{MSSM} (4,5.5);
+      \draw[<-, thick, darkgreen] (4.1,5.5) -- (4.5,5.5) node[right]{fix $m_{\tilde{f}}^2$, $A_f$, $M_i$, $\mu$, $B\mu$};
+      \draw[<-, thick, blue] (4.1,2) -- (4.5,2) node[right]{calculation of masses/observables};
+      \draw[<-, thick, darkgreen] (4.1,1) -- (4.5,1) node[right]{fix $g_i$, $y_f$, $v$};
+    \end{tikzpicture}
+  \end{raggedright}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{obsblock}[1]{%
+  \setbeamercolor{block body}{bg=darkgreen!10}
+  \setbeamercolor{block title}{bg=darkgreen}
+  \begin{block}{#1}}{\end{block}}
+
+\newenvironment{precblock}[1]{%
+  \setbeamercolor{block body}{bg=darkred!10}
+  \setbeamercolor{block title}{bg=darkred}
+  \begin{block}{#1}}{\end{block}}
+
+\newenvironment{flexblock}[1]{%
+  \setbeamercolor{block body}{bg=blue!10}
+  \setbeamercolor{block title}{bg=blue}
+  \begin{block}{#1}}{\end{block}}
+
+\newenvironment{speedblock}[1]{%
+  \setbeamercolor{block body}{bg=black!10}
+  \setbeamercolor{block title}{bg=black}
+  \begin{block}{#1}}{\end{block}}
+
+\begin{frame}{Features for all models (SUSY and non-SUSY)}
+  \begin{columns}[T]
+    \begin{column}{0.49\textwidth}
+      \begin{obsblock}{Observables}
+        $M_h$, $M_W$, BSM masses, $(g-2)_\mu$, EDMs,\\
+        $h\rightarrow\gamma\gamma$, $h\rightarrow gg$
+      \end{obsblock}
+      \begin{flexblock}{Flexibility}
+        multipe BVP solvers, user-defined BCs,\\ modular C++ code, \\
+        SLHA input/output, \Mathematica\ input/output, SQLite output
+      \end{flexblock}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{precblock}{High precision}
+        2L RGEs + 1L self energies (via \SARAH) + 1L thresholds,\\
+        NLL resummation for $M_h$ (\texttt{FlexibleEFTHiggs})
+      \end{precblock}
+      \begin{speedblock}{High speed}
+        multi-threading,\\ smart linear algebra,\\ lazy evaluation
+      \end{speedblock}
+    \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Higgsmechanismus}
-  Einsetzen von
-  \begin{align*}
-    \phi(x) = v + h(x)
-  \end{align*}
-  in $\Lagr_{\text{Higgs}}$ ergibt:
-  \begin{align*}
-    \Lagr_{\text{Higgs}}
-    &= - y_e \phi \bar{\psi}_e \psi_e + \cdots \\
-    &= - y_e (v + h(x)) \bar{\psi}_e \psi_e + \cdots \\
-    &= - \textcolor{darkgreen}{y_e v} \bar{\psi}_e \psi_e
-       - y_e h(x) \bar{\psi}_e \psi_e + \cdots
-  \end{align*}
-  $\Rightarrow$ durch Ablesen
-  \begin{align*}
-    \textcolor{darkgreen}{m_e = y_e v}
-  \end{align*}
-  Massenterm für Elektron erzeugt durch WW mit Higgs-Feld $\phi$!\\
-  Nebeneffekt: neues Teilchen, \emph{Higgs-Boson} $h$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{modelblock}[1]{%
+  \setbeamercolor{block body}{bg=darkyellow!15}
+  \setbeamercolor{block title}{fg=black,bg=darkyellow}
+  \begin{block}{#1}}{\end{block}}
+
+\begin{frame}{Additional model-specific precision corrections}
+  \begin{columns}[T]
+    \begin{column}{0.49\textwidth}
+      \begin{modelblock}{MSSM}
+        3L RGEs, 3L $M_h$, 2L $M_{H,A,H^\pm}$, 2L $(g-2)_\mu$, 2L
+        thresholds
+      \end{modelblock}
+      \begin{modelblock}{NMSSM}
+        2L $M_h$, 2L $M_{H,A,H^\pm}$, 2L thresholds
+      \end{modelblock}
+      \begin{modelblock}{Split-MSSM}
+        3L $M_h$, 2L thresholds for $y_t$, 2L thresholds for $\lambda$, $\tilde{g}_{ip}$
+        the MSSM
+      \end{modelblock}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{modelblock}{SM}
+        3L RGEs, 3L $M_h$, 3L thresholds for $\as$, $y_{t,b}$, 2L
+        thresholds for $\lambda$ to the MSSM (\texttt{HSSUSY})
+      \end{modelblock}
+      \begin{modelblock}{THDM-II}
+        2L thresholds for $\lambda_i$ to the MSSM
+      \end{modelblock}
+      \begin{modelblock}{THDM-II + $\tilde{h}$ + $\tilde{g}$}
+        1L thresholds for $\lambda_i$ to the MSSM
+      \end{modelblock}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-\begin{frame}{Higgsmechanismus}
-  Mit dem Higgsmechanismus lassen sich die Massen \emph{aller}
-  massiven Elementarteilchen generieren, z.B.
-  \begin{align*}
-    m_e &= y_e v, & m_t &= y_t v \\
-    m_Z^2 &= \frac{v^2}{4}(g_Y^2 + g_2^2) , &  m_W^2 &= \frac{v^2}{4} g_2^2 \\
-    m_h^2 &= \lambda v^2
-  \end{align*}
-  \emph{Vor 2012:}
-  Bekannt:
-  \begin{align*}
-    g_Y &\approx 0.35, &
-    g_2 &\approx 0.65, &
-    g_3 &\approx 1.2 \\
-    v &\approx 245\GeV/c^2, &
-    m_h &={} ? &
-    \Leftrightarrow \lambda &={} ?, &
-  \end{align*}
-  \\[1em]
-  \emph{2012:} Nachweis des Higgs-Bosons von ATLAS/CMS am LHC
-  \begin{align*}
-    M_h &= (125.10\pm 0.14) \GeV/c^2 &
-    \Rightarrow \ \ \lambda &\approx 0.28
-  \end{align*}
-\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Higgs Mass Calculations with FlexibleSUSY}
+
+\subsection{Fixed-order}
+\subsection{EFT}
+\subsection{Hybrid}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Summary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Das Standardmodell der Teilchenphysik}
 
 \subsection{Erfolge und Probleme}
 
@@ -567,92 +554,6 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Supersymmetrische Erweiterung des Standardmodells}
-
-\begin{frame}{Contents}
-  \tableofcontents[currentsection,currentsubsection]
-\end{frame}
-
-% \begin{frame}{Contents}
-%   \tableofcontents[currentsection]
-% \end{frame}
-
-% \subsection{Erweiterung der Raum-Zeit-Symmetrien}
-
-\begin{frame}{Supersymmetrie}
-  \emph{Ausgangspunkt:} Raumzeit und physikalische Gesetze besitzen
-  mehrere Symmetrien:
-  \begin{itemize}
-  \item Raum-Zeit-Translationsinvarianz\\
-    $\leftrightarrow$ Erhaltung von Energie- und Impuls $P^\mu$
-  \item Lorentzinvarianz\\
-    $\leftrightarrow$ Erhaltung des (Bahn-/Spin-)Drehimpulstensors $M^{\mu\nu}$
-  \end{itemize}
-  \vspace*{1em}
-  \emph{Theorem:} Es gibt nur \emph{eine} Möglichkeit diese Symmetrien
-  auf eine nicht-triviale Weise zu erweitern: Supersymmetrie
-  \begin{align*}
-    |\text{boson}\rangle \leftrightarrow |\text{fermion}\rangle
-  \end{align*}
-  \emph{Konsequenz:} Zu jedem Teilchen im Standardmodell mit Spin $S$
-  korrespondiert ein supersymmetrischer ``Partner'' mit Spin
-  $S \pm \frac{1}{2}$.
-\end{frame}
-
-\begin{frame}{Minimal Supersymmetrisches Standardmodell (MSSM)}
-  \begin{center}
-    \begin{tikzpicture}[node distance = 2.5em, auto]
-        \node[quark] (u) {$u$};
-        \node[quark, below of=u] (d) {$d$};
-        \node[quark, right of=u] (c) {$c$};
-        \node[quark, below of=c] (s) {$s$};
-        \node[quark, right of=c] (t) {$t$};
-        \node[quark, below of=t] (b) {$b$};
-        \node[lepton, below of=d] (ne) {$\nu_e$};
-        \node[lepton, below of=ne] (e) {$e$};
-        \node[lepton, right of=ne] (nm) {$\nu_\mu$};
-        \node[lepton, below of=nm] (m) {$\mu$};
-        \node[lepton, right of=nm] (nt) {$\nu_\tau$};
-        \node[lepton, below of=nt] (ta) {$\tau$};
-        \node[gauge, right of=t] (gamma) {$\gamma$};
-        \node[gauge, below of=gamma] (g) {$g$};
-        \node[gauge, below of=g] (Z) {$Z$};
-        \node[gauge, below of=Z] (W) {$W$};
-        \node[scalar, below of=e] (h) {$h$};
-        \node[scalar, right of=h] (H) {$H$};
-        \node[scalar, below of=h] (A) {$A$};
-        \node[scalar, right of=A] (Hpm) {$H^\pm$};
-        %
-        \node[squark, right=2em of gamma] (su) {$\tilde u$};
-        \node[squark, below of=su] (sd) {$\tilde d$};
-        \node[squark, right of=su] (sc) {$\tilde c$};
-        \node[squark, below of=sc] (ss) {$\tilde s$};
-        \node[squark, right of=sc] (st) {$\tilde t$};
-        \node[squark, below of=st] (sb) {$\tilde b$};
-        \node[slepton, below of=sd] (sne) {$\tilde \nu_e$};
-        \node[slepton, below of=sne] (se) {$\tilde e$};
-        \node[slepton, right of=sne] (snm) {$\tilde \nu_\mu$};
-        \node[slepton, below of=snm] (sm) {$\tilde \mu$};
-        \node[slepton, right of=snm] (snt) {$\tilde \nu_\tau$};
-        \node[slepton, below of=snt] (sta) {$\tilde \tau$};
-        \node[gaugino, right of=st] (sgamma) {$\tilde \gamma$};
-        \node[gaugino, below of=sgamma] (sg) {$\tilde g$};
-        \node[gaugino, below of=sg] (sZ) {$\tilde Z$};
-        \node[gaugino, below of=sZ] (sW) {$\tilde W$};
-        \node[higgsino, below of=se] (sh) {$\tilde h_1^0$};
-        \node[higgsino, right of=sh] (sH) {$\tilde h_2^0$};
-        \node[higgsino, below of=sh] (sA) {$\tilde h^-_1$};
-        \node[higgsino, below of=sH] (sHpm) {$\tilde h^+_2$};
-        \node[phantom, below of=sW    ] (sZprime) {\phantom{X}};
-        \node[phantom, below of=sZprime] (corner) {\phantom{X}};
-        \node[phantom, below of=corner] (corner2) {\phantom{X}};
-        %
-        \draw[line width=1, color=black!70,rounded corners] ($(u) + (-2em,2em)$) rectangle ($(corner) + (2em,-2em)$);
-        \node[color=black!70, anchor=east] (SUSY) at ($(corner.east) + (1em,-1em)$) {MSSM};
-    \end{tikzpicture}
-  \end{center}
-\end{frame}
 
 \subsection{Eigenschaften und Probleme}
 
@@ -1167,82 +1068,6 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[noframenumbering]{Lagrangedichte des Standardmodells}
-  \begin{columns}
-    \column{0.6\textwidth}
-    \begin{align*}
-        \Lagr ={}& -\frac{1}{4} F_{\mu\nu} F^{\mu\nu} \\
-        & + i \bar{\psi}_i \gamma^\mu D_\mu \psi_i \\
-        & + y_{ij} \phi \bar{\psi}_i \psi_j + \text{h.c.} \\
-        & + |D_\mu \phi|^2 - V(\phi)
-    \end{align*}
-    \column{0.4\textwidth}
-    zzgl.\ Euler-Lagrange-Gleichungen:
-    \begin{align*}
-      0 = \frac{\partial\Lagr}{\partial\sigma} - \partial_\mu \frac{\partial\Lagr}{\partial(\partial_\mu\sigma)}
-    \end{align*}
-  \end{columns}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Higgs masses in the SM}
-  Higgs potential
-  \begin{align*}
-    V_{\text{Higgs}} = -\mu^2 |\Phi|^2 + \frac{\lambda}{2}|\Phi|^4
-    = -\frac{\mu^2}{2} (v+h)^2 + \frac{\lambda}{8} (v+h)^4 + \cdots
-  \end{align*}
-  where
-  \begin{align*}
-    \Phi =
-    \begin{pmatrix}
-      0 \\ \frac{1}{\sqrt{2}} (v + h)
-    \end{pmatrix}
-  \end{align*}
-  After eliminating $\mu^2$:
-  \begin{align*}
-    V_{\text{Higgs}} = \lambda v^2 \frac{h^2}{2} + \cdots
-    \qquad\Rightarrow\qquad
-    m_h^2 = \lambda v^2  \qquad \text{(tree-level)}
-  \end{align*}
-  \emph{Until 2012:} $M_h =\ ?$ $\Leftrightarrow$ $\lambda =\ ?$\\
-  \emph{Since 2012:} $M_h \approx 125\eh{GeV}$ $\Rightarrow$ $\lambda \approx 0.26$
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[noframenumbering]{Higgs masses in the (real) MSSM}
-  Higgs potential:
-  \begin{align*}
-    V_{\text{Higgs}} = \frac{1}{8}(g_Y^2 + g_2^2)(|h_1|^2 - |h_2|^2)^2 + \frac{g_2^2}{2}|h_1^\dagger h_2|^2 + \cdots
-  \end{align*}
-  where
-  \begin{align*}
-    % h, H, A, H^\pm
-    h_1 =
-    \begin{pmatrix}
-      \frac{1}{\sqrt{2}} (v_1 + h_1^0) \\ 0
-    \end{pmatrix}, \qquad
-    h_2 =
-    \begin{pmatrix}
-      0 \\ \frac{1}{\sqrt{2}} (v_2 + h_2^0)
-    \end{pmatrix}
-  \end{align*}
-  After EWSB (if $m_A \gg m_Z$):
-  \begin{align*}
-    V_{\text{Higgs}} \approx \frac{1}{4}(g_Y^2+g_2^2) v^2 c_{2\beta}^2 \frac{h^2}{2} + \cdots
-    = m_Z^2 c_{2\beta}^2 \frac{h^2}{2} + \cdots
-    % m_h^2 = \frac{1}{2} \left[
-    %   m_Z^2 + m_A^2 - \sqrt{(m_Z^2 + m_A^2)^2 - 4 m_Z^2 m_A^2 \cos^2{2\beta}}
-    % \right]
-  \end{align*}
-  $\Rightarrow$ \emph{prediction}:
-  \begin{align*}
-    m_h^2 = m_Z^2 \cos^2{2\beta}
-    % = \frac{1}{4} (g_Y^2 + g_2^2) v^2 \cos^2{2\beta}
-    \leq m_Z^2
-    \approx (91.2 \eh{GeV})^2  \qquad \text{(tree-level)}
-  \end{align*}
-\end{frame}
 
 \begin{frame}[noframenumbering]{Scenarios with 1 light Higgs doublet}
   \begin{center}
