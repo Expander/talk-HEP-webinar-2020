@@ -333,32 +333,166 @@
 
 \section{Introduction}
 
-\begin{frame}{Introduction}
-  Current status:
-  \begin{itemize}
-  \item SM is complete
-  \item no BSM particles found at the LHC so far
-  \end{itemize}
-  Currently open challenges:
-  \begin{itemize}
-  \item hierarchy problem
-  \item $\approx 3.6\sigma$ deviation between $g_\mu^\text{exp}$ und $g_\mu^\text{theo}$
-  \item Dark Matter, Dark Energy
-  \item unified description of all interactions, including gravity
-  \end{itemize}
-  Possible solutions:
-  \begin{itemize}
-  \item BSM physics (supersymmetry, \ldots)
-  \end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t]{Open questions before/after the Higgs discovery}
+  \begin{columns}
+    \column{.3\linewidth}
+    \scalebox{0.5}{
+    \begin{tikzpicture}[node distance = 2.5em, auto]
+      \visible<1-4>{
+      \node[quark] (u) {$u$};
+      \node[quark, below of=u] (d) {$d$};
+      \node[quark, right of=u] (c) {$c$};
+      \node[quark, below of=c] (s) {$s$};
+      \node[quark, right of=c] (t) {$t$};
+      \node[quark, below of=t] (b) {$b$};
+      \node[lepton, below of=d] (ne) {$\nu_e$};
+      \node[lepton, below of=ne] (e) {$e$};
+      \node[lepton, right of=ne] (nm) {$\nu_\mu$};
+      \node[lepton, below of=nm] (m) {$\mu$};
+      \node[lepton, right of=nm] (nt) {$\nu_\tau$};
+      \node[lepton, below of=nt] (ta) {$\tau$};
+      \node[gauge, right of=t] (gamma) {$\gamma$};
+      \node[gauge, below of=gamma] (g) {$g$};
+      \node[gauge, below of=g] (Z) {$Z$};
+      \node[gauge, below of=Z] (W) {$W$};
+      \node[phantom, below of=W] (corner) {\phantom{X}};
+      \node[phantom, below of=corner] (corner2) {\phantom{X}};
+      \draw[line width=1, color=blue!70,rounded corners] ($(u) + (-2em,2em)$) rectangle ($(corner) + (2em,-2em)$);
+      \node[color=blue!70, anchor=east] (MSSM) at ($(corner.east) + (1em,-1em)$) {SM};
+      }
+      \visible<1>{
+        \node[scalar, fill=blue!10, dashed, below of=e] (h) {$h$};
+      }
+      \visible<2-4>{
+        \node[scalar, below of=e] (h) {$h$};
+      }
+      \visible<3-4>{
+        \node[gaugino, below=1.75em of h] (chi0) {$\chi^{0}$};
+        \node[gaugino, right of=chi0] (chipm) {$\chi^{\pm}$};
+        \draw[line width=1, color=darkgreen,rounded corners] ($(u) + (-3em,3em)$) rectangle ($(corner2) + (3em,-3.5em)$);
+        \node[color=darkgreen, anchor=east] (Split) at ($(corner2.east) + (2em,-2.5em)$) {SM+$\chi$};
+      }
+      \visible<4>{
+        \node[slepton, below=1.7em of chi0] (smu) {$\tilde\mu$};
+        \node[slepton, right of=smu] (snu) {$\tilde{\nu}_{\mu}$};
+        \draw[line width=1, color=red,rounded corners] ($(u) + (-4em,4em)$) rectangle ($(corner2) + (4em,-7.3em)$);
+        \node[color=red, anchor=east] (Split) at ($(corner2.east) + (3em,-6.3em)$) {SM+$\chi$+$\tilde{\mu}$+$\tilde{\nu}_\mu$};
+      }
+      \visible<5->{
+        \node[quark] (u) {$u$};
+        \node[quark, below of=u] (d) {$d$};
+        \node[quark, right of=u] (c) {$c$};
+        \node[quark, below of=c] (s) {$s$};
+        \node[quark, right of=c] (t) {$t$};
+        \node[quark, below of=t] (b) {$b$};
+        \node[lepton, below of=d] (ne) {$\nu_e$};
+        \node[lepton, below of=ne] (e) {$e$};
+        \node[lepton, right of=ne] (nm) {$\nu_\mu$};
+        \node[lepton, below of=nm] (m) {$\mu$};
+        \node[lepton, right of=nm] (nt) {$\nu_\tau$};
+        \node[lepton, below of=nt] (ta) {$\tau$};
+        \node[gauge, right of=t] (gamma) {$\gamma$};
+        \node[gauge, below of=gamma] (g) {$g$};
+        \node[gauge, below of=g] (Z) {$Z$};
+        \node[gauge, below of=Z] (W) {$W$};
+        \node[scalar, below of=e] (h) {$h$};
+        \node[scalar, right of=h] (H) {$H$};
+        \node[scalar, below of=h] (A) {$A$};
+        \node[scalar, right of=A] (Hpm) {$H^\pm$};
+        %
+        \node[squark, below=2em of A] (su) {$\tilde u$};
+        \node[squark, below of=su] (sd) {$\tilde d$};
+        \node[squark, right of=su] (sc) {$\tilde c$};
+        \node[squark, below of=sc] (ss) {$\tilde s$};
+        \node[squark, right of=sc] (st) {$\tilde t$};
+        \node[squark, below of=st] (sb) {$\tilde b$};
+        \node[slepton, below of=sd] (sne) {$\tilde \nu_e$};
+        \node[slepton, below of=sne] (se) {$\tilde e$};
+        \node[slepton, right of=sne] (snm) {$\tilde \nu_\mu$};
+        \node[slepton, below of=snm] (sm) {$\tilde \mu$};
+        \node[slepton, right of=snm] (snt) {$\tilde \nu_\tau$};
+        \node[slepton, below of=snt] (sta) {$\tilde \tau$};
+        \node[gaugino, right of=st] (sgamma) {$\tilde \gamma$};
+        \node[gaugino, below of=sgamma] (sg) {$\tilde g$};
+        \node[gaugino, below of=sg] (sZ) {$\tilde Z$};
+        \node[gaugino, below of=sZ] (sW) {$\tilde W$};
+        \node[higgsino, below of=se] (sh) {$\tilde h_1^0$};
+        \node[higgsino, right of=sh] (sH) {$\tilde h_2^0$};
+        \node[higgsino, below of=sh] (sA) {$\tilde h^-_1$};
+        \node[higgsino, below of=sH] (sHpm) {$\tilde h^+_2$};
+        \node[phantom, below of=sW    ] (sZprime) {\phantom{X}};
+        \node[phantom, below of=sZprime] (corner) {\phantom{X}};
+        \node[phantom, below of=corner] (corner2) {\phantom{X}};
+        %
+        \draw[line width=1, color=black!70,rounded corners] ($(u) + (-2em,2em)$) rectangle ($(corner) + (2em,-2em)$);
+        \node[color=black!70, anchor=east] (SUSY) at ($(corner.east) + (1em,-1em)$) {SUSY};
+      }
+      \visible<6->{
+        \node[graviton, below=1.75em of sA] (G) {$G$};
+        \node[gravitino, right of=G] (sG) {$\tilde{G}$};
+        \draw[line width=1, color=orange, rounded corners] ($(u) + (-3em,3em)$) rectangle ($(corner2) + (3em,-3.5em)$);
+        \node[color=orange, anchor=east] (SUGRA) at ($(corner2.east) + (2em,-2.5em)$) {SUGRA};
+      }
+    \end{tikzpicture}}
+    \column{.7\linewidth}
+    \emph{Open questions:}\\
+    \begin{itemize}
+    \item {\color<2->{darkgreen}{Does the Higgs exist?}}
+    \item {\color<3->{darkgreen}{What does DM consist of?}}
+    \item {\color<4->{darkgreen}{What causes the deviation of $(g-2)_\mu$?}}
+    \item {\color<5->{darkgreen}{Is the vacuum stable up to $M_{\text{Pl}}$?}}
+    \item {\color<5->{darkgreen}{Why is $M_h = 125\eh{GeV}$?}}
+    \item {\color<5->{darkgreen}{Is there a solution to the hierarchy problem?}}
+    \item {\color<6->{darkgreen}{Can QFT and gravity be unified?}}
+    \end{itemize}
+  \end{columns}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{SUSY particle exclusion limits}
+\begin{frame}{Many extensions of the Standard Modell must be studied}
   \begin{center}
-    \includegraphics[width=\textwidth]{images/ATLAS_SUSY_Summary}
+    \includegraphics[width=\textwidth]{images/FS.png}
   \end{center}
+  \onslide<2>{%
+  \tikz[overlay,remember picture] 
+  \node[at=(current page.north east),anchor=north east,inner sep=0pt, xshift=-1.5cm, yshift=-2cm] (FS) {
+    \textbf{FlexibleSUSY}};
+  \tikz[overlay,remember picture] 
+  \draw[-latex,thick] ([yshift=-0.2cm] FS.south) to[out=270,in=0] ++(-2cm,-2cm);
+}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}{Introduction}
+%   Current status:
+%   \begin{itemize}
+%   \item SM is complete
+%   \item no BSM particles found at the LHC so far
+%   \end{itemize}
+%   Currently open challenges:
+%   \begin{itemize}
+%   \item hierarchy problem
+%   \item $\approx 3.6\sigma$ deviation between $g_\mu^\text{exp}$ und $g_\mu^\text{theo}$
+%   \item Dark Matter, Dark Energy
+%   \item unified description of all interactions, including gravity
+%   \end{itemize}
+%   Possible solutions:
+%   \begin{itemize}
+%   \item BSM physics (supersymmetry, \ldots)
+%   \end{itemize}
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}{SUSY particle exclusion limits}
+%   \begin{center}
+%     \includegraphics[width=\textwidth]{images/ATLAS_SUSY_Summary}
+%   \end{center}
+% \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -366,17 +500,6 @@
 
 \begin{frame}{Contents}
   \tableofcontents[currentsection]  
-\end{frame}
-
-\begin{frame}{What is FlexibleSUSY?}
-  \begin{center}
-    \includegraphics[width=\textwidth]{images/FS.png}
-  \end{center}
-  \tikz[overlay,remember picture] 
-  \node[at=(current page.north east),anchor=north east,inner sep=0pt, xshift=-1.5cm, yshift=-2cm] (FS) {
-    \textbf{FlexibleSUSY}};
-  \tikz[overlay,remember picture] 
-  \draw[-latex,thick] ([yshift=-0.2cm] FS.south) to[out=270,in=0] ++(-2cm,-2cm);
 \end{frame}
 
 \begin{frame}{What is FlexibleSUSY?}
@@ -513,103 +636,79 @@
 
 \section{Higgs Mass Calculations with FlexibleSUSY}
 
-\subsection{Fixed-order}
-\subsection{EFT}
-\subsection{Hybrid}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Summary}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Das Standardmodell der Teilchenphysik}
-
-\subsection{Erfolge und Probleme}
-
-\begin{frame}{Erfolge und Probleme des Standardmodells}
-  \emph{Erfolge:}
-  \begin{itemize}
-  \item beschreibt 3 der 4 bekannten Wechselwirkungen
-  \item beschreibt uns umgebende sichtbare Materie
-  \item viele Präzisionstests bestanden, insbes.\ $g_e\approx 2$
-  \end{itemize}
-  \vspace*{1em}
-  \emph{Probleme:}
-  \begin{itemize}
-  \item beschreibt nicht Gravitation
-  \item beschreibt nicht Dunkle Materie, Dunkle Energie
-  \item $\approx 3.6\sigma$ Abweichung zwischen $g_\mu^\text{exp}$ und $g_\mu^\text{theo}$
-  % \item (Hierarchie-Problem)
-  \end{itemize}
-  \vspace*{1em}
-  $\Rightarrow$ Das Standardmodell liefert keine vollständige Beschreibung
-  des Universums!
-  \visible<1>{
-    \tikz[overlay,remember picture]
-    \node[anchor=north east] at ($(current page.north east)+(-1,-2)$) {
-      \includegraphics[scale=0.5]{images/amu}
-    };
-  }
+\begin{frame}{Contents}
+  \tableofcontents[currentsection]  
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Eigenschaften und Probleme}
-
-\begin{frame}{Eigenschaften des MSSM}
-  \begin{columns}
-    \column{0.5\textwidth}
-    \emph{Vorteile:}
-    \begin{itemize}
-    \item {\color<1>{darkgreen}{Eichkopplungsvereinigung}}
-    \item {\color<2>{darkgreen}{korrekte Vorhersage von $g_\mu$}}
-    \item {\color<3>{darkgreen}{Enthält ein Dunkle Materie-Teilchen}}
-      % \item (löst das Hierarchie-Problem)
-    \item {\color<4>{darkgreen}{Vorhersage der Masse des Higgs-Bosons}}
-    \end{itemize}
-    \emph{Probleme:}
-    \begin{itemize}
-    \item vorhergesagte Higgs-Masse zu klein?
-    \item bisher keine SUSY-Teilchen gefunden?
-    \end{itemize}
-    \column{0.5\textwidth}
-    \visible<1>{
-      \tikz[overlay,remember picture]
-      \node[anchor=center] at ($(current page.center)+(+3,0)$) {
-        \includegraphics[scale=0.5]{images/MSSM_gauge_couplings_largeMX}
-      };
-    }
-    \visible<2>{
-      \tikz[overlay,remember picture]
-      \node[anchor=center] at ($(current page.center)+(+3,0)$) {
-        \includegraphics[scale=0.5]{images/amu_SUSY}
-      };
-    }
-    \visible<3>{
-      \tikz[overlay,remember picture]
-      \node[anchor=center] at ($(current page.center)+(+3,0)$) {
-        \scalebox{3}{$\chi^0$}
-      };
-    }
-    \visible<4>{
-      \tikz[overlay,remember picture]
-      \node[anchor=center] at ($(current page.center)+(+3,0)$) {
-        \scalebox{2}{$m_h \le m_Z$}
-      };
-    }
-  \end{columns}
+\begin{frame}{Interesting BSM physics: Supersymmetry}
+  \emph{Properties:}
+  \begin{itemize}
+  \item gauge coupling unification
+  \item can correctly predict $(g-2)_\mu$
+  \item contains DM candidate
+  \item prediction of Higgs boson mass
+  \item may solve the hierarchy problem
+  \end{itemize}
+  % \emph{Problems:}
+  % \begin{itemize}
+  % \item predicted Higgs mass too small?
+  % \item no SUSY particles found so far
+  % \end{itemize}
 \end{frame}
 
-\begin{frame}{Vorhersage der Masse des Higgs-Bosons}
-  \emph{SM:} Ad-hoc Higgs-Potential:
+% \begin{frame}{Interesting BSM physics: Supersymmetry}
+%   \begin{columns}
+%     \column{0.5\textwidth}
+%     \emph{Properties:}
+%     \begin{itemize}
+%     \item {\color<1>{darkgreen}{gauge coupling unification}}
+%     \item {\color<2>{darkgreen}{correct prediction of $(g-2)_\mu$}}
+%     \item {\color<3>{darkgreen}{contains DM candidate}}
+%     \item {\color<4>{darkgreen}{prediction of Higgs boson mass}}
+%     \item {\color<5>{darkgreen}{solves the hierarchy problem}}
+%     \end{itemize}
+%     \emph{Problems:}
+%     \begin{itemize}
+%     \item predicted Higgs mass too small?
+%     \item no SUSY particles found so far?
+%     \end{itemize}
+%     \column{0.5\textwidth}
+%     \visible<1>{
+%       \tikz[overlay,remember picture]
+%       \node[anchor=center] at ($(current page.center)+(+3,0)$) {
+%         \includegraphics[scale=0.5]{images/MSSM_gauge_couplings_largeMX}
+%       };
+%     }
+%     \visible<2>{
+%       \tikz[overlay,remember picture]
+%       \node[anchor=center] at ($(current page.center)+(+3,0)$) {
+%         \includegraphics[scale=0.5]{images/amu_SUSY}
+%       };
+%     }
+%     \visible<3>{
+%       \tikz[overlay,remember picture]
+%       \node[anchor=center] at ($(current page.center)+(+3,0)$) {
+%         \scalebox{3}{$\chi^0$}
+%       };
+%     }
+%     \visible<4>{
+%       \tikz[overlay,remember picture]
+%       \node[anchor=center] at ($(current page.center)+(+3,0)$) {
+%         \scalebox{2}{$m_h \le m_Z$}
+%       };
+%     }
+%   \end{columns}
+% \end{frame}
+
+\begin{frame}{Prediction of the Higgs boson mass}
+  \emph{SM:} (ad-hoc) Higgs potential:
   \begin{align*}
     V(\phi) &= \frac{\textcolor{red}{\lambda}}{8}\phi^4 - \frac{\mu^2}{2} \phi^2
     \intertext{$\Rightarrow$}
     m_h^2 &= \textcolor{red}{\lambda} v^2
     % \textcolor{darkgreen}{m_Z^2 = \frac{1}{4} \left(g_Y^2 + g_2^2\right) v^2}
   \end{align*}
-  \emph{MSSM:} Higgs-Potential automatisch:
+  \emph{MSSM:} (required) Higgs potential:
   \begin{align*}
     V(\phi) &= \frac{1}{8}\textcolor{red}{\frac{1}{4}\left(g_Y^2 + g_2^2\right) \cos^2(2\beta)} \phi^4 + \cdots
     \intertext{$\Rightarrow$}
@@ -619,45 +718,23 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}{Eigenschaften des MSSM}
-  \begin{columns}
-    \column{0.5\textwidth}
-    \emph{Vorteile:}
-    \begin{itemize}
-    \item Eichkopplungsvereinigung
-    \item korrekte Vorhersage von $g_\mu$
-    \item Enthält ein Dunkle Materie-Teilchen
-    \item Vorhersage der Masse des Higgs-Bosons
-    \end{itemize}
-    \emph{Probleme:}
-    \begin{itemize}
-    \item {\color<1>{darkgreen}{vorhergesagte Higgs-Masse zu klein?}}
-    \item bisher keine SUSY-Teilchen gefunden?
-    \end{itemize}
-    \column{0.5\textwidth}
-  \end{columns}
-    \visible<1>{
-      \tikz[overlay,remember picture]
-      \node[anchor=center] at ($(current page.center)+(+3,0)$) {
-        \scalebox{2}{$m_h \le m_Z$}
-      };
-    }
+\begin{frame}{Problem 1: no SUSY particles observed}
+  \begin{center}
+    \includegraphics[width=\textwidth]{images/ATLAS_SUSY_Summary}
+  \end{center}
 \end{frame}
 
-\begin{frame}{Problem: vorhergesagte Higgs-Masse zu klein?}
-  Vorhersage des MSSM:
+\begin{frame}{Problem 2: Tree-level Higgs mass too small}
+  (minimal) SUSY \emph{predicts} at tree-level:
   \begin{align*}
-    % m_h^2 = m_Z^2 \cos^2(2\beta) \le m_Z^2
-    m_h \le m_Z
+    m_h = m_Z |\cos 2\beta| \le m_Z
   \end{align*}
-  Aus den Messungen am LEP und LHC wissen wir jedoch:
+  But from experiment we know:
   \begin{align*}
-    M_h &\approx 125.10 \GeV \\
+    M_h &\approx 125.09 \GeV \\
     M_Z &\approx 91.2 \GeV
   \end{align*}
-  $\Rightarrow$ Das MSSM sagt nur dann die korrekte Higgs-Masse
-  vorher, wenn es \emph{große Quantenkorrekturen} zwischen $M_h$
-  und $m_h$ gibt!
+  $\Rightarrow$ \emph{large loop corrections} required!
   \begin{align*}
     M_h^2 &= m_h^2 + \Delta m_h^2
     & &\Rightarrow &
@@ -665,77 +742,111 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}{Was sind Quantenkorrekturen?}
-  Quantenkorrekturen zu $g_e$:
-  \begin{align*}
-    g_e = 2 + \fmfvcenter{schwinger} + \fmfvcenter{schwinger2} + \cdots
-  \end{align*}
-  Quantenkorrekturen zu $M_h^2$:
-  \begin{align*}
-    M_h^2 &= m_h^2 + \fmfvcenter{htop} + \fmfvcenter{hstop} + \cdots \\
-          &= m_h^2 + \Delta m_h^2
-  \end{align*}
-\end{frame}
+% \begin{frame}{Eigenschaften des MSSM}
+%   \begin{columns}
+%     \column{0.5\textwidth}
+%     \emph{Vorteile:}
+%     \begin{itemize}
+%     \item Eichkopplungsvereinigung
+%     \item korrekte Vorhersage von $g_\mu$
+%     \item Enthält ein Dunkle Materie-Teilchen
+%     \item Vorhersage der Masse des Higgs-Bosons
+%     \end{itemize}
+%     \emph{Probleme:}
+%     \begin{itemize}
+%     \item {\color<1>{darkgreen}{vorhergesagte Higgs-Masse zu klein?}}
+%     \item bisher keine SUSY-Teilchen gefunden?
+%     \end{itemize}
+%     \column{0.5\textwidth}
+%   \end{columns}
+%     \visible<1>{
+%       \tikz[overlay,remember picture]
+%       \node[anchor=center] at ($(current page.center)+(+3,0)$) {
+%         \scalebox{2}{$m_h \le m_Z$}
+%       };
+%     }
+% \end{frame}
 
-\begin{frame}{Eigenschaften des MSSM}
-  \begin{columns}
-    \column{0.5\textwidth}
-    \emph{Vorteile:}
-    \begin{itemize}
-    \item Eichkopplungsvereinigung
-    \item korrekte Vorhersage von $g_\mu$
-    \item Enthält ein Dunkle Materie-Teilchen
-    \item Vorhersage der Masse des Higgs-Bosons
-    \end{itemize}
-    \emph{Probleme:}
-    \begin{itemize}
-    \item vorhergesagte Higgs-Masse zu klein?
-      $\rightarrow$ Kein Problem!
-    \item {\color<1>{darkgreen}{bisher keine SUSY-Teilchen gefunden?}}
-    \end{itemize}
-    \column{0.5\textwidth}
-  \end{columns}
-\end{frame}
+% \begin{frame}{Problem: vorhergesagte Higgs-Masse zu klein?}
+%   Vorhersage des MSSM:
+%   \begin{align*}
+%     % m_h^2 = m_Z^2 \cos^2(2\beta) \le m_Z^2
+%     m_h \le m_Z
+%   \end{align*}
+%   Aus den Messungen am LEP und LHC wissen wir jedoch:
+%   \begin{align*}
+%     M_h &\approx 125.10 \GeV \\
+%     M_Z &\approx 91.2 \GeV
+%   \end{align*}
+%   $\Rightarrow$ Das MSSM sagt nur dann die korrekte Higgs-Masse
+%   vorher, wenn es \emph{große Quantenkorrekturen} zwischen $M_h$
+%   und $m_h$ gibt!
+%   \begin{align*}
+%     M_h^2 &= m_h^2 + \Delta m_h^2
+%     & &\Rightarrow &
+%     \Delta m_h^2 &\geq (85\eh{GeV})^2
+%   \end{align*}
+% \end{frame}
 
-\begin{frame}{Problem: bisher keine SUSY-Teilchen gefunden}
-  \begin{center}
-    \includegraphics[width=\textwidth]{images/ATLAS_SUSY_Summary}
-  \end{center}
-\end{frame}
+% \begin{frame}{Eigenschaften des MSSM}
+%   \begin{columns}
+%     \column{0.5\textwidth}
+%     \emph{Vorteile:}
+%     \begin{itemize}
+%     \item Eichkopplungsvereinigung
+%     \item korrekte Vorhersage von $g_\mu$
+%     \item Enthält ein Dunkle Materie-Teilchen
+%     \item Vorhersage der Masse des Higgs-Bosons
+%     \end{itemize}
+%     \emph{Probleme:}
+%     \begin{itemize}
+%     \item vorhergesagte Higgs-Masse zu klein?
+%       $\rightarrow$ Kein Problem!
+%     \item {\color<1>{darkgreen}{bisher keine SUSY-Teilchen gefunden?}}
+%     \end{itemize}
+%     \column{0.5\textwidth}
+%   \end{columns}
+% \end{frame}
 
-\subsection{Wie kann man das MSSM testen?}
+% \begin{frame}{Problem: bisher keine SUSY-Teilchen gefunden}
+%   \begin{center}
+%     \includegraphics[width=\textwidth]{images/ATLAS_SUSY_Summary}
+%   \end{center}
+% \end{frame}
 
-\begin{frame}{Wie kann man das MSSM testen?}
-  Sind die experimentellen Ausschlussgrenzen für SUSY-Teilchen kompatibel mit
-  der Notwendigkeit großer Quantenkorrekturen zur Higgs-Masse?\\[1em]
-  %
-  \emph{Vorgehen zur Untersuchung:}
+\begin{frame}{How can we test a SUSY model?}
+  \emph{Idea:}
   \begin{enumerate}
-  \item Berechne MSSM-Vorhersage von $M_h$ so präzise wie möglich:
+  \item Calculate $M_h$ as precisely as possible in the SUSY model:
   \begin{align*}
     M_h^2 &= m_h^2 + \Delta m_h^2
   \end{align*}
-  \item Einschränkung des Parameterraums des MSSM durch Forderung:
+  \item Constrain the parameter space by requiring:
     \begin{align*}
-      M_h \overset{!}{=} 125.10 \GeV \pm \delta M_h^{\text{exp}} \pm \delta M_h^{\text{theo}}
+      M_h \overset{!}{=} 125.09 \GeV \pm \Delta M_h^{\text{exp}} \pm \Delta M_h^{\text{theo}}
     \end{align*}
   \end{enumerate}
-  Experimentelle Unsicherheit:
+  \emph{Problem:} because of large loop corrections $\Delta m_h^2$:
   \begin{align*}
-    % \delta M_h^{\text{theo}} &\gtrsim 1\text{--}2\GeV \\
-    \delta M_h^{\text{exp}} &= 0.14\eh{GeV} \ \ \mycite{PDG-2019}
+    \Delta M_h^{\text{theo}} &\gtrsim (1\ldots 2)\eh{GeV} \quad \text{at least!} \\
+    \Delta M_h^{\text{exp}} &= 0.24\eh{GeV} \ \ \mycite{PDG-2017}
   \end{align*}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Präzise Vorhersage der Masse des Higgs-Bosons}
-
-\subsection{Endliche Schleifenordnung}
+\subsection{Fixed-order}
 
 \begin{frame}{Contents}
-  \tableofcontents[currentsection,currentsubsection]
+  \tableofcontents[currentsection,currentsubsection]  
 \end{frame}
+
+\subsection{EFT}
+\subsection{Hybrid}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Summary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Berechnung bis zu endlicher Schleifenordnung}
   \begin{center}
@@ -913,9 +1024,6 @@
   \end{center}
 \end{frame}
 
-
-\subsection{Effektive Feldtheorie}
-
 \begin{frame}{Contents}
   \tableofcontents[currentsection,currentsubsection]
 \end{frame}
@@ -1014,24 +1122,6 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Wo ist SUSY?}
-
-\begin{frame}{Contents}
-  \tableofcontents[currentsection]  
-\end{frame}
-
-\begin{frame}{Wo ist SUSY?}
-  \begin{center}
-    \includegraphics[width=0.49\textwidth]{plots/Where_is_SUSY/HeavySUSY}\hfill
-    \includegraphics[width=0.49\textwidth]{plots/Where_is_SUSY/SplitSUSY}
-  \end{center}
-  \raggedleft\mycite{1407.4081}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Zusammenfassung}
 
 \begin{frame}{Zusammenfassung}
   \emph{Supersymmetrie} ist eine interessante Erweiterung des
