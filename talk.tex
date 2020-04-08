@@ -645,9 +645,9 @@
   \begin{itemize}
   \item gauge coupling unification
   \item can correctly predict $(g-2)_\mu$
-  \item contains DM candidate
-  \item prediction of Higgs boson mass
+  \item may contain a DM candidate $\chi_0$
   \item may solve the hierarchy problem
+  \item ``predicts'' the Higgs boson mass
   \end{itemize}
   % \emph{Problems:}
   % \begin{itemize}
@@ -833,14 +833,415 @@
   \end{align*}
 \end{frame}
 
+\begin{frame}{Contents}
+  \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{Approaches to predict $M_h$}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.9]
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
+      \node at (2.5,7) {\emph{Fixed order}};
+      \draw[thick] (1,0)   rectangle node{SM}    (4,0.9);
+      \draw[thick] (1,1.1) rectangle node{MSSM}  (4,6);
+      \draw[<-, thick, red] (4.1,5) -- (4.5,5) node[right]{$M_h$};
+      \node at (7.5,7) {\emph{Effective Field Theory}};
+      \draw[thick] (6,0)   rectangle node{SM}    (9,0.9);
+      \draw[thick] (6,1.1) rectangle node{EFT}   (9,4.9);
+      \draw[thick] (6,5.1) rectangle node{MSSM}  (9,6);
+      \draw[<-, thick, red] (9.1,1.5) -- (9.5,1.5) node[right]{$M_h$};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+% Argumentation:
+
+% 1. classic approach: FO calculation -> large uncertainty due to
+% heavy particles. -> discuss recent status (3-loop) and uncertainty
+
 \subsection{Fixed-order}
+
+\begin{frame}{Contents}
+  \tableofcontents[currentsection,currentsubsection]
+\end{frame}
+
+\begin{frame}{Fixed-order calculation}
+  \emph{Input:} $\aem$, $\as$, $G_F$, $M_Z$, $M_t$, $m_b$, \ldots\\[2em]
+  \begin{center}
+    \begin{tikzpicture}[scale=0.9]
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
+      \draw[thick] (1,0)   rectangle node{SM}    (4,0.9);
+      \draw[thick] (1,1.1) rectangle node{MSSM}  (4,6);
+      \draw[<-, thick, red] (4.1,5) -- (4.5,5) node[right]{$M_h^2 = m_Z^2 c_{2\beta}^2 + (\Delta m_h^2)^{1L} + \cdots$};
+      \draw[<-, thick, darkgreen] (4.1,1) -- (4.5,1) node[right]{$y_f^\MSSM, g_i^\MSSM$};
+      \draw[<->, thick, blue] (4.2,1.2) -- node[right]{RG running} (4.2,4.8);
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Fixed loop order calculation}
+  Dominant contribution to $M_h$ at the 1-loop level:
+  \begin{align*}
+    (\Delta m_h^2)^{1L} &= -\Sigma_h^{1L}(p^2) + \frac{t_h^{1L}}{v} \\
+    &= \fmfvcenter{htop} + \fmfvcenter{hstop} + \fmfvcenter{hstopA} \\
+    &\phantom{={}} + \fmfvcenter{htoptad} + \fmfvcenter{hstoptad} \\
+    &\approx \frac{12 m_t^2 y_t^2}{(4\pi)^2} \left(
+      \ln\frac{\MS^2}{m_t^2}
+      + \frac{X_t^2}{\MS^2}
+      - \frac{X_t^4}{12 \MS^4}
+    \right) + O(p^2)
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Higgs mass at 1-loop level}
+  \begin{align*}
+    (\Delta m_h^2)^{1L} &\approx
+    \frac{12 m_t^2 y_t^2}{(4\pi)^2} \left(
+      \ln\frac{\MS^2}{m_t^2}
+      + \frac{X_t^2}{\MS^2}
+      - \frac{X_t^4}{12 \MS^4}
+    \right) + O(p^2)
+  \end{align*}
+  $X_t = A_t - \mu/t_\beta$ = stop mixing parameter,
+  $\MS = (m_Q)_{33} = (m_U)_{33}$
+  % 24 mt^4 / (16 Pi^2 v^2) (Log[MS^2/mt^2] + Xt^2/MS^2 - Xt^4/(12 MS^4))
+  \\[1em]
+  \emph{Observations:}
+  \begin{itemize}
+  \item logarithmically enhanced by $\MS / m_t$
+  \item maximal for $X_t \approx \sqrt{6} \MS$
+  \item high sensitivity on $m_t$, due to prefactor $m_t^2 y_t^2 = 2 m_t^4/v^2$
+  \item ambiguity of definition of $m_t$: pole mass or \DRbar\ mass? \\
+    $M_t \approx 173.3\eh{GeV}$, $m_t^{\DRbar} \approx 165\eh{GeV}$ \\
+    $\Rightarrow$ huge theoretical uncertainty!\\
+    $\Rightarrow$ 2-loop calculation needed to resolve this ambiguity
+  \item $M_h \approx 125\eh{GeV}$ requires $\MS \gtrsim 5\eh{TeV}$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Higgs mass at 2-loop level}
+  Known contributions: $O(\as (\at + \ab) + (\at+\ab)^2 + \atau^2)$
+  for $p^2 = 0$ \mycite{hep-ph/0105096, hep-ph/0112177}
+  \\[1em]
+  \includegraphics[width=0.6\textwidth]{images/atas}\\[1em]
+  \includegraphics[width=\textwidth]{images/atat}
+\end{frame}
+
+\begin{frame}{Higgs mass at 2-loop level}
+  \begin{align*}
+    (\Delta m_h^2)^{2L} &\approx
+    \frac{m_t^2 y_t^4}{(4\pi)^4} \left(
+      c_1 \ln^2\frac{\MS^2}{m_t^2}
+      + c_2 \ln\frac{\MS^2}{m_t^2}
+      + c_3
+    \right) \\
+    & +
+    \frac{m_t^2 y_t^2 g_3^2}{(4\pi)^4} \left(
+      c_4 \ln^2\frac{\MS^2}{m_t^2}
+      + c_5 \ln\frac{\MS^2}{m_t^2}
+      + c_6
+    \right)
+  \end{align*}
+  \emph{Observations:}
+  \begin{itemize}
+  \item logarithmically enhanced by $\MS / m_t$
+  \item still high sensitivity on $m_t$
+  \item ambiguity of definition of $m_t$ is resolved \ok
+  \item ambiguity of definition of $\as$: $\as^\SM(M_Z)$, $\as^\MSSM(\MS)$, \ldots ? \\
+    $\Rightarrow$ 3-loop calculation needed to resolve this ambiguity
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Higgs mass at 3-loop level}
+  Known contributions: $O(\at\as^2)$ for $p^2 = 0$ \mycite{1005.5709}
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{images/h3l-atasas}
+  \end{center}
+  \begin{align*}
+    (\Delta m_h^2)^{3L} &\approx
+    \frac{m_t^2 y_t^2 g_3^4}{(4\pi)^6} \left(
+      c_7 \ln^3\frac{\MS^2}{m_t^2}
+      + c_8 \ln^2\frac{\MS^2}{m_t^2}
+      + c_9 \ln\frac{\MS^2}{m_t^2}
+      + c_{10}
+    \right)
+  \end{align*}
+  \emph{Observations:}
+  \begin{itemize}
+  \item logarithmically enhanced by $\MS / m_t$
+  \item still high sensitivity on $m_t$
+  \item ambiguity of definition of $m_t$ is resolved \ok
+  \item ambiguity of definition of $\as$ is resolved \ok
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Summary of fixed loop order calculation}
+  Typical order of magnitude of loop contributions (depends on
+  parameter scenario):
+  \begin{align*}
+    M_h &= m_h + \Delta m_h^{1L} + \Delta m_h^{2L} + \Delta m_h^{3L} + \cdots \\
+    &\approx [91 + O(20\ldots 30) + O(2\ldots 4) + O(1\ldots 2)] \eh{GeV}
+  \end{align*}
+  \emph{Advantages:}
+  \begin{itemize}
+  \item includes logarithmic and non-logarithmic contributions
+    % and suppressed terms of
+    % $O(v^2/\MS^2)$ at fixed loop order
+  \item precise prediction if $\MS \sim m_t$
+  \end{itemize}
+  \emph{Problem:}
+  \begin{itemize}
+  \item large logarithmic corrections, if $\MS \gg m_t$ \\
+    $\Rightarrow$ slow convergence of perturbation series \\
+    $\Rightarrow$ large theoretical uncertainty, ($1$--$2\eh{GeV}$, or
+    more)
+    % \\
+    % recall: $M_h^{\text{exp}} = (125.09 \pm 0.24)\eh{GeV}$
+  \end{itemize}
+  % \emph{Note:} 3-loop MSSM corrections available in \Himalaya \mycite{1708.05720}
+\end{frame}
+
+\begin{frame}{Uncertainty estimate of the fixed-order \DRbarp\ calculation}
+  \begin{center}
+    \includegraphics[width=0.49\textwidth]{{{plots/SOFTSUSY/SS_TB-20_Xt--sqrt6}}}\hfill
+    \includegraphics[width=0.49\textwidth]{{{plots/SOFTSUSY/SS_TB-20_Xt--sqrt6_individual}}}
+  \end{center}
+  \mycite{1804.09410}
+\end{frame}
+
+%%% EFT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% colored SUSY particles are probably heavy -> this scenario is
+% possibly most realistic
+
+% 2. EFT approach: since colored SUSY particles are heavy -> construct
+% different EFTs: SM, SM+split, 2HDM, 2HDM+split
+%
+% a) simplest option: SM-like:
+% - pure EFT calculation is possible -> compare to FO!
+% - hybrid approach is possible (Flexibleefthiggs or FH-approach)
+%   (can be fully automatized due to its simplicity)
+%
+% b) advanced options: 2HDM-like
+% -> show some plots with uncertainty est. from Bagnaschi/Weiglein/Voigt
+
+% Conclusion: In the MSSM EFT calculation is most precise above ~ 1TeV
+% Beyond MSSM: not so clear
+% Flexibleefthiggs:  very precise and easy to automate
+% UOLEA: only 1-loop, but incl. h.o. operators, easy to automate
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Effective Field Theory}
+
+\begin{frame}{Contents}
+  \tableofcontents[currentsection,currentsubsection]
+\end{frame}
+
+\begin{frame}{Higgs mass calculation in an EFT}
+  \emph{Idea:} Decouple SUSY particles at $\MS$ (expand in $v^2/\MS^2$) \\
+  $\Rightarrow$ $\lambda(\MS)$ is fixed by the MSSM \\
+  % $\Rightarrow$ effectively: separation of scales $\MS$ and $M_t$.
+  \begin{center}
+    \begin{tikzpicture}[scale=0.9]
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
+      \draw[thick] (1,0)   rectangle node{SM(5)} (4,0.9);
+      \draw[thick] (1,1.1) rectangle node{SM}    (4,4.9);
+      \draw[thick] (1,5.1) rectangle node{MSSM}  (4,6);
+      \draw[<-, thick, darkgreen] (4.1,5) -- (4.5,5) node[right]{$\lambda(\MS) = \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta} + \cdots$};
+      \draw[<-, thick, red] (4.1,1) -- (4.5,1) node[right]{$(M_h^\SM)^2 = \lambda(M_t) v^2 + (\Delta m_h^2)^{(1L)} + \cdots$};
+      \draw[<->, thick, blue] (4.2,1.2) -- node[right]{RG running} (4.2,4.8);
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+% \begin{frame}{EFT avoids large logarithmic corrections}
+%   \begin{enumerate}
+%   \item Calculate $\lambda$ from the condition ($p^2 = v^2 = 0$):
+%     \begin{align*}
+%       \partial_{p^2}^{(k)}\Gamma_{h,\ldots,h}^{\MSSM,(n)}
+%       = \partial_{p^2}^{(k)}\Gamma_{h,\ldots,h}^{\SM,(n)}
+%     \end{align*}
+%     $\Rightarrow$
+%     \begin{align*}
+%       \lambda(Q) &= \frac{1}{4}\left[g_Y^{2} + g_2^2\right] c^2_{2\beta}
+%                    + \Delta \lambda^{1L} + \Delta \lambda^{2L} + \cdots \\
+%                  &= \frac{1}{4}\left[g_Y^{2} + g_2^2\right] c^2_{2\beta}
+%       + \frac{12 m_t^2 y_t^2}{(4\pi)^2 v^2} \left[
+%         \ln\frac{\MS^2}{Q^2} + \frac{X_t^2}{\MS^2} - \frac{X_t^4}{12 \MS^4}
+%       \right]
+%       + \cdots
+%     \end{align*}
+%     $\Rightarrow$ \textcolor{darkgreen}{no large logs for $Q\approx\MS$}
+%   \item RG running of $\lambda$ from $Q = \MS$ $\rightarrow M_t$.\\
+%     $\Rightarrow$ \textcolor{darkgreen}{logs are resummed to all orders}
+%   \item Calculate $M_h$ in the SM at $Q = M_t$:
+%     \begin{align*}
+%       (M_h^\SM)^2 &= \lambda(Q) v^2 + \frac{12 m_t^2 y_t^2}{(4\pi)^2 v^2} \ln\frac{Q^2}{m_t^2} + \cdots
+%     \end{align*}
+%     $\Rightarrow$ \textcolor{darkgreen}{no large logs for $Q\approx M_t$}
+%   \end{enumerate}
+% \end{frame}
+
+\begin{frame}{Summary of EFT approach}
+  Typical order of magnitude of loop contributions (depends on
+  parameter scenario, here $X_t = 0$, $\MS = 20\eh{TeV}$):
+  \begin{align*}
+    M_h &= m_h + \Delta m_h^{1L} + \Delta m_h^{2L} + \Delta m_h^{3L} + \cdots \\
+    % &= \sqrt{\lambda(M_t)} v + \Delta m_h^{1L} + \Delta m_h^{2L} + \cdots \\
+    &\approx [O(124) + O(0.5\ldots 1) + O(0.1\ldots 0.2) + O(0.02\ldots 0.04)] \eh{GeV}
+    % &= \sqrt{\lambda(\MS)} v + \text{logs} + \Delta m_h^{1L} + \Delta m_h^{2L} + \cdots \\
+    % &\approx [O(84) + O(40) + O(0.5\ldots 1) + O(0.1\ldots 0.2)] \eh{GeV}
+  \end{align*}
+  \emph{Advantages:}
+  \begin{itemize}
+  \item large logarithmic fixed order loop corrections are avoided
+  \item large logarithms $\propto\ln(M_S/M_t)$ are resummed to all orders
+  \end{itemize}
+  \emph{Disadvantage:} terms of $O(v^2/M_S^2)$ are neglected \\
+  $\Rightarrow$ imprecise when $v \sim \MS$ \\
+  $\Rightarrow$ large theoretical uncertainty when $v \sim \MS$
+\end{frame}
+
+\begin{frame}{Comparison of fixed-order and EFT calculation}
+  \begin{center}
+    \includegraphics[width=0.49\textwidth]{plots/SOFTSUSY/Mh_MS_TB-20_Xt--sqrt6}\hfill
+    \includegraphics[width=0.49\textwidth]{plots/SOFTSUSY/HSSUSY_TB-20_Xt--sqrt6_individual}
+  \end{center}
+  \begin{center}
+    $\DMh \overset{!}{=} \DMhHSSUSY$\\[0.5em]
+    $\Rightarrow$ $\MS^{\text{equal}} = 1.0$--$1.3\TeV$ for
+    small/large $\tan\beta$ and/or $X_t$
+  \end{center}
+  \mycite{1804.09410}
+\end{frame}
+
+\begin{frame}{Summary of fixed-order and EFT approaches}
+  \begin{center}
+    \begin{tabular}{lcc}
+      \toprule
+                  & low $\MS$ & high $\MS$ \\
+                  & $\MS \lesssim 1\eh{TeV}$ & $\MS \gtrsim 1\eh{TeV}$ \\
+      \midrule
+      fixed-order & \ok       & \notok     \\
+      EFT         & \notok    & \ok        \\
+      ? mixed     & \ok       & \ok        \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \vspace{2em}
+  Q: Can the fixed-order and EFT approaches be combined? \\[1em]
+  A: Yes!  \mycite{1312.4937, 1609.00371, 1710.03760}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Hybrid}
 
 \begin{frame}{Contents}
   \tableofcontents[currentsection,currentsubsection]  
 \end{frame}
 
-\subsection{EFT}
-\subsection{Hybrid}
+\begin{frame}{Hybrid fixed-order/EFT calculation}
+  \emph{Goal:} resum large logarithms \emph{and} include suppressed
+  $O(v^2/\MS^2)$ terms
+  \\[2em]
+  \emph{Idea I:} (``FeynHiggs approach'' \mycite{1312.4937, 1706.00346, 1805.00867})\\
+  Replace logs from fixed-order calculation by resummed logs:
+  \begin{align*}
+    M_h^2 = (M_h^2)_{\text{fixed-order}} - (M_h^2)_{\text{logs}} + (M_h^2)_{\text{resummed logs}}
+  \end{align*}
+  \emph{Pro:}
+  \begin{itemize}
+  \item[\ok] approach applicable to any BSM model
+  \item[\ok] any EFT can be used
+  \end{itemize}
+  \emph{Contra:}
+  \begin{itemize}
+  \item[\notok] requires knowledge of fixed-order and EFT expressions
+  \item[\notok] care must be taken to avoid double counting
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Hybrid fixed-order/EFT calculation}
+  % \emph{Goal:} resum large logarithms \emph{and} include suppressed
+  % $O(v^2/\MS^2)$ terms
+  % \\[2em]
+  \emph{Idea II:} (``FlexibleEFTHiggs'' \mycite{1609.00371,
+    1710.03760})\\
+  Incorporate $O(v^2/\MS^2)$ terms into $\lambda$ by using the
+  matching condition
+  \begin{align*}
+    (M_h^2)_{\SM} &\overset{!}{=} (M_h^2)_{\BSM} \qquad \text{at } Q = \MS \\
+    \lambda(\MS) v^2 + (\Delta m_h^2)_{\SM} &= (M_h^2)_{\BSM}
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    \lambda(\MS) = \frac{1}{v^2}\left[(M_h^2)_{\BSM} - (\Delta m_h^2)_{\SM}\right]
+  \end{align*}
+  Continue as in in the EFT calculation \ldots
+  % \emph{Pro:}
+  % \begin{itemize}
+  % \item[\ok] approach applicable to any BSM model
+  %   % easy to apply to any SM extensison
+  % \item[\ok] easy to automate
+  %   (only fixed-order expressions required)
+  % \end{itemize}
+  % \emph{Contra:}
+  % \begin{itemize}
+  % \item[\notok] difficult to extend to other EFTs beyond the SM (2HDM,
+  %   \ldots)
+  % \item[\meh] tricky to reach 2-loop accuracy\\
+  %   (requires careful treatment of parameter matching)
+  % \end{itemize}
+\end{frame}
+
+\begin{frame}{FlexibleEFTHiggs approach}
+  Continue as in the EFT calculation:
+  \begin{center}
+    \begin{tikzpicture}[scale=0.9]
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
+      \draw[thick] (1,0)   rectangle node{SM(5)} (4,0.9);
+      \draw[thick] (1,1.1) rectangle node{SM}    (4,4.9);
+      \draw[thick] (1,5.1) rectangle node{BSM}  (4,6);
+      \draw[<-, thick, darkgreen] (4.1,5) -- (4.5,5) node[right]{$\lambda(\MS) = \frac{1}{v^2}\left[(M_h^2)_{\BSM} - (\Delta m_h^2)_{\SM}\right]$};
+      \draw[<-, thick, red] (4.1,1) -- (4.5,1) node[right]{$(M_h^\SM)^2 = \lambda(M_t) v^2 + (\Delta m_h^2)_{\SM} + \cdots$};
+      \draw[<->, thick, blue] (4.2,1.2) -- node[right]{RG running} (4.2,4.8);
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}{FlexibleEFTHiggs approach}
+  Matching condition:
+  \begin{align*}
+    (M_h^2)_{\SM} &\overset{!}{=} (M_h^2)_{\BSM}
+  \end{align*}
+  \emph{Pro:}
+  \begin{itemize}
+  \item[\ok] approach applicable to any BSM model
+    % easy to apply to any SM extensison
+  \item[\ok] very simple $\rightarrow$ easy to automate
+  \item[\ok] only BSM fixed-order expressions required
+  \end{itemize}
+  \emph{Contra:}
+  \begin{itemize}
+  \item[\notok] difficult to extend to other EFTs beyond the SM (2HDM,
+    \ldots)
+  \item[\meh] tricky to reach 2-loop accuracy\\
+    (requires careful treatment of parameter matching)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Comparison of the three approaches in the MSSM}
+  % Currently NLO + NLL is available \mycite{1609.00371, 1710.03760}.\\
+  % Extension to NNLO + NNLL is work in progress:
+  % \begin{center}
+  %   \includegraphics[width=0.49\textwidth]{{{plots/FlexibleEFTHiggs-2L/Mh_MS_TB-20_Xt-0}}}
+  %   \hfill
+  %   \includegraphics[width=0.49\textwidth]{{{plots/FlexibleEFTHiggs-2L/Mh_MS_TB-20_Xt--sqrt6}}}
+  % \end{center}
+  Preliminary work by Thomas Kwasnitza, Dominik Stöckinger, AV
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
