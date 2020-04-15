@@ -870,7 +870,7 @@
 \end{frame}
 
 \begin{frame}{Fixed-order calculation}
-  \emph{Input:} $\aem$, $\as$, $G_F$, $M_Z$, $M_t$, $m_b$, \ldots\\[2em]
+  \emph{Input:} $\aem(M_Z)$, $\as(M_Z)$, $G_F$, $M_Z$, $M_t$, $m_b(m_b)$, \ldots\\[2em]
   \begin{center}
     \begin{tikzpicture}[scale=0.9]
       \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
@@ -988,14 +988,13 @@
   \end{align*}
   \emph{Advantages:}
   \begin{itemize}
-  \item includes logarithmic and non-logarithmic contributions
-    % and suppressed terms of
-    % $O(v^2/\MS^2)$ at fixed loop order
+  \item includes logarithmic, non-logarithmic and suppressed terms of
+    $O(v^2/\MS^2)$ at fixed loop order
   \item precise prediction if $\MS \sim m_t$
   \end{itemize}
   \emph{Problem:}
   \begin{itemize}
-  \item large logarithmic corrections, if $\MS \gg m_t$ \\
+  \item large logarithmic corrections if $\MS \gg m_t$ \\
     $\Rightarrow$ slow convergence of perturbation series \\
     $\Rightarrow$ large theoretical uncertainty, ($1$--$2\eh{GeV}$, or
     more)
