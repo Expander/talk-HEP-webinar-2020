@@ -1128,13 +1128,13 @@
       \midrule
       fixed-order & \ok       & \notok     \\
       EFT         & \notok    & \ok        \\
-      ? mixed     & \ok       & \ok        \\
+      ? hybrid    & \ok       & \ok        \\
       \bottomrule
     \end{tabular}
   \end{center}
   \vspace{2em}
   Q: Can the fixed-order and EFT approaches be combined? \\[1em]
-  A: Yes!  \mycite{1312.4937, 1609.00371, 1710.03760}
+  A: Yes!  \mycite{1312.4937, 1609.00371, 1710.03760, 1910.03595, 2003.04639}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1145,11 +1145,11 @@
   \tableofcontents[currentsection,currentsubsection]  
 \end{frame}
 
-\begin{frame}{Hybrid fixed-order/EFT calculation}
+\begin{frame}{Hybrid calculation -- FeynHiggs approach}
   \emph{Goal:} resum large logarithms \emph{and} include suppressed
   $O(v^2/\MS^2)$ terms
   \\[2em]
-  \emph{Idea I:} (``FeynHiggs approach'' \mycite{1312.4937, 1706.00346, 1805.00867})\\
+  \emph{Idea I:} (``FeynHiggs approach'' \mycite{1312.4937, 1706.00346, 1805.00867, 1910.03595})\\
   Replace logs from fixed-order calculation by resummed logs:
   \begin{align*}
     M_h^2 = (M_h^2)_{\text{fixed-order}} - (M_h^2)_{\text{logs}} + (M_h^2)_{\text{resummed logs}}
@@ -1166,12 +1166,20 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Hybrid fixed-order/EFT calculation}
+\begin{frame}{FeynHiggs approach in FlexibleSUSY at 3-loop}
+  \begin{center}
+    \includegraphics[width=0.49\textwidth]{plots/Mh3l-match-really/scan_Mh_MS_TB-20_Xt--sqrt6_mixed_3L}\hfill
+    \includegraphics[width=0.49\textwidth]{plots/Mh3l-match-really/scan_Mh_MS_TB-20_Xt--sqrt6_mixed_3L_diff}
+  \end{center}
+  \mycite{1910.03595}
+\end{frame}
+
+\begin{frame}{Hybrid calculation -- FlexibleEFTHiggs}
   % \emph{Goal:} resum large logarithms \emph{and} include suppressed
   % $O(v^2/\MS^2)$ terms
   % \\[2em]
   \emph{Idea II:} (``FlexibleEFTHiggs'' \mycite{1609.00371,
-    1710.03760})\\
+    1710.03760, 2003.04639})\\
   Incorporate $O(v^2/\MS^2)$ terms into $\lambda$ by using the
   matching condition
   \begin{align*}
