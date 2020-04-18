@@ -1053,9 +1053,41 @@
       \draw[thick] (1,5.1) rectangle node{MSSM}  (4,6);
       \draw[<-, thick, darkgreen] (4.1,5) -- (4.5,5) node[right]{$\lambda(\MS) = \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta} + \cdots$};
       \draw[<-, thick, red] (4.1,1) -- (4.5,1) node[right]{$(M_h^\SM)^2 = \lambda(M_t) v^2 + (\Delta m_h^2)^{(1L)} + \cdots$};
-      \draw[<->, thick, blue] (4.2,1.2) -- node[right]{RG running} (4.2,4.8);
+      \draw[<->, thick, blue] (4.2,1.2) -- node[right, align=center]{RG running, i.e.\,\\
+        numeric solution of\\[0.5em]
+        $\displaystyle\frac{\dd\lambda}{\dd L} = \beta_\lambda$} (4.2,4.8);
     \end{tikzpicture}
   \end{center}
+\end{frame}
+
+\begin{frame}{Larg log resummation in an EFT}
+  System of coupled DEQs:
+  \begin{align*}
+    \frac{\dd\lambda}{\dd L} &= \beta_\lambda \approx -12 \kappa y_t^4 , &
+    \frac{\dd y_t}{\dd L} &\approx -8 \kappa y_t g_3^2 , &
+    \frac{\dd g_3}{\dd L} &\approx -7 \kappa g_3^3
+  \end{align*}
+  Solution:
+  \begin{align*}
+    \lambda(M_t) &= \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta} % \lambda(\MS)
+                   - \frac{2 y_t^4}{3 g_3^2} \left[
+                   \left( 1 + 14 g_3^2 \textcolor{red}{\kappa L} \right)^{-9/7} - 1
+    \right]
+  \end{align*}
+  Insert in $M_h^2 = \lambda(M_t) v^2$:
+  \begin{align*}
+    M_h^2 &= m_Z^2 c^2_{2\beta}
+            - \frac{2 y_t^4 v^2}{3 g_3^2} \left[
+            \left( 1 + 14 g_3^2 \textcolor{red}{\kappa L} \right)^{-9/7} - 1
+            \right]\\
+          &= m_Z^2 c^2_{2\beta}
+            + 12 y_t^4 v^2 \left[
+            \textcolor{red}{\kappa L}
+            - 16 g_3^2 \textcolor{red}{\kappa^2 L^2}
+            + \frac{736}{3} g_3^4 \textcolor{red}{\kappa^3 L^3} + O(\textcolor{red}{\kappa^4L^4})
+            \right]
+  \end{align*}
+  $\Rightarrow$ $M_h$ contains \emph{infinite series} if $\textcolor{red}{(\kappa L)^n}$ terms
 \end{frame}
 
 % \begin{frame}{EFT avoids large logarithmic corrections}
@@ -1325,55 +1357,6 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[noframenumbering]{Berechnung in einer Effektiven Feldtheorie}
-  \emph{Idee:} SUSY-Teilchen entkoppeln an Energieskala $\MS$ \\
-  $\Rightarrow$ SM ist ``Effektive Theorie'' (ohne SUSY-Teilchen)\\
-  $\Rightarrow$ effektiver SM-Parameter $\lambda(\MS)$ wird vorhergesagt  \\
-  % $\Rightarrow$ effectively: separation of scales $\MS$ and $M_t$.
-  \begin{center}
-    \begin{tikzpicture}[scale=0.9]
-      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6) node[left] {$E$};
-      \draw[thick] (1,0)   rectangle node{SM}    (4,4.9);
-      \draw[thick] (1,5.1) rectangle node{MSSM}  (4,6);
-      \draw[<-, thick, blue] (4.1,5) -- (4.5,5) node[right]{$\lambda(\MS) = \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta}$};
-      \draw[<-, thick, blue] (4.1,1) -- (4.5,1) node[right]{$M_h^2 = \lambda(M_t) v^2$};
-      \draw[<-, thick, red] (4.2,1.2) -- node[right, align=center]{Renormierungsgruppenlaufen,\\
-        d.h.\ numerisches Lösen von\\[0.5em]
-        $\displaystyle\frac{\dd\lambda}{\dd L} = \beta_\lambda$} (4.2,4.8);
-    \end{tikzpicture}
-  \end{center}
-\end{frame}
-
-\begin{frame}[noframenumbering]{EFT enthält unendliche Reihe von $(\kappa L)^n$-Termen}
-  System gekoppelter DGLs:
-  \begin{align*}
-    \frac{\dd\lambda}{\dd L} &= \beta_\lambda \approx -12 \kappa y_t^4 , &
-    \frac{\dd y_t}{\dd L} &\approx -8 \kappa y_t g_3^2 , &
-    \frac{\dd g_3}{\dd L} &\approx -7 \kappa g_3^3
-  \end{align*}
-  Lösung:
-  \begin{align*}
-    \lambda(M_t) &= \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta} % \lambda(\MS)
-                   - \frac{2 y_t^4}{3 g_3^2} \left[
-                   \left( 1 + 14 g_3^2 \textcolor{red}{\kappa L} \right)^{-9/7} - 1
-    \right]
-  \end{align*}
-  Einsetzen in $M_h^2 = \lambda(M_t) v^2$ ergibt:
-  \begin{align*}
-    M_h^2 &= m_Z^2 c^2_{2\beta}
-            - \frac{2 y_t^4 v^2}{3 g_3^2} \left[
-            \left( 1 + 14 g_3^2 \textcolor{red}{\kappa L} \right)^{-9/7} - 1
-            \right]\\
-          &= m_Z^2 c^2_{2\beta}
-            + 12 y_t^4 v^2 \left[
-            \textcolor{red}{\kappa L}
-            - 16 g_3^2 \textcolor{red}{\kappa^2 L^2}
-            + \frac{736}{3} g_3^4 \textcolor{red}{\kappa^3 L^3} + O(\textcolor{red}{\kappa^4L^4})
-            \right]
-  \end{align*}
-  $\Rightarrow$ $M_h$ enthält \emph{unendliche Reihe} von $\textcolor{red}{(\kappa L)^n}$-Termen
-\end{frame}
 
 \begin{frame}[noframenumbering]{Eigenschaften der EFT-Rechnung}
   Typische Größenordnung der Quantenkorrekturen in einer EFT-Rechnung:
