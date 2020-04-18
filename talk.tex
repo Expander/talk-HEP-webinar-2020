@@ -1340,7 +1340,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Improvements: $x_t$ resummation}
+\section{$x_t$ resummation}
+\begin{frame}{Contents}
+  \tableofcontents[currentsection,currentsubsection]  
+\end{frame}
+
+\begin{frame}{Further improvements: $x_t$ resummation}
   ``With large stop mixing comes large uncertainty.'' [P.\ Slavich].\\[1em]
   $\DMh$ maximal when $x_t \equiv X_t/\MS \approx \pm \sqrt{6}$:
   \begin{center}
@@ -1354,10 +1359,99 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{Recap: $\tan\beta$ resummation in $m_b$}
+  Relation between running $m_b$ in EFT and BSM model:
+  \begin{align*}
+    m_b^{\EFT} = m_b (1 + \Delta m_b)
+  \end{align*}
+  where $\Delta m_b$ is expressed in terms of BSM parameters.\\[1em]
+  Theorem [hep-ph/9912516]:
+  \begin{center}
+    \textit{There are no contributions to $\Delta m_b$ of
+      $O((\as\tan\beta)^n)$ for $n\ge 2$.}
+  \end{center}
+  $\Rightarrow$ All higher-order BSM contributions in $m_b$ of
+  $O((\as\tan\beta)^n)$ can be resummed by writing:
+  \begin{align*}
+    m_b = \frac{m_b^{\EFT}}{1 + \Delta m_b}
+    = m_b^{\EFT} \sum_{n=0}^\infty (-\Delta m_b)^n
+  \end{align*}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{$x_t$ resummation}
+  Relation between running $y_t$ in EFT and BSM model:
+  \begin{align*}
+    y_t^{\EFT} = y_t s_\beta + \Delta y_t
+  \end{align*}
+  where $\Delta y_t$ is expressed in terms of BSM parameters.\\[1em]
+  Theorem [Kwasnitza, Stöckinger]:
+  \begin{center}
+    \textit{There are no unsuppressed contributions to $\Delta y_t$\\
+      of $O(\as^n x_t^{>1})$ for $n\ge 1$.}
+  \end{center}
+  $\Rightarrow$ All higher-order BSM contributions in $y_t$ of
+  $O(\as^n x_t^{>1})$ can be resummed by writing:
+  \begin{align*}
+    y_t = \frac{y_t^{\EFT}}{1 + \Delta y_t/(y_ts_\beta)}
+  \end{align*}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}{$x_t$ resummation}
+%   $\Rightarrow$ by expressing $M_h$ in terms of \emph{BSM parameters}
+%   ($y_t$, $m_b$, \ldots), certain higher-order contributions can be
+%   resummed to all orders.
+%   \begin{center}
+%     \includegraphics[width=0.49\textwidth]{{{plots/FlexibleEFTHiggs-3L/plot_xt_MS_3_tb20_compare_hybrids}}}\hfill
+%     \includegraphics[width=0.49\textwidth]{{{plots/FlexibleEFTHiggs-3L/plot_xt_MS_3_tb20_compare_hybrids_diff}}}
+%   \end{center}
+%   \mycite{2003.04639}
+% \end{frame}
+
+\begin{frame}{$x_t$ resummation}
+  $\Rightarrow$ by expressing $M_h$ in terms of \emph{BSM parameters}
+  ($y_t$, $m_b$, \ldots), certain higher-order contributions can be
+  resummed to all orders.
+  \begin{center}
+    \includegraphics[width=0.49\textwidth]{{{plots/FlexibleEFTHiggs-3L/plot_MS_xt_sqrt6_tb20_compare_hybrids}}}\hfill
+    \includegraphics[width=0.49\textwidth]{{{plots/FlexibleEFTHiggs-3L/plot_MS_xt_sqrt6_tb20_compare_hybrids_diff}}}
+  \end{center}
+  \mycite{2003.04639}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Summary}
 
-\begin{frame}{Summary}
-  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[noframenumbering]{Summary}
+  \emph{Supersymmetrie} ist eine interessante Erweiterung des
+  Standardmodells.  Bietet Erklärungen für Dunkle Materie,
+  $g_\mu$, uvm.
+  \\[1em]
+  \emph{Präzise Vorhersage der Masse des Higgs-Bosons} erlaubt
+  Einschränkung des Parameterraums des MSSM.
+  \\[1em]
+  \emph{Stopmassen} $\MS \gtrsim 2\TeV$ im MSSM nötig für korrekte
+  Vorhersage von $M_h = 125.10\GeV$ $\rightarrow$ Kompatible mit LHC-Ergebnissen.
+  \\[1em]
+  \emph{Effektive Feldtheorie} ist nötig um präzise Vorhersagen zu
+  erhalten, da unendliche Reihe großer Logarithmen aufsummiert
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[noframenumbering]{Outlook}
+  \begin{center}
+    \LARGE Large zoo of SUSY models\\ $\Rightarrow$ automation important!
+  \end{center}
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{images/FS.png}
+  \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1391,32 +1485,6 @@
   \item unpräzise wenn  $\MS \lesssim 0.5\TeV$
     (ist irrelevant)
   \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[noframenumbering]{Zusammenfassung}
-  \emph{Supersymmetrie} ist eine interessante Erweiterung des
-  Standardmodells.  Bietet Erklärungen für Dunkle Materie,
-  $g_\mu$, uvm.
-  \\[1em]
-  \emph{Präzise Vorhersage der Masse des Higgs-Bosons} erlaubt
-  Einschränkung des Parameterraums des MSSM.
-  \\[1em]
-  \emph{Stopmassen} $\MS \gtrsim 2\TeV$ im MSSM nötig für korrekte
-  Vorhersage von $M_h = 125.10\GeV$ $\rightarrow$ Kompatible mit LHC-Ergebnissen.
-  \\[1em]
-  \emph{Effektive Feldtheorie} ist nötig um präzise Vorhersagen zu
-  erhalten, da unendliche Reihe großer Logarithmen aufsummiert
-\end{frame}
-
-\begin{frame}[noframenumbering]{Ausblick}
-  \begin{center}
-    \LARGE Riesiger Zoo an SUSY-Modellen\\ $\Rightarrow$ Automatisierung nötig!
-  \end{center}
-  \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/FS.png}
-  \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
