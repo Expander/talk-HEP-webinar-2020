@@ -1222,6 +1222,42 @@
   \end{center}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Equivalence FlexibleEFTHiggs $\rightarrow$ EFT for $v^2 \ll M_S^2$}
+  \begin{align*}
+    \lambda(\MS) = \frac{1}{v^2}\left[(M_h^2)_{\MSSM} - (\Delta m_h^2)_{\SM}\right]
+  \end{align*}
+  where
+  \begin{align*}
+    (\Delta m_h^2)_{\SM} ={}& - {\color{red}\Sigma^{\SM}_h} - {\color{red}6\kappa y_t^2 A_0(m_t)}\\
+    (M_h^2)_{\MSSM} ={}& m_Z^2 c^2_{2\alpha} + \Big[ - {\color{red}\Sigma_h^\SM}
+      - {\color{red} 6 \kappa y_t^2 A_0(m_t)} \Big] \; \frac{c^2_\alpha}{s^2_\beta} \\
+    &- 6 \kappa y_t^4 v^2 \frac{c^2_\alpha}{s^2_\beta} B_0(\MS,\MS)
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Equivalence FlexibleEFTHiggs $\rightarrow$ EFT for $v^2 \ll M_S^2$}
+  \begin{align*}
+    \lambda(\MS) ={}& \frac{1}{v^2}\left[(M_h^2)_{\MSSM} - (\Delta m_h^2)_{\SM}\right] \\
+    ={}& \frac{m_Z^2}{v^2} c^2_{2\alpha}
+    + \frac{1}{v^2} \Big[ - {\color{red}\Sigma_h^\SM}
+    - {\color{red} 6 \kappa y_t^2 A_0(m_t)} \Big] \; \Big(\frac{c^2_\alpha}{s^2_\beta} - 1 \Big) \\
+    &- 6 \kappa y_t^4 \frac{c^2_\alpha}{s^2_\beta} B_0(\MS,\MS)
+  \end{align*}
+  In the limit $v^2 \ll M_S^2$: $c_\alpha^2 \to s_\beta^2$, $c_{2\alpha}^2 \rightarrow c_{2\beta}^2$
+  $\Rightarrow$
+  \begin{align*}
+    \lambda(\MS) ={}& \frac{1}{4} (g_Y^2 + g_2^2) c_{2\beta}^2
+    - 6 \kappa y_t^4 B_0(\MS,\MS) \\
+    ={}& \frac{1}{4} (g_Y^2 + g_2^2) c_{2\beta}^2
+    - 6 \kappa y_t^4 \Big[
+    - \log\frac{\MS^2}{Q^2} + \textcolor{blue}{\frac{p^2}{6 \MS^2} + O\Big(\frac{p^4}{\MS^4}\Big)} \Big]
+  \end{align*}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}{FlexibleEFTHiggs approach}
   Matching condition:
   \begin{align*}
@@ -1229,10 +1265,13 @@
   \end{align*}
   \emph{Pro:}
   \begin{itemize}
+  \item[\ok] includes all power-suppressed terms at order
+    $(v^2/\MS^2)^\infty [c + \log^n(\MS/Q) + \log^n(\MS/m_t)]$
+  \item[\ok] resumms large non-suppressed logarithms $c \log^\infty(\MS/Q)$
   \item[\ok] approach applicable to any BSM model
     % easy to apply to any SM extensison
-  \item[\ok] very simple $\rightarrow$ easy to automate
-  \item[\ok] only BSM fixed-order expressions required
+  \item[\ok] only 1- and 2-point fixed-order expressions required
+   $\rightarrow$ easy to automate (e.g.\ SARAH/FlexibleSUSY)
   \end{itemize}
   \emph{Contra:}
   \begin{itemize}
@@ -1254,12 +1293,17 @@
   in collaboration with Thomas Kwasnitza and Dominik Stöckinger
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}{FlexibleEFTHiggs approach}
   \begin{center}
     \includegraphics[width=0.49\textwidth]{{{plots/FlexibleEFTHiggs-3L/uncer_2panel_ms_scan_xt-sqrt6_tb20}}}\hfill
     \includegraphics[width=0.49\textwidth]{{{plots/FlexibleEFTHiggs-3L/uncer_2panel_xt_scan_ms3_tb20}}}
   \end{center}
-  \mycite{2003.04639}
+  \begin{raggedright}
+    \mycite{2003.04639}
+  \end{raggedright}\\[1em]
+  Theory uncertainty $\DMh \lesssim 1\GeV$ in relevant degenerate SUSY scenarios.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
