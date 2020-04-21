@@ -15,7 +15,7 @@
 \DeclareGraphicsExtensions{.pdf}
 \usepackage{amsmath,amssymb,amstext,amsfonts} % mathrsfs
 \usepackage{array,booktabs,tabularx}
-\usepackage{tikz,tikz-uml,pgf-pie}
+\usepackage{tikz,tikz-uml,pgf-pie,tikzsymbols}
 \usetikzlibrary{shapes,calc,arrows,positioning}
 \tikzstyle{block} = [rectangle, draw, text width=10em, text centered, minimum height=2em]
 \tikzstyle{arrow} = [draw, -latex, thick]
@@ -488,7 +488,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{BSM Phenomenology with FlexibleSUSY}
+\section{BSM phenomenology with FlexibleSUSY}
 
 \begin{frame}{Contents}
   \tableofcontents[currentsection]  
@@ -628,7 +628,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Higgs Mass Calculations in BSM Models}
+\section{Higgs mass calculations in BSM models}
 
 \begin{frame}{Contents}
   \tableofcontents[currentsection]  
@@ -656,23 +656,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Problem 1: no SUSY particles observed}
-  \begin{center}
-    \includegraphics[width=\textwidth]{images/ATLAS_SUSY_Summary}
-  \end{center}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Problem 2: Tree-level Higgs mass too small}
-  (minimal) SUSY \emph{predicts} at tree-level:
+\begin{frame}{Problem: Is the predicted Higgs mass too small?}
+  MSSM \emph{predicts} at tree-level:
   \begin{align*}
     m_h = m_Z |\cos 2\alpha| \le m_Z
   \end{align*}
-  But from experiment we know:
+  But from experiment we know [PDG]:
   \begin{align*}
-    M_h &\approx 125.09 \GeV \\
-    M_Z &\approx 91.2 \GeV
+    M_h &= (125.10 \pm 0.14) \GeV \\
+    M_Z &= (91.1876 \pm 0.0021) \GeV
   \end{align*}
   $\Rightarrow$ \emph{large loop corrections} required!
   \begin{align*}
@@ -684,7 +676,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{How can we test a SUSY model?}
+\begin{frame}{Use the Higgs mass to put constraints on a SUSY model}
   \emph{Idea:}
   \begin{enumerate}
   \item Calculate $M_h$ as precisely as possible in the SUSY model:
@@ -693,58 +685,57 @@
   \end{align*}
   \item Constrain the parameter space by requiring:
     \begin{align*}
-      M_h \overset{!}{=} 125.09 \GeV \pm \Delta M_h^{\text{exp}} \pm \Delta M_h^{\text{theo}}
+      M_h \overset{!}{=} 125.14 \GeV \pm \Delta M_h^{\text{exp}} \pm \Delta M_h^{\text{theo}}
     \end{align*}
   \end{enumerate}
   \emph{Problem:} because of large loop corrections $\Delta m_h^2$:
   \begin{align*}
-    \Delta M_h^{\text{theo}} &\gtrsim (1\ldots 2)\eh{GeV} \quad \text{at least!} \\
-    \Delta M_h^{\text{exp}} &= 0.24\eh{GeV} \ \ \mycite{PDG-2017}
+    \Delta M_h^{\text{theo}} &\sim 1\GeV \quad \text{\Changey[1.5]{-2}} \\
+    \Delta M_h^{\text{exp}} &= 0.14\GeV \ \ \mycite{PDG-2019}
   \end{align*}
+  $\rightarrow$ Theorists must increase their precision!
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Contents}
-  \tableofcontents[currentsection]
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Approaches to predict $M_h$}
-  \begin{center}
-    \begin{tikzpicture}[scale=0.9]
-      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5.5) node[left]{$\MS$} -- (0,6);
-      \node at (2.5,7) {\emph{Fixed order}};
-      \draw[thick] (1,0)   rectangle node{SM}    (4,0.9);
-      \draw[thick] (1,1.1) rectangle node{MSSM}  (4,6);
-      \draw[<-, thick, red] (4.1,5.5) -- (4.5,5.5) node[right]{$M_h$};
-      \node at (7.5,7) {\emph{Effective Field Theory}};
-      \draw[thick] (6,0)   rectangle node{SM}    (9,0.9);
-      \draw[thick] (6,1.1) rectangle node{EFT}   (9,5.4);
-      \draw[thick] (6,5.6) rectangle node{MSSM}  (9,6.5);
-      \draw[<-, thick, red] (9.1,1.1) -- (9.5,1.1) node[right]{$M_h$};
-    \end{tikzpicture}
-  \end{center}
-\end{frame}
+% \begin{frame}{Approaches to predict $M_h$}
+%   \begin{center}
+%     \begin{tikzpicture}[scale=0.9]
+%       \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5.5) node[left]{$\MS$} -- (0,6);
+%       \node at (2.5,7) {\emph{Fixed order}};
+%       \draw[thick] (1,0)   rectangle node{SM}    (4,0.9);
+%       \draw[thick] (1,1.1) rectangle node{MSSM}  (4,6);
+%       \draw[<-, thick, red] (4.1,5.5) -- (4.5,5.5) node[right]{$M_h$};
+%       \node at (7.5,7) {\emph{Effective Field Theory}};
+%       \draw[thick] (6,0)   rectangle node{SM}    (9,0.9);
+%       \draw[thick] (6,1.1) rectangle node{EFT}   (9,5.4);
+%       \draw[thick] (6,5.6) rectangle node{MSSM}  (9,6.5);
+%       \draw[<-, thick, red] (9.1,1.1) -- (9.5,1.1) node[right]{$M_h$};
+%     \end{tikzpicture}
+%   \end{center}
+% \end{frame}
 
 % Argumentation:
 
 % 1. classic approach: FO calculation -> large uncertainty due to
 % heavy particles. -> discuss recent status (3-loop) and uncertainty
 
-\subsection{Fixed-order}
+\subsection{Fixed order}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Contents}
   \tableofcontents[currentsection,currentsubsection]
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}{Fixed-order calculation}
-  \emph{Input:} $\aem(M_Z)$, $\as(M_Z)$, $G_F$, $M_Z$, $M_t$, $m_b(m_b)$, \ldots\\[2em]
+  \emph{Input:} $\aem(M_Z)$, $\as(M_Z)$, $G_F$, $M_Z$, $M_t$, $m_b(m_b)$, SUSY parameters, \ldots\\[2em]
   \begin{center}
     \begin{tikzpicture}[scale=0.9]
       \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
-      \draw[thick] (1,0)   rectangle node{SM}    (4,0.9);
+      \draw[thick] (1,0)   rectangle node{SM(5)}    (4,0.9);
       \draw[thick] (1,1.1) rectangle node{MSSM}  (4,6);
       \draw[<-, thick, red] (4.1,5) -- (4.5,5) node[right]{$M_h^2 = m_Z^2 c_{2\beta}^2 + (\Delta m_h^2)^{1L} + \cdots$};
       \draw[<-, thick, darkgreen] (4.1,1) -- (4.5,1) node[right]{$y_f^\MSSM, g_i^\MSSM$};
@@ -753,25 +744,29 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{Fixed loop order calculation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Fixed-order calculation}
   Dominant contribution to $M_h$ at the 1-loop level:
   \begin{align*}
     (\Delta m_h^2)^{1L} &= -\Sigma_h^{1L}(p^2) + \frac{t_h^{1L}}{v} \\
     &= \fmfvcenter{htop} + \fmfvcenter{hstop} + \fmfvcenter{hstopA} \\
     &\phantom{={}} + \fmfvcenter{htoptad} + \fmfvcenter{hstoptad} \\
-    &\approx \frac{12 m_t^2 y_t^2}{(4\pi)^2} \left(
-      \ln\frac{\MS^2}{m_t^2}
+    &\approx \frac{6 y_t^4 v^2}{(4\pi)^2} \left(
+      \log\frac{\MS^2}{m_t^2}
       + \frac{X_t^2}{\MS^2}
       - \frac{X_t^4}{12 \MS^4}
     \right) + O(p^2)
   \end{align*}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}{Higgs mass at 1-loop level}
   \begin{align*}
     (\Delta m_h^2)^{1L} &\approx
-    \frac{12 m_t^2 y_t^2}{(4\pi)^2} \left(
-      \ln\frac{\MS^2}{m_t^2}
+    \frac{6 y_t^4 v^2}{(4\pi)^2} \left(
+      \log\frac{\MS^2}{m_t^2}
       + \frac{X_t^2}{\MS^2}
       - \frac{X_t^4}{12 \MS^4}
     \right) + O(p^2)
@@ -782,16 +777,18 @@
   \\[1em]
   \emph{Observations:}
   \begin{itemize}
-  \item logarithmically enhanced by $\MS / m_t$
-  \item maximal for $X_t \approx \sqrt{6} \MS$
-  \item high sensitivity on $m_t$, due to prefactor $m_t^2 y_t^2 = 2 m_t^4/v^2$
+  \item logarithmically enhanced by $\log(\MS / m_t)$
+  \item maximal for $X_t/\MS \approx \sqrt{6}$
+  \item high sensitivity on $m_t$, due to prefactor $y_t = \sqrt{2} m_t/v$
   \item ambiguity of definition of $m_t$: pole mass or \DRbar\ mass? \\
-    $M_t \approx 173.3\eh{GeV}$, $m_t^{\DRbar} \approx 165\eh{GeV}$ \\
+    $M_t \approx 173.3\GeV$, $m_t^{\DRbar} \approx 165\GeV$ \\
     $\Rightarrow$ huge theoretical uncertainty!\\
     $\Rightarrow$ 2-loop calculation needed to resolve this ambiguity
-  \item $M_h \approx 125\eh{GeV}$ requires $\MS \gtrsim 5\eh{TeV}$
+  \item $M_h \approx 125\GeV$ requires $\MS \gtrsim 5\eh{TeV}$
   \end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Higgs mass at 2-loop level}
   Known contributions: $O(\as (\at + \ab) + (\at+\ab)^2 + \atau^2)$
@@ -801,30 +798,34 @@
   \includegraphics[width=\textwidth]{images/atat}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}{Higgs mass at 2-loop level}
   \begin{align*}
     (\Delta m_h^2)^{2L} &\approx
-    \frac{m_t^2 y_t^4}{(4\pi)^4} \left(
-      c_1 \ln^2\frac{\MS^2}{m_t^2}
-      + c_2 \ln\frac{\MS^2}{m_t^2}
+    \frac{y_t^6}{(4\pi)^4} \left(
+      c_1 \log^2\frac{\MS^2}{m_t^2}
+      + c_2 \log\frac{\MS^2}{m_t^2}
       + c_3
     \right) \\
     & +
-    \frac{m_t^2 y_t^2 g_3^2}{(4\pi)^4} \left(
-      c_4 \ln^2\frac{\MS^2}{m_t^2}
-      + c_5 \ln\frac{\MS^2}{m_t^2}
+    \frac{y_t^4 g_3^2}{(4\pi)^4} \left(
+      c_4 \log^2\frac{\MS^2}{m_t^2}
+      + c_5 \log\frac{\MS^2}{m_t^2}
       + c_6
     \right)
   \end{align*}
   \emph{Observations:}
   \begin{itemize}
-  \item logarithmically enhanced by $\MS / m_t$
+  \item logarithmically enhanced by $\log^2(\MS/m_t)$
   \item still high sensitivity on $m_t$
   \item ambiguity of definition of $m_t$ is resolved \ok
   \item ambiguity of definition of $\as$: $\as^\SM(M_Z)$, $\as^\MSSM(\MS)$, \ldots ? \\
     $\Rightarrow$ 3-loop calculation needed to resolve this ambiguity
   \end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Higgs mass at 3-loop level}
   Known contributions: $O(\at\as^2)$ for $p^2 = 0$ \mycite{1005.5709,1708.05720}
@@ -833,28 +834,30 @@
   \end{center}
   \begin{align*}
     (\Delta m_h^2)^{3L} &\approx
-    \frac{m_t^2 y_t^2 g_3^4}{(4\pi)^6} \left(
-      c_7 \ln^3\frac{\MS^2}{m_t^2}
-      + c_8 \ln^2\frac{\MS^2}{m_t^2}
-      + c_9 \ln\frac{\MS^2}{m_t^2}
+    \frac{y_t^4 g_3^4}{(4\pi)^6} \left(
+      c_7 \log^3\frac{\MS^2}{m_t^2}
+      + c_8 \log^2\frac{\MS^2}{m_t^2}
+      + c_9 \log\frac{\MS^2}{m_t^2}
       + c_{10}
     \right)
   \end{align*}
   \emph{Observations:}
   \begin{itemize}
-  \item logarithmically enhanced by $\MS / m_t$
+  \item logarithmically enhanced by $\log^3(\MS/m_t)$
   \item still high sensitivity on $m_t$
   \item ambiguity of definition of $m_t$ is resolved \ok
   \item ambiguity of definition of $\as$ is resolved \ok
   \end{itemize}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}{Summary of fixed loop order calculation}
   Typical order of magnitude of loop contributions (depends on
   parameter scenario):
   \begin{align*}
     M_h &= m_h + \Delta m_h^{1L} + \Delta m_h^{2L} + \Delta m_h^{3L} + \cdots \\
-    &\approx [91 + O(20\ldots 30) + O(2\ldots 4) + O(1\ldots 2)] \eh{GeV}
+    &\approx [91 + O(20\ldots 30) + O(2\ldots 4) + O(1\ldots 2)] \GeV
   \end{align*}
   \emph{Advantages:}
   \begin{itemize}
@@ -866,10 +869,10 @@
   \begin{itemize}
   \item large logarithmic corrections if $\MS \gg m_t$ \\
     $\Rightarrow$ slow convergence of perturbation series \\
-    $\Rightarrow$ large theoretical uncertainty, ($1$--$2\eh{GeV}$, or
+    $\Rightarrow$ large theoretical uncertainty, ($1$--$2\GeV$, or
     more)
     % \\
-    % recall: $M_h^{\text{exp}} = (125.09 \pm 0.24)\eh{GeV}$
+    % recall: $M_h^{\text{exp}} = (125.10 \pm 0.14)\GeV$
   \end{itemize}
   % \emph{Note:} 3-loop MSSM corrections available in \Himalaya \mycite{1708.05720}
 \end{frame}
@@ -880,6 +883,14 @@
     \includegraphics[width=0.49\textwidth]{{{plots/SOFTSUSY/SS_TB-20_Xt--sqrt6_individual}}}
   \end{center}
   \mycite{1804.09410}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Additional problem: no SUSY particles observed so far}
+  \begin{center}
+    \includegraphics[width=\textwidth]{images/ATLAS_SUSY_Summary}
+  \end{center}
 \end{frame}
 
 %%% EFT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -911,7 +922,7 @@
   \tableofcontents[currentsection,currentsubsection]
 \end{frame}
 
-\begin{frame}{Higgs mass calculation in an EFT}
+\begin{frame}{Higgs mass calculation in an Effective Field Theory}
   \emph{Idea:} Decouple SUSY particles at $\MS$ (expand in $v^2/\MS^2$) \\
   $\Rightarrow$ $\lambda(\MS)$ is fixed by the MSSM \\
   % $\Rightarrow$ effectively: separation of scales $\MS$ and $M_t$.
@@ -930,7 +941,7 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{Larg log resummation in an EFT}
+\begin{frame}{Resummation of large logarithms in an EFT}
   System of coupled DEQs:
   \begin{align*}
     \frac{\dd\lambda}{\dd L} &= \beta_\lambda \approx -12 \kappa y_t^4 , &
@@ -973,7 +984,7 @@
 %                    + \Delta \lambda^{1L} + \Delta \lambda^{2L} + \cdots \\
 %                  &= \frac{1}{4}\left[g_Y^{2} + g_2^2\right] c^2_{2\beta}
 %       + \frac{12 m_t^2 y_t^2}{(4\pi)^2 v^2} \left[
-%         \ln\frac{\MS^2}{Q^2} + \frac{X_t^2}{\MS^2} - \frac{X_t^4}{12 \MS^4}
+%         \log\frac{\MS^2}{Q^2} + \frac{X_t^2}{\MS^2} - \frac{X_t^4}{12 \MS^4}
 %       \right]
 %       + \cdots
 %     \end{align*}
@@ -982,7 +993,7 @@
 %     $\Rightarrow$ \textcolor{darkgreen}{logs are resummed to all orders}
 %   \item Calculate $M_h$ in the SM at $Q = M_t$:
 %     \begin{align*}
-%       (M_h^\SM)^2 &= \lambda(Q) v^2 + \frac{12 m_t^2 y_t^2}{(4\pi)^2 v^2} \ln\frac{Q^2}{m_t^2} + \cdots
+%       (M_h^\SM)^2 &= \lambda(Q) v^2 + \frac{12 m_t^2 y_t^2}{(4\pi)^2 v^2} \log\frac{Q^2}{m_t^2} + \cdots
 %     \end{align*}
 %     $\Rightarrow$ \textcolor{darkgreen}{no large logs for $Q\approx M_t$}
 %   \end{enumerate}
@@ -994,14 +1005,14 @@
   \begin{align*}
     M_h &= m_h + \Delta m_h^{1L} + \Delta m_h^{2L} + \Delta m_h^{3L} + \cdots \\
     % &= \sqrt{\lambda(M_t)} v + \Delta m_h^{1L} + \Delta m_h^{2L} + \cdots \\
-    &\approx [O(124) + O(0.5\ldots 1) + O(0.1\ldots 0.2) + O(0.02\ldots 0.04)] \eh{GeV}
+    &\approx [O(124) + O(0.5\ldots 1) + O(0.1\ldots 0.2) + O(0.02\ldots 0.04)] \GeV
     % &= \sqrt{\lambda(\MS)} v + \text{logs} + \Delta m_h^{1L} + \Delta m_h^{2L} + \cdots \\
-    % &\approx [O(84) + O(40) + O(0.5\ldots 1) + O(0.1\ldots 0.2)] \eh{GeV}
+    % &\approx [O(84) + O(40) + O(0.5\ldots 1) + O(0.1\ldots 0.2)] \GeV
   \end{align*}
   \emph{Advantages:}
   \begin{itemize}
   \item large logarithmic fixed order loop corrections are avoided
-  \item large logarithms $\propto\ln(M_S/M_t)$ are resummed to all orders
+  \item large logarithms $\propto\log(M_S/M_t)$ are resummed to all orders
   \end{itemize}
   \emph{Disadvantage:} terms of $O(v^2/M_S^2)$ are neglected \\
   $\Rightarrow$ imprecise when $v \sim \MS$ \\
