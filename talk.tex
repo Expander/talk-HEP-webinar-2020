@@ -861,13 +861,13 @@
   \end{align*}
   \emph{Advantages:}
   \begin{itemize}
-  \item includes logarithmic, non-logarithmic and suppressed terms of
+  \item[\ok] includes logarithmic, non-logarithmic and suppressed terms of
     $O(v^2/\MS^2)$ at fixed loop order
-  \item precise prediction if $\MS \sim m_t$
+  \item[\ok] precise prediction if $\MS \sim m_t$
   \end{itemize}
-  \emph{Problem:}
+  \emph{Disadvantages:}
   \begin{itemize}
-  \item large logarithmic corrections if $\MS \gg m_t$ \\
+  \item[\notok] large logarithmic corrections if $\MS \gg m_t$ \\
     $\Rightarrow$ slow convergence of perturbation series \\
     $\Rightarrow$ large theoretical uncertainty, ($1$--$2\GeV$, or
     more)
@@ -942,13 +942,13 @@
 \end{frame}
 
 \begin{frame}{Resummation of large logarithms in an EFT}
-  System of coupled DEQs:
+  System of coupled DEQs ($t = \log(Q)$):
   \begin{align*}
-    \frac{\dd\lambda}{\dd L} &= \beta_\lambda \approx -12 \kappa y_t^4 , &
-    \frac{\dd y_t}{\dd L} &\approx -8 \kappa y_t g_3^2 , &
-    \frac{\dd g_3}{\dd L} &\approx -7 \kappa g_3^3
+    \frac{\dd\lambda}{\dd t} &= \beta_\lambda \approx -12 \kappa y_t^4 , &
+    \frac{\dd y_t}{\dd t} &\approx -8 \kappa y_t g_3^2 , &
+    \frac{\dd g_3}{\dd t} &\approx -7 \kappa g_3^3
   \end{align*}
-  Solution:
+  Solution ($L = \log(\MS/M_t)$):
   \begin{align*}
     \lambda(M_t) &= \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta} % \lambda(\MS)
                    - \frac{2 y_t^4}{3 g_3^2} \left[
@@ -1003,7 +1003,7 @@
   Typical order of magnitude of loop contributions (depends on
   parameter scenario, here $X_t = 0$, $\MS = 20\eh{TeV}$):
   \begin{align*}
-    M_h &= m_h + \Delta m_h^{1L} + \Delta m_h^{2L} + \Delta m_h^{3L} + \cdots \\
+    M_h &= \sqrt{\lambda(M_t)}\; v + \Delta m_h^{1L} + \Delta m_h^{2L} + \Delta m_h^{3L} + \cdots \\
     % &= \sqrt{\lambda(M_t)} v + \Delta m_h^{1L} + \Delta m_h^{2L} + \cdots \\
     &\approx [O(124) + O(0.5\ldots 1) + O(0.1\ldots 0.2) + O(0.02\ldots 0.04)] \GeV
     % &= \sqrt{\lambda(\MS)} v + \text{logs} + \Delta m_h^{1L} + \Delta m_h^{2L} + \cdots \\
@@ -1011,12 +1011,15 @@
   \end{align*}
   \emph{Advantages:}
   \begin{itemize}
-  \item large logarithmic fixed order loop corrections are avoided
-  \item large logarithms $\propto\log(M_S/M_t)$ are resummed to all orders
+  \item[\ok] large corrections of $\log^n(\MS/M_t)$ at \textit{fixed order} $n$ are avoided
+  \item[\ok] large logarithms $\propto\log^\infty(M_S/M_t)$ are resummed to \textit{all orders}
   \end{itemize}
-  \emph{Disadvantage:} terms of $O(v^2/M_S^2)$ are neglected \\
-  $\Rightarrow$ imprecise when $v \sim \MS$ \\
-  $\Rightarrow$ large theoretical uncertainty when $v \sim \MS$
+  \emph{Disadvantage:}
+  \begin{itemize}
+  \item[\notok] Terms of $O(v^2/M_S^2)$ are (typically) neglected \\
+    $\Rightarrow$ imprecise when $\MS \sim v$ \\
+    $\Rightarrow$ large theoretical uncertainty when $\MS \sim v$
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Comparison of fixed-order and EFT calculation}
@@ -1026,7 +1029,7 @@
   \end{center}
   \begin{center}
     $\DMhFO \overset{!}{=} \DMhEFT$\\[0.5em]
-    $\Rightarrow$ $\MS^{\text{equal}} = 1.0$--$1.3\TeV$ for
+    $\Rightarrow$ $\MS^{\text{equal}} \sim 1\TeV$ for
     small/large $\tan\beta$ and/or $X_t$
   \end{center}
   \mycite{1804.09410}
@@ -1067,12 +1070,12 @@
   \begin{align*}
     M_h^2 = (M_h^2)_{\text{fixed-order}} - (M_h^2)_{\text{logs}} + (M_h^2)_{\text{resummed logs}}
   \end{align*}
-  \emph{Pro:}
+  \emph{Advantages:}
   \begin{itemize}
   \item[\ok] approach applicable to any BSM model
   \item[\ok] any EFT can be used
   \end{itemize}
-  \emph{Contra:}
+  \emph{Disadvantages:}
   \begin{itemize}
   \item[\notok] requires knowledge of fixed-order and EFT expressions
   \item[\notok] care must be taken to avoid double counting
@@ -1103,7 +1106,7 @@
   \begin{align*}
     \lambda(\MS) = \frac{1}{v^2}\left[(M_h^2)_{\BSM} - (\Delta m_h^2)_{\SM}\right]
   \end{align*}
-  Continue as in in the EFT calculation \ldots
+  Continue as in the EFT calculation \ldots
   % \emph{Pro:}
   % \begin{itemize}
   % \item[\ok] approach applicable to any BSM model
@@ -1120,7 +1123,7 @@
   % \end{itemize}
 \end{frame}
 
-\begin{frame}{FlexibleEFTHiggs approach}
+\begin{frame}{Hybrid calculation -- FlexibleEFTHiggs}
   Continue as in the EFT calculation:
   \begin{center}
     \begin{tikzpicture}[scale=0.9]
@@ -1137,7 +1140,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Equivalence FlexibleEFTHiggs $\rightarrow$ EFT for $v^2 \ll M_S^2$}
+\begin{frame}{Proof: FlexibleEFTHiggs $\rightarrow$ EFT for $v^2 \ll M_S^2$}
   \begin{align*}
     \lambda(\MS) = \frac{1}{v^2}\left[(M_h^2)_{\MSSM} - (\Delta m_h^2)_{\SM}\right]
   \end{align*}
@@ -1150,7 +1153,7 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}{Equivalence FlexibleEFTHiggs $\rightarrow$ EFT for $v^2 \ll M_S^2$}
+\begin{frame}{Proof: FlexibleEFTHiggs $\rightarrow$ EFT for $v^2 \ll M_S^2$}
   \begin{align*}
     \lambda(\MS) ={}& \frac{1}{v^2}\left[(M_h^2)_{\MSSM} - (\Delta m_h^2)_{\SM}\right] \\
     ={}& \frac{m_Z^2}{v^2} c^2_{2\alpha}
@@ -1171,7 +1174,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{FlexibleEFTHiggs approach}
+\begin{frame}{Hybrid calculation -- FlexibleEFTHiggs}
   Matching condition:
   \begin{align*}
     (M_h^2)_{\SM} &\overset{!}{=} (M_h^2)_{\BSM}
@@ -1208,7 +1211,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{FlexibleEFTHiggs approach}
+\begin{frame}{Hybrid calculation -- FlexibleEFTHiggs}
   \begin{center}
     \includegraphics[width=0.49\textwidth]{{{plots/FlexibleEFTHiggs-3L/uncer_2panel_ms_scan_xt-sqrt6_tb20}}}\hfill
     \includegraphics[width=0.49\textwidth]{{{plots/FlexibleEFTHiggs-3L/uncer_2panel_xt_scan_ms3_tb20}}}
