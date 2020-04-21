@@ -628,81 +628,23 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Higgs Mass Calculations with FlexibleSUSY}
+\section{Higgs Mass Calculations in BSM Models}
 
 \begin{frame}{Contents}
   \tableofcontents[currentsection]  
 \end{frame}
 
-\begin{frame}{Interesting BSM physics: Supersymmetry}
-  \emph{Properties:}
-  \begin{itemize}
-  \item gauge coupling unification
-  \item can correctly predict $(g-2)_\mu$
-  \item may contain a DM candidate $\chi_0$
-  \item may solve the hierarchy problem
-  \item ``predicts'' the Higgs boson mass
-  \end{itemize}
-  % \emph{Problems:}
-  % \begin{itemize}
-  % \item predicted Higgs mass too small?
-  % \item no SUSY particles found so far
-  % \end{itemize}
-\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \begin{frame}{Interesting BSM physics: Supersymmetry}
-%   \begin{columns}
-%     \column{0.5\textwidth}
-%     \emph{Properties:}
-%     \begin{itemize}
-%     \item {\color<1>{darkgreen}{gauge coupling unification}}
-%     \item {\color<2>{darkgreen}{correct prediction of $(g-2)_\mu$}}
-%     \item {\color<3>{darkgreen}{contains DM candidate}}
-%     \item {\color<4>{darkgreen}{prediction of Higgs boson mass}}
-%     \item {\color<5>{darkgreen}{solves the hierarchy problem}}
-%     \end{itemize}
-%     \emph{Problems:}
-%     \begin{itemize}
-%     \item predicted Higgs mass too small?
-%     \item no SUSY particles found so far?
-%     \end{itemize}
-%     \column{0.5\textwidth}
-%     \visible<1>{
-%       \tikz[overlay,remember picture]
-%       \node[anchor=center] at ($(current page.center)+(+3,0)$) {
-%         \includegraphics[scale=0.5]{images/MSSM_gauge_couplings_largeMX}
-%       };
-%     }
-%     \visible<2>{
-%       \tikz[overlay,remember picture]
-%       \node[anchor=center] at ($(current page.center)+(+3,0)$) {
-%         \includegraphics[scale=0.5]{images/amu_SUSY}
-%       };
-%     }
-%     \visible<3>{
-%       \tikz[overlay,remember picture]
-%       \node[anchor=center] at ($(current page.center)+(+3,0)$) {
-%         \scalebox{3}{$\chi^0$}
-%       };
-%     }
-%     \visible<4>{
-%       \tikz[overlay,remember picture]
-%       \node[anchor=center] at ($(current page.center)+(+3,0)$) {
-%         \scalebox{2}{$m_h \le m_Z$}
-%       };
-%     }
-%   \end{columns}
-% \end{frame}
-
-\begin{frame}{Prediction of the Higgs boson mass}
-  \emph{SM:} (ad-hoc) Higgs potential:
+\begin{frame}{Prediction of the Higgs boson mass in supersymmetry}
+  \emph{SM:} Higgs potential (ad-hoc):
   \begin{align*}
     V(\phi) &= \frac{\textcolor{red}{\lambda}}{8}\phi^4 - \frac{\mu^2}{2} \phi^2
     \intertext{$\Rightarrow$}
     m_h^2 &= \textcolor{red}{\lambda} v^2
     % \textcolor{darkgreen}{m_Z^2 = \frac{1}{4} \left(g_Y^2 + g_2^2\right) v^2}
   \end{align*}
-  \emph{MSSM:} (required) Higgs potential:
+  \emph{MSSM:} Higgs potential (required by SUSY):
   \begin{align*}
     V(\phi) &= \frac{1}{8}\textcolor{red}{\frac{1}{4}\left(g_Y^2 + g_2^2\right) \cos^2(2\beta)} \phi^4 + \cdots
     \intertext{$\Rightarrow$}
@@ -711,6 +653,8 @@
     &\le m_Z^2
   \end{align*}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Problem 1: no SUSY particles observed}
   \begin{center}
