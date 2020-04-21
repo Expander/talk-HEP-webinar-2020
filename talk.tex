@@ -133,16 +133,9 @@
 \newcommand{\Qmatch}{\ensuremath{Q_\text{match}}}
 \newcommand{\Qsplit}{\ensuremath{Q_\text{split}}\xspace}
 \newcommand{\QTHDM}{\ensuremath{Q_\text{\THDM}}\xspace}
-\newcommand{\DMh}{\ensuremath{\Delta M_h^{(\text{FO})}}}
-\newcommand{\DMhQpole}{\ensuremath{\Delta M_h^{(\Qpole)}}}
-\newcommand{\DMhQmatch}{\ensuremath{\Delta M_h^{(\Qmatch)}}}
-\newcommand{\DMhMt}{\ensuremath{\Delta M_h^{(m_t)}}}
-\newcommand{\DMhAlphaS}{\ensuremath{\Delta M_h^{(\as)}}}
-\newcommand{\DMhAlphaEm}{\ensuremath{\Delta M_h^{(\aem)}}}
-\newcommand{\DMhHSSUSY}{\ensuremath{\Delta M_h^{(\text{EFT})}}}
-\newcommand{\DMhHSSUSYytSM}{\ensuremath{\Delta M_h^{(y_t^\SM)}}}
-\newcommand{\DMhHSSUSYytMSSM}{\ensuremath{\Delta M_h^{(y_t^\MSSM)}}}
-\newcommand{\DMhEFT}{\ensuremath{\Delta M_h^{(v^2/\MS^2)}}}
+\newcommand{\DMh}{\ensuremath{\Delta M_h}}
+\newcommand{\DMhFO}{\ensuremath{\Delta M_h^{(\text{FO})}}}
+\newcommand{\DMhEFT}{\ensuremath{\Delta M_h^{(\text{EFT})}}}
 \newcommand{\Mathematica}{\texttt{Mathematica}}
 \def\HSSUSY{\texttt{HSSUSY}}
 
@@ -1143,7 +1136,7 @@
     \includegraphics[width=0.49\textwidth]{plots/SOFTSUSY/HSSUSY_TB-20_Xt--sqrt6_individual}
   \end{center}
   \begin{center}
-    $\DMh \overset{!}{=} \DMhHSSUSY$\\[0.5em]
+    $\DMhFO \overset{!}{=} \DMhEFT$\\[0.5em]
     $\Rightarrow$ $\MS^{\text{equal}} = 1.0$--$1.3\TeV$ for
     small/large $\tan\beta$ and/or $X_t$
   \end{center}
@@ -1434,11 +1427,16 @@
   \emph{Precise prediction of the Higgs boson mass} in supersymmetric
   models allows to constrain the model parameter space
   \\[1em]
-  \emph{Stops must be heavy}, $\MS \gtrsim 2\TeV$, in the MSSM
-  necessary for correct prediction of $M_h = 125.10\GeV$ $\rightarrow$
+  \emph{Effective field theory} and resummation methods necessary for
+  a precise prediction (resummation of large logarithmic and $x_t^n$
+  corrections)
   \\[1em]
-  \emph{Effective field theory} methods necessary for a precise
-  prediction (resummation of large logarithmic corrections)
+  $\Rightarrow$
+  \\[1em]
+  \emph{Current precision} in the MSSM: $\DMh \lesssim 1\GeV$
+  \\[1em]
+  \emph{Stops must be heavy}, $\MS \gtrsim 2\TeV$, in the MSSM for
+  correct prediction of $M_h = 125.10\GeV$
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1464,25 +1462,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[noframenumbering]{Eigenschaften der EFT-Rechnung}
-  Typische Größenordnung der Quantenkorrekturen in einer EFT-Rechnung:
-  \begin{align*}
-    M_h &= m_h + \Delta m_h^{1\ell} + \Delta m_h^{2\ell} + \Delta m_h^{3\ell} + \cdots \\
-    &\approx [O(124) + O(0.5\ldots 1) + O(0.1\ldots 0.2) + O(0.02\ldots 0.04)] \eh{GeV}
-  \end{align*}
-  \emph{Vorteile:}
-  \begin{itemize}
-  \item Störungsreihe wird nicht bei $n$ Schleifen $O(L^n)$
-    abgeschnitten
-  \item große Logarithmen $L^n$ werden komplett aufsummiert
-  \item $\Rightarrow$ Störungsreihe konvergiert schnell
-  \end{itemize}
-  \vspace*{1em}
-  \emph{Nachteil:}
-  \begin{itemize}
-  \item unpräzise wenn  $\MS \lesssim 0.5\TeV$
-    (ist irrelevant)
-  \end{itemize}
+\begin{frame}[noframenumbering]{Maximum stop masses in the MSSM}
+  Maximum stop mass scenario with $\tan\beta = 1$:
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{plots/DMh/TB-1}
+  \end{center}
+  Dark region: charge and color breaking minima\\
+  Hatched region: unbounded Higgs potential, $\lambda(\MS) < 0$
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
