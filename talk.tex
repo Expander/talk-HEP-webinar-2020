@@ -507,6 +507,8 @@
     \node[above right = 0cm and 0cm of FSname.north west] {\textbf{\textcolor{red}{FlexibleSUSY}}};
     \node[block, right = 2cm of EXPR, text width=5em] (SARAH) {\textbf{\SARAH}};
     \path[arrow] (SARAH) -- node[above]{calculates} (EXPR);
+    \node[block, above = 0.5cm of SARAH, text width=5em] (Lagr) {$\Lagr$};
+    \path[arrow] (Lagr) -- (SARAH);
     \end{tikzpicture}
   \end{center}
 \end{frame}
