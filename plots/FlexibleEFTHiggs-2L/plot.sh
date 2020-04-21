@@ -9,7 +9,7 @@ import scipy.interpolate
 plt.rcParams['text.usetex'] = True
 plt.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
 
-def plot(filename, outfile, xlim, title):
+def plot(filename, outfile, xlim, ylim, title):
     try:
         data = np.genfromtxt(filename)
     except:
@@ -37,9 +37,10 @@ def plot(filename, outfile, xlim, title):
 
     plt.title(title)
     plt.xscale('log')
-    plt.xlabel(r'$M_S\;/\;\mathrm{GeV}$')
-    plt.ylabel(r'$M_h\;/\;\mathrm{GeV}$')
+    plt.xlabel(r'$M_S/\text{GeV}$')
+    plt.ylabel(r'$M_h/\text{GeV}$')
     plt.xlim(xlim)
+    plt.ylim(ylim)
 
     # plt.plot(MS, FEFT1L, 'r:' , linewidth=1.2)
     plt.plot(MS, FEFT2L, 'r-' , linewidth=1.2)
@@ -47,15 +48,15 @@ def plot(filename, outfile, xlim, title):
     plt.plot(MS, EFT2L , 'g-.', linewidth=1.2, dashes=(3,2,1,2))
 
     leg = plt.legend([# r'$\text{FlexibleEFTHiggs/MSSM\ 1L}$',
-                      r'$\text{\texttt{FlexibleSUSY}/FlexibleEFTHiggs 2L}$',
-                      r'$\text{\texttt{FlexibleSUSY}/fixed-order 2L}$',
-                      r'$\text{\texttt{FlexibleSUSY}/\texttt{HSSUSY}(EFT) 2L}$'],
+                      r'$\text{FlexibleEFTHiggs $2\ell$}$',
+                      r'$\text{Fixed order $2\ell$}$',
+                      r'$\text{EFT $2\ell$}$'],
                      loc='lower right', fontsize=10)
     leg.get_frame().set_alpha(1.0)
     leg.get_frame().set_edgecolor('black')
 
-    Mhexp = 125.09
-    sigma = 0.32
+    Mhexp = 125.10
+    sigma = 0.14
     
     ax.add_patch(
         patches.Rectangle(
@@ -74,7 +75,7 @@ def plot(filename, outfile, xlim, title):
     plt.close(fig)
 
 plot('ms_scan_Xt0_Tb20.dat'     , r'Mh_MS_TB-20_Xt-0.pdf'     ,
-     [100, 50000], r'$\tan\beta = 20, X_t = 0$~~~[preliminary]')
+     [100, 50000], [80, 131], r'$\tan\beta = 20, X_t = 0$')
 
 plot('ms_scan_Xt-sqrt6_Tb20.dat', r'Mh_MS_TB-20_Xt--sqrt6.pdf',
-     [320, 10000], r'$\tan\beta = 20, X_t = -\sqrt{6}M_S$~~~[preliminary]')
+     [320, 10000], [100, 131], r'$\tan\beta = 20, X_t = -\sqrt{6}M_S$')
