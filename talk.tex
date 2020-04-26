@@ -676,7 +676,7 @@
 \begin{frame}{Problem: Is the predicted Higgs mass too small?}
   MSSM \emph{predicts} at tree-level:
   \begin{align*}
-    m_h = m_Z |\cos 2\alpha| \le m_Z
+    m_h^2 = m_Z \cos^2 2\alpha \le m_Z^2
   \end{align*}
   But from experiment we know [PDG]:
   \begin{align*}
@@ -702,7 +702,7 @@
   \end{align*}
   \item Constrain the parameter space by requiring:
     \begin{align*}
-      M_h \overset{!}{=} 125.14 \GeV \pm \Delta M_h^{\text{exp}} \pm \Delta M_h^{\text{theo}}
+      M_h \overset{!}{=} (125.10 \pm 0.14) \GeV \pm \Delta M_h^{\text{theo}}
     \end{align*}
   \end{enumerate}
   \emph{Problem:} because of large loop corrections $\Delta m_h^2$:
@@ -748,7 +748,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Fixed-order calculation}
-  \emph{Input:} $\aem(M_Z)$, $\as(M_Z)$, $G_F$, $M_Z$, $M_t$, $m_b(m_b)$, SUSY parameters, \ldots\\[2em]
+  \emph{Input:} $\aem(M_Z)$, $\as(M_Z)$, $G_F$, $M_Z$, $M_t$, $m_b(m_b)$,\\
+  SUSY parameters, \ldots\\[2em]
   \begin{center}
     \begin{tikzpicture}[scale=0.9]
       \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
