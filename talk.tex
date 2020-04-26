@@ -879,7 +879,7 @@
   \begin{itemize}
   \item[\ok] includes logarithmic, non-logarithmic and suppressed terms of
     $O(v^2/\MS^2)$ at fixed loop order
-  \item[\ok] precise prediction if $\MS \sim m_t$
+  \item[\ok] precise prediction if $\MS \sim m_t$ (then $\log(\MS/m_t) \approx 0$)
   \end{itemize}
   \emph{Disadvantages:}
   \begin{itemize}
@@ -952,13 +952,13 @@
       \draw[<-, thick, red] (4.1,1) -- (4.5,1) node[right]{$(M_h^\SM)^2 = \lambda(M_t) v^2 + (\Delta m_h^2)^{(1L)} + \cdots$};
       \draw[<->, thick, blue] (4.2,1.2) -- node[right, align=center]{RG running, i.e.\,\\
         numeric solution of\\[0.5em]
-        $\displaystyle\frac{\dd\lambda}{\dd L} = \beta_\lambda$} (4.2,4.8);
+        $\displaystyle\frac{\dd\lambda}{\dd t} = \beta_\lambda$} (4.2,4.8);
     \end{tikzpicture}
   \end{center}
 \end{frame}
 
 \begin{frame}{Resummation of large logarithms in an EFT}
-  System of coupled DEQs ($t = \log(Q)$):
+  System of coupled DEQs ($t = \log(Q)$, $\kappa = 1/(4\pi)^2$):
   \begin{align*}
     \frac{\dd\lambda}{\dd t} &= \beta_\lambda \approx -12 \kappa y_t^4 , &
     \frac{\dd y_t}{\dd t} &\approx -8 \kappa y_t g_3^2 , &
@@ -966,12 +966,14 @@
   \end{align*}
   Solution ($L = \log(\MS/M_t)$):
   \begin{align*}
-    \lambda(M_t) &= \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta} % \lambda(\MS)
+    \lambda(M_t) &= % \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta}
+                   \lambda(\MS)
                    - \frac{2 y_t^4}{3 g_3^2} \left[
                    \left( 1 + 14 g_3^2 \textcolor{red}{\kappa L} \right)^{-9/7} - 1
     \right]
   \end{align*}
-  Insert in $M_h^2 = \lambda(M_t) v^2$:
+  Insert in $M_h^2 = \lambda(M_t) v^2$,
+  with $\lambda(\MS) = m_Z^2 c^2_{2\beta}/v^2$:
   \begin{align*}
     M_h^2 &= m_Z^2 c^2_{2\beta}
             - \frac{2 y_t^4 v^2}{3 g_3^2} \left[
@@ -984,7 +986,7 @@
             + \frac{736}{3} g_3^4 \textcolor{red}{\kappa^3 L^3} + O(\textcolor{red}{\kappa^4L^4})
             \right]
   \end{align*}
-  $\Rightarrow$ $M_h$ contains \emph{infinite series} if $\textcolor{red}{(\kappa L)^n}$ terms
+  $\Rightarrow$ $M_h^2$ contains \emph{infinite series} of $\textcolor{red}{(\kappa L)^n}$ terms in an EFT
 \end{frame}
 
 % \begin{frame}{EFT avoids large logarithmic corrections}
@@ -1033,7 +1035,7 @@
   \emph{Disadvantage:}
   \begin{itemize}
   \item[\notok] Terms of $O(v^2/M_S^2)$ are (typically) neglected \\
-    $\Rightarrow$ imprecise when $\MS \sim v$ \\
+    $\Rightarrow$ imprecise when $\MS \sim v$ (relevant?) \\
     $\Rightarrow$ large theoretical uncertainty when $\MS \sim v$
   \end{itemize}
 \end{frame}
