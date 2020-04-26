@@ -1159,10 +1159,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Proof: FlexibleEFTHiggs $\rightarrow$ EFT for $v^2 \ll M_S^2$}
+  Consider matching condition:
   \begin{align*}
     \lambda(\MS) = \frac{1}{v^2}\left[(M_h^2)_{\MSSM} - (\Delta m_h^2)_{\SM}\right]
   \end{align*}
-  where
+  where at $O(y_t^4)$:
   \begin{align*}
     (\Delta m_h^2)_{\SM} ={}& - {\color{red}\Sigma^{\SM}_h} - {\color{red}6\kappa y_t^2 A_0(m_t)}\\
     (M_h^2)_{\MSSM} ={}& m_Z^2 c^2_{2\alpha} + \Big[ - {\color{red}\Sigma_h^\SM}
@@ -1197,17 +1198,17 @@
   \begin{align*}
     (M_h^2)_{\SM} &\overset{!}{=} (M_h^2)_{\BSM}
   \end{align*}
-  \emph{Pro:}
+  \emph{Advantages:}
   \begin{itemize}
-  \item[\ok] includes all power-suppressed terms at order
+  \item[\ok] includes all power-suppressed terms at $n$-loop order
     $(v^2/\MS^2)^\infty [c + \log^n(\MS/Q) + \log^n(\MS/m_t)]$
-  \item[\ok] resumms large non-suppressed logarithms $c \log^\infty(\MS/Q)$
+  \item[\ok] resumms large non-suppressed logarithms $c \log^\infty(\MS/m_t)$
   \item[\ok] approach applicable to any BSM model
     % easy to apply to any SM extensison
   \item[\ok] only 1- and 2-point fixed-order expressions required
    $\rightarrow$ easy to automate (e.g.\ SARAH/FlexibleSUSY)
   \end{itemize}
-  \emph{Contra:}
+  \emph{Disadvantages:}
   \begin{itemize}
   \item[\notok] difficult to extend to other EFTs beyond the SM (2HDM,
     \ldots)

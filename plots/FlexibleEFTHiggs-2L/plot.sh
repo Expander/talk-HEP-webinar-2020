@@ -45,11 +45,11 @@ def plot(filename, outfile, xlim, ylim, title):
     # plt.plot(MS, FEFT1L, 'r:' , linewidth=1.2)
     plt.plot(MS, FEFT2L, 'r-' , linewidth=1.2)
     plt.plot(MS, FO2L  , 'b--', linewidth=1.2)
-    plt.plot(MS, EFT2L , 'g-.', linewidth=1.2, dashes=(3,2,1,2))
+    plt.plot(MS, EFT2L , 'k-.', linewidth=1.2, dashes=(5,2,1,2))
 
     leg = plt.legend([# r'$\text{FlexibleEFTHiggs/MSSM\ 1L}$',
                       r'$\text{FlexibleEFTHiggs $2\ell$}$',
-                      r'$\text{Fixed order $2\ell$}$',
+                      r'$\text{FO $2\ell$}$',
                       r'$\text{EFT $2\ell$}$'],
                      loc='lower right', fontsize=10)
     leg.get_frame().set_alpha(1.0)
