@@ -752,12 +752,14 @@
   SUSY parameters, \ldots\\[2em]
   \begin{center}
     \begin{tikzpicture}[scale=0.9]
-      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,4.5) node[left]{$\MS$} -- (0,5.5) node[left]{$Q_\text{input}$} -- (0,6) node[left] {$Q$};
       \draw[thick] (1,0)   rectangle node{SM(5)}    (4,0.9);
       \draw[thick] (1,1.1) rectangle node{MSSM}  (4,6);
-      \draw[<-, thick, red] (4.1,5) -- (4.5,5) node[right]{$M_h^2 = m_Z^2 c_{2\beta}^2 + (\Delta m_h^2)^{1L} + \cdots$};
+      \draw[<-, thick, darkgreen] (4.1,5.5) -- (4.5,5.5) node[right]{input SUSY parameters};
+      \draw[<-, thick, red] (4.1,4.5) -- (4.5,4.5) node[right]{$M_h^2 = m_Z^2 c_{2\beta}^2 + (\Delta m_h^2)^{1L} + \cdots$};
       \draw[<-, thick, darkgreen] (4.1,1) -- (4.5,1) node[right]{$y_f^\MSSM, g_i^\MSSM$};
-      \draw[<->, thick, blue] (4.2,1.2) -- node[right]{RG running} (4.2,4.8);
+      \draw[<->, thick, blue] (0.8,1.2) -- node[rotate=90, anchor=center, yshift=0.2cm]{RG running} (0.8,4.4);
+      \draw[<->, thick, blue] (0.8,4.6) -- (0.8,5.5);
     \end{tikzpicture}
   \end{center}
 \end{frame}
