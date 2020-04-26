@@ -494,12 +494,12 @@
   \tableofcontents[currentsection]  
 \end{frame}
 
-\begin{frame}{What is FlexibleSUSY?}
+\begin{frame}{FlexibleSUSY -- a spectrum generator generator}
   \begin{center}
     \begin{tikzpicture}
-    \node[block] (EXPR) {\textbf{analytic expressions}\\ (\Mathematica)\\ $\beta_g$, $M_h$, $\Sigma_h$, \ldots};
+    \node[block] (EXPR) {\textbf{analytic expressions}\\ (\Mathematica)\\ $\beta_g$, $\Sigma_h$, \ldots};
     % \node[block, below = 1cm of EXPR, text width=15em] (FS) {\textbf{spectrum generator}\\ (C++)\\ solves BVP, calculates observables};
-    \node[block, below = 1cm of EXPR, text width=15em] (FS) {\textbf{spectrum generator}\\ (C++)\\ \footnotesize{\texttt{double calc\_Mhh() \{ return ...; \}}}};
+    \node[block, below = 1cm of EXPR, text width=15em] (FS) {\textbf{spectrum generator}\\ (C++)\\ \footnotesize{\texttt{double calc\_Mh() \{ return ...; \}}}};
     \node[block, below = 1cm of FS, text width=15em] (OUT) {$M_h$, $M_W$, BSM masses, $(g-2)_\mu$, EDMs, $h\rightarrow\gamma\gamma$, $h\rightarrow gg$};
     \path[arrow] (EXPR) -- node[right]{generates} (FS);
     \path[arrow] (FS) -- node[right]{calculates obs.} node[left]{solves BVP} (OUT);
@@ -509,6 +509,8 @@
     \path[arrow] (SARAH) -- node[above]{calculates} (EXPR);
     \node[block, above = 0.5cm of SARAH, text width=5em] (Lagr) {$\Lagr$};
     \path[arrow] (Lagr) -- (SARAH);
+    \node[block, below = 0.5cm of SARAH, text width=5em, gray] (SPheno) {SPheno};
+    \path[arrow, gray] (SARAH) -- (SPheno);
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -583,7 +585,7 @@
         NLL resummation for $M_h$ (\texttt{FlexibleEFTHiggs})
       \end{precblock}
       \begin{speedblock}{High speed}
-        multi-threading,\\ smart linear algebra,\\ lazy evaluation
+        multi-threading,\\ self-optimizing linear algebra,\\ lazy evaluation
       \end{speedblock}
     \end{column}
   \end{columns}
@@ -624,6 +626,21 @@
       \end{modelblock}
     \end{column}
   \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{FlexibleSUSY resources}
+  FlexibleSUSY reference manuals:
+  \begin{center}
+    \href{https://arxiv.org/abs/1406.2319}{[1406.2319]},
+    \href{https://arxiv.org/abs/1710.03760}{[1710.03760]}
+  \end{center}
+  Software download:
+  \begin{center}
+    \href{https://flexiblesusy.hepforge.org}{flexiblesusy.hepforge.org}\\[0.5em]
+    \href{https://github.com/FlexibleSUSY/FlexibleSUSY}{github.com/FlexibleSUSY/FlexibleSUSY}
+  \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
