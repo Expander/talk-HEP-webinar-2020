@@ -137,6 +137,7 @@
 \newcommand{\DMhFO}{\ensuremath{\Delta M_h^{(\text{FO})}}}
 \newcommand{\DMhEFT}{\ensuremath{\Delta M_h^{(\text{EFT})}}}
 \newcommand{\Mathematica}{\texttt{Mathematica}}
+\newcommand{\ord}{\ensuremath{\mathcal{O}}}
 \def\HSSUSY{\texttt{HSSUSY}}
 
 % set look of slides
@@ -777,7 +778,7 @@
       \log\frac{\MS^2}{m_t^2}
       + \frac{X_t^2}{\MS^2}
       - \frac{X_t^4}{12 \MS^4}
-    \right) + O\left(\frac{v^2}{\MS^2}\right)
+    \right) + \ord\left(\frac{v^2}{\MS^2}\right)
   \end{align*}
 \end{frame}
 
@@ -790,7 +791,7 @@
       \log\frac{\MS^2}{m_t^2}
       + \frac{X_t^2}{\MS^2}
       - \frac{X_t^4}{12 \MS^4}
-    \right) + O\left(\frac{v^2}{\MS^2}\right)
+    \right) + \ord\left(\frac{v^2}{\MS^2}\right)
   \end{align*}
   $X_t = A_t - \mu/t_\beta$ = stop mixing parameter,
   $\MS = (m_Q)_{33} = (m_U)_{33}$
@@ -812,7 +813,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Higgs mass at 2-loop level}
-  Known contributions: $O(\as (\at + \ab) + (\at+\ab)^2 + \atau^2)$
+  Known contributions: $\ord(\as (\at + \ab) + (\at+\ab)^2 + \atau^2)$
   for $p^2 = 0$ \mycite{hep-ph/0105096, hep-ph/0112177}
   \\[1em]
   \includegraphics[width=0.6\textwidth]{images/atas}\\[1em]
@@ -849,7 +850,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Higgs mass at 3-loop level}
-  Known contributions: $O(\at\as^2)$ for $p^2 = 0$ \mycite{1005.5709,1708.05720}
+  Known contributions: $\ord(\at\as^2)$ for $p^2 = 0$ \mycite{1005.5709,1708.05720}
   \begin{center}
     \includegraphics[width=0.9\textwidth]{images/h3l-atasas}
   \end{center}
@@ -878,12 +879,12 @@
   parameter scenario):
   \begin{align*}
     M_h &= m_h + \Delta m_h^{1L} + \Delta m_h^{2L} + \Delta m_h^{3L} + \cdots \\
-    &\approx [91 + O(20\ldots 30) + O(2\ldots 4) + O(1\ldots 2)] \GeV
+    &\approx [91 + \ord(20\ldots 30) + \ord(2\ldots 4) + \ord(1\ldots 2)] \GeV
   \end{align*}
   \emph{Advantages:}
   \begin{itemize}
   \item[\ok] includes logarithmic, non-logarithmic and suppressed terms of
-    $O((v^2/\MS^2)^\infty)$ at fixed loop order
+    $\ord((v^2/\MS^2)^\infty)$ at fixed loop order
   \item[\ok] precise prediction if $\MS \sim m_t$ (then $\log(\MS/m_t) \approx 0$)
   \end{itemize}
   \emph{Disadvantages:}
@@ -988,7 +989,7 @@
             + 12 y_t^4 v^2 \left[
             \textcolor{red}{\kappa L}
             - 16 g_3^2 \textcolor{red}{\kappa^2 L^2}
-            + \frac{736}{3} g_3^4 \textcolor{red}{\kappa^3 L^3} + O(\textcolor{red}{\kappa^4L^4})
+            + \frac{736}{3} g_3^4 \textcolor{red}{\kappa^3 L^3} + \ord(\textcolor{red}{\kappa^4L^4})
             \right]
   \end{align*}
   $\Rightarrow$ $M_h^2$ contains \emph{infinite series} of $\textcolor{red}{(\kappa L)^n}$ terms in an EFT
@@ -1028,9 +1029,9 @@
   \begin{align*}
     M_h &= \sqrt{\lambda(M_t)}\; v + \Delta m_h^{1L} + \Delta m_h^{2L} + \Delta m_h^{3L} + \cdots \\
     % &= \sqrt{\lambda(M_t)} v + \Delta m_h^{1L} + \Delta m_h^{2L} + \cdots \\
-    &\approx [O(124) + O(0.5\ldots 1) + O(0.1\ldots 0.2) + O(0.02\ldots 0.04)] \GeV
+    &\approx [\ord(124) + \ord(0.5\ldots 1) + \ord(0.1\ldots 0.2) + \ord(0.02\ldots 0.04)] \GeV
     % &= \sqrt{\lambda(\MS)} v + \text{logs} + \Delta m_h^{1L} + \Delta m_h^{2L} + \cdots \\
-    % &\approx [O(84) + O(40) + O(0.5\ldots 1) + O(0.1\ldots 0.2)] \GeV
+    % &\approx [\ord(84) + \ord(40) + \ord(0.5\ldots 1) + \ord(0.1\ldots 0.2)] \GeV
   \end{align*}
   \emph{Advantages:}
   \begin{itemize}
@@ -1039,7 +1040,7 @@
   \end{itemize}
   \emph{Disadvantage:}
   \begin{itemize}
-  \item[\notok] Terms of $O(v^2/M_S^2)$ are (typically) neglected \\
+  \item[\notok] Terms of $\ord(v^2/M_S^2)$ are (typically) neglected \\
     $\Rightarrow$ imprecise when $\MS \sim v$ (relevant?) \\
     $\Rightarrow$ large theoretical uncertainty when $\MS \sim v$
   \end{itemize}
@@ -1086,7 +1087,7 @@
 
 \begin{frame}{Hybrid calculation -- FeynHiggs approach}
   \emph{Goal:} resum large logarithms \emph{and} include suppressed
-  $O(v^2/\MS^2)$ terms
+  $\ord(v^2/\MS^2)$ terms
   \\[2em]
   \emph{Idea I:} (``FeynHiggs approach'' \mycite{1312.4937, 1706.00346, 1805.00867, 1910.03595})\\
   Replace logs from fixed-order calculation by resummed logs:
@@ -1115,11 +1116,11 @@
 
 \begin{frame}{Hybrid calculation -- FlexibleEFTHiggs}
   % \emph{Goal:} resum large logarithms \emph{and} include suppressed
-  % $O(v^2/\MS^2)$ terms
+  % $\ord(v^2/\MS^2)$ terms
   % \\[2em]
   \emph{Idea II:} (``FlexibleEFTHiggs'' \mycite{1609.00371,
     1710.03760, 2003.04639})\\
-  Incorporate all $O((v^2/\MS^2)^\infty)$ terms into $\lambda$ by
+  Incorporate all $\ord((v^2/\MS^2)^\infty)$ terms into $\lambda$ by
   using the matching condition for the FO calculations:
   \begin{align*}
     (M_h^2)_{\SM} &\overset{!}{=} (M_h^2)_{\BSM} \qquad \text{at } Q = \MS \\
@@ -1168,7 +1169,7 @@
   \begin{align*}
     \lambda(\MS) = \frac{1}{v^2}\left[(M_h^2)_{\MSSM} - (\Delta m_h^2)_{\SM}\right]
   \end{align*}
-  where at $O(y_t^4)$:
+  where at $\ord(y_t^4)$:
   \begin{align*}
     (\Delta m_h^2)_{\SM} ={}& - {\color{red}\Sigma^{\SM}_h} - {\color{red}6\kappa y_t^2 A_0(m_t)}\\
     (M_h^2)_{\MSSM} ={}& m_Z^2 c^2_{2\alpha} + \Big[ - {\color{red}\Sigma_h^\SM}
@@ -1192,7 +1193,7 @@
     - 6 \kappa y_t^4 B_0(\MS,\MS) \\
     ={}& \frac{1}{4} (g_Y^2 + g_2^2) c_{2\beta}^2
     - 6 \kappa y_t^4 \Big[
-    - \log\frac{\MS^2}{Q^2} + \textcolor{blue}{\frac{p^2}{6 \MS^2} + O\Big(\frac{p^4}{\MS^4}\Big)} \Big]
+    - \log\frac{\MS^2}{Q^2} + \textcolor{blue}{\frac{p^2}{6 \MS^2} + \ord\Big(\frac{p^4}{\MS^4}\Big)} \Big]
   \end{align*}
 \end{frame}
 
@@ -1280,11 +1281,11 @@
   where $\Delta m_b$ is expressed in terms of MSSM parameters.\\[1em]
   \begin{theorem}[hep-ph/9912516]
     There are no contributions to $\Delta m_b$ of
-    $O((\as\tan\beta)^n)$ for $n\ge 2$.
+    $\ord((\as\tan\beta)^n)$ for $n\ge 2$.
   \end{theorem}
   \vspace*{1em}
   $\Rightarrow$ All higher-order MSSM contributions in $m_b$ of
-  $O((\as\tan\beta)^n)$ can be resummed by writing:
+  $\ord((\as\tan\beta)^n)$ can be resummed by writing:
   \begin{align*}
     m_b = \frac{m_b^{\EFT}}{1 + \Delta m_b}
     = m_b^{\EFT} \sum_{n=0}^\infty (-\Delta m_b)^n
@@ -1301,11 +1302,11 @@
   where $\Delta y_t$ is expressed in terms of MSSM parameters.\\[1em]
   \begin{theorem}[Kwasnitza, Stöckinger (2003.04639)]
     There are no unsuppressed contributions to $\Delta y_t$
-    of $O(\as^n x_t^{>1})$ for $n\ge 1$.
+    of $\ord(\as^n x_t^{>1})$ for $n\ge 1$.
   \end{theorem}
   \vspace*{1em}
   $\Rightarrow$ All higher-order MSSM contributions in $y_t$ of
-  $O(\as^n x_t^{>1})$ can be resummed by writing:
+  $\ord(\as^n x_t^{>1})$ can be resummed by writing:
   \begin{align*}
     y_t = \frac{y_t^{\EFT}}{1 + \Delta y_t/(y_ts_\beta)}
   \end{align*}
